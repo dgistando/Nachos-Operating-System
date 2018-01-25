@@ -17,6 +17,7 @@ public final class Machine {
      *
      * @param	args	the command line arguments.
      */
+    //Added a comment above main for git test
     public static void main(final String[] args) {
 	System.out.print("nachos 5.0j initializing...");
 	
