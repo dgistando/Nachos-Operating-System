@@ -31,6 +31,9 @@ public class PriorityScheduler extends Scheduler {
      * Allocate a new priority scheduler.
      */
     public PriorityScheduler() {
+	//set maximum size of the queue
+	//SortedSet<KThread> priorityQueue = new TreeSet<KThread>();
+	//Edit comparator here
     }
     
     /**
