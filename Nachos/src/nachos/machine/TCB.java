@@ -109,10 +109,10 @@ public final class TCB {
 	    currentTCB.waitForInterrupt();
 	}
 	else {
-	    /* This is the first TCB, so we don't need to make a new Java
-	     * thread to run it; we just steal the current Java thread.
-	     */
-	    javaThread = Thread.currentThread();
+		/* This is the first TCB, so we don't need to make a new Java
+		 * thread to run it; we just steal the current Java thread.
+		 */
+		javaThread = Thread.currentThread();
 
 	    /* All we have to do now is invoke threadroot() directly. */
 	    threadroot();
