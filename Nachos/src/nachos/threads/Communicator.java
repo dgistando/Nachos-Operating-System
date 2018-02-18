@@ -19,6 +19,8 @@ public class Communicator {
     private int speakerCount;
     private int word;
 
+    private boolean isWord;
+
     /**
      * Allocate a new communicator.
      */
@@ -26,6 +28,11 @@ public class Communicator {
         lock = new Lock();
         speakCondition = new Condition2(lock);
         listenContidion = new Condition2(lock);
+
+        speakerCount = 0;
+        listenCount = 0;
+
+        isWord = false;
     }
 
     /**
@@ -42,6 +49,18 @@ public class Communicator {
         lock.acquire();
         this.word = word;
 
+        speakerCount++;
+
+        //If someone is already trying to speak
+        //make the thread sleep until the speaker is gone.
+        if(listenCount == 0)
+            speakCondition.sleep();
+
+        isWord = true;
+        //If here then only speaker and ready
+        speakCondition.wakeAll();
+
+        speakerCount--;
         lock.release();
     }
 
@@ -54,11 +73,18 @@ public class Communicator {
     public int listen() {
         lock.acquire();
 
+        listenCount++;
 
+        if(!isWord && speakerCount > 0)
+            speakCondition.wakeAll();
+            listenContidion.sleep();
 
+        //Since the word was listened to
+        //There is no word anymore
+        isWord = false;
 
         lock.release();
-	    return word;
+	    return this.word;
     }
 
 

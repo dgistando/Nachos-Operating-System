@@ -2,9 +2,7 @@ package nachos.threads;
 
 import nachos.machine.*;
 
-import java.util.TreeSet;
-import java.util.HashSet;
-import java.util.Iterator;
+import java.util.*;
 
 /**
  * A scheduler that chooses threads based on their priorities.
@@ -31,10 +29,14 @@ public class PriorityScheduler extends Scheduler {
      * Allocate a new priority scheduler.
      */
     public PriorityScheduler() {
-	//set maximum size of the queue
-	//SortedSet<KThread> priorityQueue = new TreeSet<KThread>();
-	//Edit comparator here
-    }
+		//set maximum size of the queue
+		SortedSet<ThreadState> priorityQueue = new TreeSet<ThreadState>(new Comparator<ThreadState>() {
+			@Override
+			public int compare(ThreadState threadState, ThreadState t1) {
+				return threadState.getPriority() - t1.getPriority();
+			}
+		});
+	}
     
     /**
      * Allocate a new priority thread queue.
@@ -146,6 +148,8 @@ public class PriorityScheduler extends Scheduler {
 	public KThread nextThread() {
 	    Lib.assertTrue(Machine.interrupt().disabled());
 	    // implement me
+
+
 	    return null;
 	}
 
@@ -254,11 +258,16 @@ public class PriorityScheduler extends Scheduler {
 	 */
 	public void acquire(PriorityQueue waitQueue) {
 	    // implement me
+
+
 	}	
 
 	/** The thread with which this object is associated. */	   
 	protected KThread thread;
 	/** The priority of the associated thread. */
 	protected int priority;
+
+	/** There should be some resources here for use*/
+	protected HashSet<PriorityQueue> othersQueues = new HashSet<>();
     }
 }
