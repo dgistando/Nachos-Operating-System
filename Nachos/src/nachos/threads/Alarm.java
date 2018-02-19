@@ -7,6 +7,8 @@ import nachos.machine.*;
  * until a certain time.
  */
 public class Alarm {
+	
+     private List<Kthread> waitQueue;
     /**
      * Allocate a new Alarm. Set the machine's timer interrupt handler to this
      * alarm's callback.
@@ -18,6 +20,8 @@ public class Alarm {
 	Machine.timer().setInterruptHandler(new Runnable() {
 		public void run() { timerInterrupt(); }
 	    });
+	    
+	waitQueue = new ArrayList<Kthread>();
     }
 
     /**
@@ -28,6 +32,19 @@ public class Alarm {
      */
     public void timerInterrupt() {
 	KThread.currentThread().yield();
+	
+	if(waitQueue.isEmpty())
+		return;
+	long time = Machine.timer().getTime();
+	    
+	Iterator<Kthread> it = waitQueue.iterator();
+	while(it.hasNext()){
+		Kthread thread = it.next();
+		if(thread gettime or something <= time){
+			thread.currentThread.ready();
+			waitQueue.remove(thread);
+		}
+	}
     }
 
     /**
@@ -49,5 +66,7 @@ public class Alarm {
 	long wakeTime = Machine.timer().getTime() + x;
 	while (wakeTime > Machine.timer().getTime())
 	    KThread.yield();
+	    
+	
     }
 }
