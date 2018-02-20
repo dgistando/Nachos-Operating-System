@@ -52,7 +52,7 @@ public class Communicator {
         speakerCount++;
 
         //If someone is already trying to speak
-        //make the thread sleep until the speaker is gone.
+        //make the thread sleep until the speaker is found.
         if(listenCount == 0)
             speakCondition.sleep();
 

@@ -25,12 +25,14 @@ import java.util.*;
  * particular, priority must be donated through locks, and through joins.
  */
 public class PriorityScheduler extends Scheduler {
+
+	public SortedSet<ThreadState> priorityQueue;
     /**
      * Allocate a new priority scheduler.
      */
     public PriorityScheduler() {
 		//set maximum size of the queue
-		SortedSet<ThreadState> priorityQueue = new TreeSet<ThreadState>(new Comparator<ThreadState>() {
+		priorityQueue = new TreeSet<ThreadState>(new Comparator<ThreadState>() {
 			@Override
 			public int compare(ThreadState threadState, ThreadState t1) {
 				return threadState.getPriority() - t1.getPriority();
@@ -185,6 +187,9 @@ public class PriorityScheduler extends Scheduler {
      * @see	nachos.threads.KThread#schedulingState
      */
     protected class ThreadState {
+    	protected PriorityQueue waitQueue;
+    	protected List<PriorityQueue> capturedResouces;
+    	protected int effectivePriority;
 	/**
 	 * Allocate a new <tt>ThreadState</tt> object and associate it with the
 	 * specified thread.
@@ -213,6 +218,9 @@ public class PriorityScheduler extends Scheduler {
 	 */
 	public int getEffectivePriority() {
 	    // implement me
+
+
+
 	    return priority;
 	}
 
