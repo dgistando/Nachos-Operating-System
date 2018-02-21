@@ -248,10 +248,10 @@ public class PriorityScheduler extends Scheduler {
 		//need to somehow show that a priority change occured to change
 		//it back after running.
 
-		for(ThreadState thread:){
+		for(ThreadState ){
 
 		}
-		
+
 	    return priority;
 	}
 

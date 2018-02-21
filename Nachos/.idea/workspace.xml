@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="c35c53d1-c2e6-41be-b37c-9a9f956c3efb" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/Nachos.iml" afterPath="$PROJECT_DIR$/Nachos.iml" />
-      <change beforePath="$PROJECT_DIR$/src/nachos/threads/KThread.java" afterPath="$PROJECT_DIR$/src/nachos/threads/KThread.java" />
       <change beforePath="$PROJECT_DIR$/src/nachos/threads/PriorityScheduler.java" afterPath="$PROJECT_DIR$/src/nachos/threads/PriorityScheduler.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -80,8 +78,8 @@
           <file leaf-file-name="PriorityScheduler.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/nachos/threads/PriorityScheduler.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="845">
-                  <caret line="253" column="8" lean-forward="true" selection-start-line="253" selection-start-column="8" selection-end-line="253" selection-end-column="8" />
+                <state relative-caret-position="794">
+                  <caret line="250" column="24" lean-forward="true" selection-start-line="250" selection-start-column="24" selection-end-line="250" selection-end-column="24" />
                   <folding>
                     <element signature="imports" expanded="true" />
                     <element signature="e#1402#1403#0" expanded="true" />
@@ -829,7 +827,7 @@
       <workItem from="1519082146122" duration="12912000" />
       <workItem from="1519192156130" duration="1610000" />
       <workItem from="1519201714244" duration="914000" />
-      <workItem from="1519202650941" duration="4763000" />
+      <workItem from="1519202650941" duration="4791000" />
     </task>
     <task id="LOCAL-00001" summary="changed communicator">
       <created>1519155611820</created>
@@ -838,11 +836,18 @@
       <option name="project" value="LOCAL" />
       <updated>1519155611820</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="changed communicator">
+      <created>1519207423659</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1519207423659</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="42588000" />
+    <option name="totallyTimeSpent" value="42616000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="2552" y="-8" width="2576" height="1426" extended-state="6" />
@@ -1324,8 +1329,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/nachos/threads/PriorityScheduler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="845">
-          <caret line="253" column="8" lean-forward="true" selection-start-line="253" selection-start-column="8" selection-end-line="253" selection-end-column="8" />
+        <state relative-caret-position="794">
+          <caret line="250" column="24" lean-forward="true" selection-start-line="250" selection-start-column="24" selection-end-line="250" selection-end-column="24" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1402#1403#0" expanded="true" />
