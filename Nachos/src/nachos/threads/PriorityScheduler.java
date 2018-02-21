@@ -316,13 +316,10 @@ public class PriorityScheduler extends Scheduler {
 	    // implement me
 
 		//make sure thread is not on the waitQueue 
-		if(waitQueue.waitQueue.contains(this)){
-			waitQueue.waitQueue.remove(this);
-		}
+		if(waitQueue.waitQueue.contains(this))waitQueue.waitQueue.remove(this);
+		
 		//and make sure waitqueue is not a resource already
-		if(!capturedResouces.contains(waitQueue)){
-		capturedResouces.add(waitQueue);
-		}
+		if(!capturedResouces.contains(waitQueue))capturedResouces.add(waitQueue);
 		
 		this.getEffectivePriority();
 
