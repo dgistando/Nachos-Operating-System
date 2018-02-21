@@ -274,18 +274,18 @@ public class KThread {
      */
     public void join() {
 	    
-	int interruptStatus = Machine.interrupt().disable();
-	Lib.debug(dbgThread, "Joining to thread: " + toString());
+		boolean interruptStatus = Machine.interrupt().disable();
+		Lib.debug(dbgThread, "Joining to thread: " + toString());
 
-	Lib.assertTrue(this != currentThread && currentThread != 'Stattus finished. whatever that is');
-	if(readyQueue == null){
-		readyQueue = new ThreadQueue();
-	    	readyQueue.acquire(currentThread);
-	}else{
-		readyQueue.waitForAccess(currentThread);
-		currentThread.sleep();
-	}
-	Machine.interrupt().disable(interruptStatus);
+		Lib.assertTrue(this != currentThread && currentThread.status != statusFinished);
+		if(readyQueue == null){
+			readyQueue = ThreadedKernel.scheduler.newThreadQueue(false);
+			readyQueue.acquire(currentThread);
+		}else{
+			readyQueue.waitForAccess(currentThread);
+			currentThread.sleep();
+		}
+		Machine.interrupt().restore(interruptStatus);
     }
 
     /**

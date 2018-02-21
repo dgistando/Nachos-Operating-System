@@ -26,18 +26,10 @@ import java.util.*;
  */
 public class PriorityScheduler extends Scheduler {
 
-	public SortedSet<ThreadState> priorityQueue;
     /**
      * Allocate a new priority scheduler.
      */
     public PriorityScheduler() {
-		//set maximum size of the queue
-		priorityQueue = new TreeSet<ThreadState>(new Comparator<ThreadState>() {
-			@Override
-			public int compare(ThreadState threadState, ThreadState t1) {
-				return threadState.getPriority() - t1.getPriority();
-			}
-		});
 	}
     
     /**
@@ -133,8 +125,21 @@ public class PriorityScheduler extends Scheduler {
      * A <tt>ThreadQueue</tt> that sorts threads by priority.
      */
     protected class PriorityQueue extends ThreadQueue {
+
+		public SortedSet<ThreadState> priorityQueue;
+		public LinkedList<ThreadState> waitQueue;
+
 	PriorityQueue(boolean transferPriority) {
-	    this.transferPriority = transferPriority;
+		this.transferPriority = transferPriority;
+		//set maximum size of the queue
+		priorityQueue = new TreeSet<ThreadState>(new Comparator<ThreadState>() {
+			@Override
+			public int compare(ThreadState threadState, ThreadState t1) {
+				return threadState.getPriority() - t1.getPriority();
+			}
+		});
+
+		waitQueue = new LinkedList<>();
 	}
 
 	public void waitForAccess(KThread thread) {
@@ -155,7 +160,7 @@ public class PriorityScheduler extends Scheduler {
 		}else{
 			ThreadState thread = priorityQueue.first();
 			priorityQueue.remove(priorityQueue.first());
-			return Threadstate.thread;
+			return thread.thread;
 		}
 	}
 
@@ -168,27 +173,22 @@ public class PriorityScheduler extends Scheduler {
 	 */
 	protected ThreadState pickNextThread() {
 	    // implement me
-	    int interruotResult = Machine.interrupt().disable();
+	    boolean interruptResult = Machine.interrupt().disable();
 	
 	    if(priorityQueue.isEmpty())return null;
-	    Iterator<ThreadState> it =  priorityQueue.iterator();
-		
-	    Kthread thread = null;
-	    while(it.hasNext()){
-	    	thread = it.next();
-		int priority = thread.getEffectivePrioity();
-		    
-		//NOT DONE
-		if(){
+
+	    int maxPriority = priorityMinimum;
+	    ThreadState thread = null;
+	    //basically do the max for the priorities of threads
+	    for(ThreadState entity : waitQueue){
+	    	int priority = entity.getEffectivePriority();
+
+	    	if(thread == null || priority > maxPriority){
+	    		thread = entity;
+	    		maxPriority = priority;
+			}
 		}
-		    
-	    }
-		
-	    if(thread != null){
-	    	priorityQueue.remove(thread);
-		
-	    }
-		
+
 	    Machine.interrupt().restore(interruptResult);
 	    return thread;
 	}
@@ -196,6 +196,7 @@ public class PriorityScheduler extends Scheduler {
 	public void print() {
 	    Lib.assertTrue(Machine.interrupt().disabled());
 	    // implement me (if you want)
+		priorityQueue.stream().forEach(System.out::println);
 	}
 
 	/**
@@ -213,7 +214,6 @@ public class PriorityScheduler extends Scheduler {
      * @see	nachos.threads.KThread#schedulingState
      */
     protected class ThreadState {
-    	protected PriorityQueue waitQueue;
     	protected List<PriorityQueue> capturedResouces;
     	protected int effectivePriority;
 	/**
@@ -245,8 +245,13 @@ public class PriorityScheduler extends Scheduler {
 	public int getEffectivePriority() {
 	    // implement me
 
+		//need to somehow show that a priority change occured to change
+		//it back after running.
 
+		for(ThreadState thread:){
 
+		}
+		
 	    return priority;
 	}
 
@@ -302,6 +307,6 @@ public class PriorityScheduler extends Scheduler {
 	protected int priority;
 
 	/** There should be some resources here for use*/
-	protected HashSet<PriorityQueue> othersQueues = new HashSet<>();
+	protected ThreadQueue othersQueues = newThreadQueue(false);
     }
 }
