@@ -215,7 +215,15 @@ public class PriorityScheduler extends Scheduler {
      */
     protected class ThreadState {
     	protected List<PriorityQueue> capturedResouces;
+    	protected ThreadQueue wantedResources;
     	protected int effectivePriority;
+		/** There should be some resources here for use*/
+		//protected ThreadQueue othersQueues = newThreadQueue(false);
+		protected List<ThreadState> waitQueue = new ArrayList<>();
+
+		protected boolean priorityChanged = false;
+
+
 	/**
 	 * Allocate a new <tt>ThreadState</tt> object and associate it with the
 	 * specified thread.
@@ -245,14 +253,17 @@ public class PriorityScheduler extends Scheduler {
 	public int getEffectivePriority() {
 	    // implement me
 
-		//need to somehow show that a priority change occured to change
+		//need to somehow show that a priority change occurred to change
 		//it back after running.
 
-		for(ThreadState ){
+		int effectivePriority = priorityMinimum;
 
+		for(ThreadState entity : waitQueue){
+			effectivePriority = (this.effectivePriority > entity.effectivePriority)?effectivePriority:entity.effectivePriority;
 		}
+		priorityChanged = true;
 
-	    return priority;
+	    return effectivePriority;
 	}
 
 	/**
@@ -264,8 +275,7 @@ public class PriorityScheduler extends Scheduler {
 	    if (this.priority == priority)
 		return;
 	    
-	    this.priority = priority;
-	    
+	    this.priority = getEffectivePriority();
 	    // implement me
 	}
 
@@ -283,6 +293,13 @@ public class PriorityScheduler extends Scheduler {
 	 */
 	public void waitForAccess(PriorityQueue waitQueue) {
 	    // implement me
+		Lib.assertTrue(Machine.interrupt().disable());
+		if(!waitQueue.waitQueue.contains(this))
+			waitQueue.waitQueue.add(this);
+
+		wantedResources = waitQueue;
+
+		if(capturedResouces.contains(waitQueue))capturedResouces.remove(waitQueue);
 	}
 
 	/**
@@ -298,6 +315,21 @@ public class PriorityScheduler extends Scheduler {
 	public void acquire(PriorityQueue waitQueue) {
 	    // implement me
 
+		//make sure thread is not on the waitQueue and make sure waitqueue is not a resource already
+		if(waitQueue.waitQueue.contains(this) || !capturedResouces.contains(waitQueue)){
+			return;
+		}
+
+		capturedResouces.add(waitQueue);
+
+		this.getEffectivePriority();
+
+		//Change the thread state to wait??????
+		
+
+		if(waitQueue == wantedResources){
+			wantedResources = null;
+		}
 
 	}	
 
@@ -306,7 +338,5 @@ public class PriorityScheduler extends Scheduler {
 	/** The priority of the associated thread. */
 	protected int priority;
 
-	/** There should be some resources here for use*/
-	protected ThreadQueue othersQueues = newThreadQueue(false);
     }
 }
