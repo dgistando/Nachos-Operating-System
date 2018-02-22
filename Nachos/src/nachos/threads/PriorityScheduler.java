@@ -219,7 +219,7 @@ public class PriorityScheduler extends Scheduler {
     	protected int effectivePriority;
 		/** There should be some resources here for use*/
 		//protected ThreadQueue othersQueues = newThreadQueue(false);
-		protected List<ThreadState> waitQueue = new ArrayList<>();
+		//protected List<ThreadState> waitQueue = new ArrayList<>();
 
 		protected boolean priorityChanged = false;
 
@@ -258,8 +258,10 @@ public class PriorityScheduler extends Scheduler {
 
 		int effectivePriority = priorityMinimum;
 
-		for(ThreadState entity : waitQueue){
-			effectivePriority = (this.effectivePriority > entity.effectivePriority)?effectivePriority:entity.effectivePriority;
+		for(PriorityQueue priorityQueue: capturedResouces) {
+			for (ThreadState entity : priorityQueue.waitQueue) {
+				effectivePriority = (this.effectivePriority > entity.effectivePriority) ? this.effectivePriority : entity.effectivePriority;
+			}
 		}
 		priorityChanged = true;
 
