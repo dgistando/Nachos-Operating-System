@@ -2,7 +2,11 @@ package nachos.threads;
 
 import nachos.machine.*;
 
-import java.util.*;
+import java.util.TreeSet;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.SortedSet;
+import java.util.Comparator;
 
 /**
  * A scheduler that chooses threads based on their priorities.
@@ -126,12 +130,14 @@ public class PriorityScheduler extends Scheduler {
      */
     protected class PriorityQueue extends ThreadQueue {
 
+    	//This is the main queue that holds the threads to be executed.
 		public SortedSet<ThreadState> priorityQueue;
+		//This is a queue made just for the threads waiting to execute.
 		public LinkedList<ThreadState> waitQueue;
 
 	PriorityQueue(boolean transferPriority) {
 		this.transferPriority = transferPriority;
-		//set maximum size of the queue
+		//Tihs
 		priorityQueue = new TreeSet<ThreadState>(new Comparator<ThreadState>() {
 			@Override
 			public int compare(ThreadState threadState, ThreadState t1) {
@@ -213,7 +219,7 @@ public class PriorityScheduler extends Scheduler {
      *
      * @see	nachos.threads.KThread#schedulingState
      */
-    protected class ThreadState {
+    protected class ThreadState {																			//<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
     	protected List<PriorityQueue> capturedResouces;
     	protected ThreadQueue wantedResources;
     	protected int effectivePriority;
@@ -324,9 +330,6 @@ public class PriorityScheduler extends Scheduler {
 		if(!capturedResouces.contains(waitQueue))capturedResouces.add(waitQueue);
 		
 		this.getEffectivePriority();
-
-		//Change the thread state to wait??????
-		
 
 		if(waitQueue == wantedResources){
 			wantedResources = null;

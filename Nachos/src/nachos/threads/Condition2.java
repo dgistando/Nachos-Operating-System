@@ -1,6 +1,7 @@
 package nachos.threads;
 
 import nachos.machine.*;
+import nachos.network.MailMessage;
 
 import java.util.LinkedList;
 
@@ -37,12 +38,14 @@ public class Condition2 {
      */
     public void sleep() {
         Lib.assertTrue(conditionLock.isHeldByCurrentThread());
+        boolean res = Machine.interrupt().disable();
         conditionLock.release();
 
         waitQueue.add(KThread.currentThread());
         KThread.sleep();
 
         conditionLock.acquire();
+        Machine.interrupt().restore(res);
     }
 
     /**
@@ -51,7 +54,12 @@ public class Condition2 {
      */
     public void wake() {
         Lib.assertTrue(conditionLock.isHeldByCurrentThread());
-	    waitQueue.getFirst().ready();
+        boolean res = Machine.interrupt().disable();
+
+        while(!waitQueue.isEmpty())
+            waitQueue.getFirst().ready();
+
+        Machine.interrupt().restore(res);
     }
 
     /**
@@ -60,7 +68,7 @@ public class Condition2 {
      */
     public void wakeAll() {
     	Lib.assertTrue(conditionLock.isHeldByCurrentThread());
-    	waitQueue.stream().forEach(x -> wake());
+    	if(!waitQueue.isEmpty())waitQueue.stream().forEach(x -> wake());
     }
 
 }

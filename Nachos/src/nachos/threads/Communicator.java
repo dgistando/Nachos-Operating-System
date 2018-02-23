@@ -75,9 +75,10 @@ public class Communicator {
 
         listenCount++;
 
-        if(!isWord && speakerCount > 0)
+        if(!isWord && speakerCount <= 0) {
             speakCondition.wakeAll();
             listenContidion.sleep();
+        }
 
         //Since the word was listened to
         //There is no word anymore
@@ -86,6 +87,5 @@ public class Communicator {
         lock.release();
 	    return this.word;
     }
-
 
 }
