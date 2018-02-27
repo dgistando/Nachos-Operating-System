@@ -212,7 +212,7 @@ public class PriorityScheduler extends Scheduler {
      * @see	nachos.threads.KThread#schedulingState
      */
     protected class ThreadState {																			//<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-    	protected List<PriorityQueue> capturedResources = new LinkedList<>();
+    	protected List<PriorityQueue> capturedResources;
     	protected PriorityQueue wantedResources;
     	protected int effectivePriority;
 		/** There should be some resources here for use*/
