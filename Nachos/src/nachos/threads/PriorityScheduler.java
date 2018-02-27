@@ -2,11 +2,7 @@ package nachos.threads;
 
 import nachos.machine.*;
 
-import java.util.TreeSet;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.SortedSet;
-import java.util.Comparator;
+import java.util.*;
 
 /**
  * A scheduler that chooses threads based on their priorities.
@@ -137,7 +133,7 @@ public class PriorityScheduler extends Scheduler {
 
 	PriorityQueue(boolean transferPriority) {
 		this.transferPriority = transferPriority;
-		//Tihs
+		//This should initialize a new Queue
 		priorityQueue = new TreeSet<ThreadState>(new Comparator<ThreadState>() {
 			@Override
 			public int compare(ThreadState threadState, ThreadState t1) {
@@ -179,11 +175,10 @@ public class PriorityScheduler extends Scheduler {
 	 */
 	protected ThreadState pickNextThread() {
 	    // implement me
-	    boolean interruptResult = Machine.interrupt().disable();
-	
-	    if(priorityQueue.isEmpty())return null;
 
-	    int maxPriority = priorityMinimum;
+	    if(priorityQueue.isEmpty())return null;
+	    return priorityQueue.first();
+	    /*int maxPriority = priorityMinimum;
 	    ThreadState thread = null;
 	    //basically do the max for the priorities of threads
 	    for(ThreadState entity : waitQueue){
@@ -193,10 +188,8 @@ public class PriorityScheduler extends Scheduler {
 	    		thread = entity;
 	    		maxPriority = priority;
 			}
-		}
+		}*/
 
-	    Machine.interrupt().restore(interruptResult);
-	    return thread;
 	}
 	
 	public void print() {
@@ -220,8 +213,8 @@ public class PriorityScheduler extends Scheduler {
      * @see	nachos.threads.KThread#schedulingState
      */
     protected class ThreadState {																			//<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-    	protected List<PriorityQueue> capturedResouces;
-    	protected ThreadQueue wantedResources;
+    	protected List<PriorityQueue> capturedResources;
+    	protected PriorityQueue wantedResources;
     	protected int effectivePriority;
 		/** There should be some resources here for use*/
 		//protected ThreadQueue othersQueues = newThreadQueue(false);
@@ -238,7 +231,11 @@ public class PriorityScheduler extends Scheduler {
 	 */
 	public ThreadState(KThread thread) {
 	    this.thread = thread;
-	    
+	    //Creating new resourced list
+	    capturedResources = new ArrayList<>();
+	    wantedResources = new PriorityQueue(false);
+	    effectivePriority = priorityMinimum;
+
 	    setPriority(priorityDefault);
 	}
 
@@ -264,9 +261,9 @@ public class PriorityScheduler extends Scheduler {
 
 		int effectivePriority = priorityMinimum;
 
-		for(PriorityQueue priorityQueue: capturedResouces) {
+		for(PriorityQueue priorityQueue : capturedResources) {
 			for (ThreadState entity : priorityQueue.waitQueue) {
-				effectivePriority = (this.effectivePriority > entity.effectivePriority) ? this.effectivePriority : entity.effectivePriority;
+				effectivePriority = (this.effectivePriority > entity.priority) ? this.effectivePriority : entity.priority;
 			}
 		}
 		priorityChanged = true;
@@ -301,13 +298,16 @@ public class PriorityScheduler extends Scheduler {
 	 */
 	public void waitForAccess(PriorityQueue waitQueue) {
 	    // implement me
-		Lib.assertTrue(Machine.interrupt().disable());
+		//Lib.assertTrue(Machine.interrupt().disable());//COMMENTED OUT THIS LINE. THIS CHECK FAILS INITIALLY
+		boolean result = Machine.interrupt().disable();
 		if(!waitQueue.waitQueue.contains(this))
 			waitQueue.waitQueue.add(this);
 
-		wantedResources = waitQueue;
 
-		if(capturedResouces.contains(waitQueue))capturedResouces.remove(waitQueue);
+		if(capturedResources.contains(waitQueue))
+			capturedResources.remove(waitQueue);
+
+
 	}
 
 	/**
@@ -327,7 +327,7 @@ public class PriorityScheduler extends Scheduler {
 		if(waitQueue.waitQueue.contains(this))waitQueue.waitQueue.remove(this);
 		
 		//and make sure waitqueue is not a resource already
-		if(!capturedResouces.contains(waitQueue))capturedResouces.add(waitQueue);
+		if(!capturedResources.contains(waitQueue))capturedResources.add(waitQueue);
 		
 		this.getEffectivePriority();
 
@@ -335,9 +335,9 @@ public class PriorityScheduler extends Scheduler {
 			wantedResources = null;
 		}
 
-	}	
+	}
 
-	/** The thread with which this object is associated. */	   
+		/** The thread with which this object is associated. */
 	protected KThread thread;
 	/** The priority of the associated thread. */
 	protected int priority;

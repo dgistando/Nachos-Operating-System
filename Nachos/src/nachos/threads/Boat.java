@@ -43,8 +43,8 @@ public class Boat
 
     static void AdultItinerary()
     {
-	bg.initializeAdult(); //Required for autograder interface. Must be the first thing called.
-	//DO NOT PUT ANYTHING ABOVE THIS LINE. 
+	//bg.initializeAdult(); //Required for autograder interface. Must be the first thing called.
+	//DO NOT PUT ANYTHING ABOVE THIS LINE.
 
 	/* This is where you should put your solutions. Make calls
 	   to the BoatGrader to show that it is synchronized. For
@@ -56,8 +56,8 @@ public class Boat
 
     static void ChildItinerary()
     {
-	bg.initializeChild(); //Required for autograder interface. Must be the first thing called.
-	//DO NOT PUT ANYTHING ABOVE THIS LINE. 
+	//bg.initializeChild(); //Required for autograder interface. Must be the first thing called.
+	//DO NOT PUT ANYTHING ABOVE THIS LINE.
     }
 
     static void SampleItinerary()

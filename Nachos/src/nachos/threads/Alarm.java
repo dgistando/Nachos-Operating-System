@@ -2,7 +2,9 @@ package nachos.threads;
 
 import nachos.machine.*;
 
+import java.sql.Time;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.Iterator;
 import java.util.List;
 
@@ -24,7 +26,9 @@ public class Alarm {
 	Machine.timer().setInterruptHandler(new Runnable() {
 		public void run() { timerInterrupt(); }
 	    });
-	    
+
+	//System.out.print("TIHS IS INSIDE THE ALARM CLASS");
+
 		waitQueue = new ArrayList<TimedThread>();
     }
 
@@ -81,7 +85,7 @@ public class Alarm {
 	}
 
 
-	public class TimedThread{
+	protected class TimedThread {//implements Comparator{//see not below
     	protected KThread thread;
     	protected long time;
 
@@ -95,6 +99,16 @@ public class Alarm {
 			this.time = time;
 		}
 
+		//trying to decide if i need this
+		/*@Override
+		public int compare(Object o, Object t1) {
+			if(((TimedThread)o).time > ((TimedThread)t1).time){
+				return 1;
+			}else if(((TimedThread)o).time == ((TimedThread)t1).time){
+				return 0;
+			}else
+				return -1;
+		}*/
 	}
 
 }

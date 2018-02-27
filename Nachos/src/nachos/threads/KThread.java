@@ -397,7 +397,7 @@ public class KThread {
 	
 	public void run() {
 	    for (int i=0; i<5; i++) {
-		System.out.println("*** thread " + which + " looped "
+		System.out.println("*** threads " + which + " looped "
 				   + i + " times");
 		currentThread.yield();
 	    }
@@ -410,9 +410,16 @@ public class KThread {
      * Tests whether this module is working.
      */
     public static void selfTest() {
+	Lib.enableDebugFlags("t");
 	Lib.debug(dbgThread, "Enter KThread.selfTest");
 	
 	new KThread(new PingTest(1)).setName("forked thread").fork();
+
+	//ADDING TEST
+	new KThread(new PingTest(2)).setName("forked thread 2").fork();
+	new KThread().join();
+
+	//END TEST
 	new PingTest(0).run();
     }
 
