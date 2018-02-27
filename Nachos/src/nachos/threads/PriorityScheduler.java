@@ -197,7 +197,6 @@ public class PriorityScheduler extends Scheduler {
 	    // implement me (if you want)
 		priorityQueue.stream().forEach(System.out::println);
 	}
-
 	/**
 	 * <tt>true</tt> if this queue should transfer priority from waiting
 	 * threads to the owning thread.
@@ -213,7 +212,7 @@ public class PriorityScheduler extends Scheduler {
      * @see	nachos.threads.KThread#schedulingState
      */
     protected class ThreadState {																			//<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-    	protected List<PriorityQueue> capturedResources;
+    	protected List<PriorityQueue> capturedResources = new LinkedList<>();
     	protected PriorityQueue wantedResources;
     	protected int effectivePriority;
 		/** There should be some resources here for use*/
