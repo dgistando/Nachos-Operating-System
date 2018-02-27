@@ -141,7 +141,7 @@ public class PriorityScheduler extends Scheduler {
 			}
 		});
 
-		waitQueue = new LinkedList<>();
+		waitQueue = new LinkedList<ThreadState>();
 	}
 
 	public void waitForAccess(KThread thread) {
@@ -195,7 +195,8 @@ public class PriorityScheduler extends Scheduler {
 	public void print() {
 	    Lib.assertTrue(Machine.interrupt().disabled());
 	    // implement me (if you want)
-		priorityQueue.stream().forEach(System.out::println);
+		for(ThreadState threadState: priorityQueue)
+			System.out.print(threadState);
 	}
 	/**
 	 * <tt>true</tt> if this queue should transfer priority from waiting
@@ -231,7 +232,7 @@ public class PriorityScheduler extends Scheduler {
 	public ThreadState(KThread thread) {
 	    this.thread = thread;
 	    //Creating new resourced list
-	    capturedResources = new ArrayList<>();
+	    capturedResources = new ArrayList<PriorityQueue>();
 	    wantedResources = new PriorityQueue(false);
 	    effectivePriority = priorityMinimum;
 
