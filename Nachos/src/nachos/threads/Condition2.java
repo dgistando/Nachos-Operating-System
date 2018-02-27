@@ -1,7 +1,6 @@
 package nachos.threads;
 
 import nachos.machine.*;
-import nachos.network.MailMessage;
 
 import java.util.LinkedList;
 
@@ -69,7 +68,7 @@ public class Condition2 {
     public void wakeAll() {
     	Lib.assertTrue(conditionLock.isHeldByCurrentThread());
     	if(!waitQueue.isEmpty())
-    	    for(KThread thread: waitQueue)
+    	    for(KThread thread : waitQueue)
     	        wake();
     }
 

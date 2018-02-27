@@ -137,7 +137,8 @@ public class PriorityScheduler extends Scheduler {
 		priorityQueue = new TreeSet<ThreadState>(new Comparator<ThreadState>() {
 			@Override
 			public int compare(ThreadState threadState, ThreadState t1) {
-				return threadState.getPriority() - t1.getPriority();
+				//return threadState.getPriority() - t1.getPriority();//This would be in ascending order
+				return t1.getPriority() - threadState.getPriority();
 			}
 		});
 
@@ -332,7 +333,7 @@ public class PriorityScheduler extends Scheduler {
 		if(capturedResources.contains(waitQueue))
 			capturedResources.remove(waitQueue);
 
-
+		Machine.interrupt().restore(result);
 	}
 
 	/**
