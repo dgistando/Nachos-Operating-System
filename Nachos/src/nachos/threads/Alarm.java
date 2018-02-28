@@ -1,12 +1,9 @@
 package nachos.threads;
 
 import nachos.machine.*;
+import nachos.machine.Timer;
 
-import java.sql.Time;
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.Iterator;
-import java.util.List;
+import java.util.*;
 
 /**
  * Uses the hardware timer to provide preemption, and to allow threads to sleep
@@ -14,7 +11,7 @@ import java.util.List;
  */
 public class Alarm {
 	
-     private List<TimedThread> waitQueue;
+     private PriorityQueue<TimedThread> waitQueue;
     /**
      * Allocate a new Alarm. Set the machine's timer interrupt handler to this
      * alarm's callback.
@@ -23,14 +20,25 @@ public class Alarm {
      * alarm.
      */
     public Alarm() {
+
 	Machine.timer().setInterruptHandler(new Runnable() {
 		public void run() { timerInterrupt(); }
 	    });
 
-	//System.out.print("TIHS IS INSIDE THE ALARM CLASS");
-
-		waitQueue = new ArrayList<TimedThread>();
+	waitQueue = new PriorityQueue<TimedThread>();
     }
+
+    //This is nothing
+	/*@Override
+	public int compare(TimedThread timedThread, TimedThread t1) {
+		//return timedThread.time - t1.time;
+		if(timedThread.time > t1.time){
+			return 1;
+		}else if(timedThread.time < t1.time){
+			return -1;
+		}else{
+			return 0;
+		}*/
 
     /**
      * The timer interrupt handler. This is called by the machine's timer
@@ -39,20 +47,17 @@ public class Alarm {
      * that should be run.
      */
     public void timerInterrupt() {
-		KThread.currentThread().yield();
+    	long currentTime = Machine.timer().getTime();
+		boolean res = Machine.interrupt().disable();
 
-		if(waitQueue.isEmpty())
-			return;
-		long time = Machine.timer().getTime();
-
-		Iterator<TimedThread> it = waitQueue.iterator();
-		while(it.hasNext()){
-			TimedThread thread = it.next();
-			if(thread.time <= time){
-				thread.thread.ready();
-				waitQueue.remove(thread);
-			}
+		while(!waitQueue.isEmpty() && waitQueue.peek().time <= currentTime){
+			TimedThread thread = waitQueue.poll();
+			KThread kThread = thread.thread;
+			if(kThread != null)kThread.ready();
 		}
+
+		KThread.yield();
+    	Machine.interrupt().restore(res);
     }
 
     /**
@@ -85,7 +90,7 @@ public class Alarm {
 	}
 
 
-	protected class TimedThread {//implements Comparator{//see not below
+	protected class TimedThread implements Comparable{
     	protected KThread thread;
     	protected long time;
 
@@ -99,16 +104,14 @@ public class Alarm {
 			this.time = time;
 		}
 
-		//trying to decide if i need this
-		/*@Override
-		public int compare(Object o, Object t1) {
-			if(((TimedThread)o).time > ((TimedThread)t1).time){
-				return 1;
-			}else if(((TimedThread)o).time == ((TimedThread)t1).time){
-				return 0;
-			}else
-				return -1;
-		}*/
-	}
-
+		@Override
+		public int compareTo(Object o) {
+				if(this.time > ((TimedThread)o).time ){
+					return 1;
+				}else if(((TimedThread)o).time == this.time){
+					return 0;
+				}else
+					return -1;
+			}
+		}
 }

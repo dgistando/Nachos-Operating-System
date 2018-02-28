@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="c35c53d1-c2e6-41be-b37c-9a9f956c3efb" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/nachos/threads/Communicator.java" afterPath="$PROJECT_DIR$/src/nachos/threads/Communicator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/nachos/threads/KThread.java" afterPath="$PROJECT_DIR$/src/nachos/threads/KThread.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/nachos/threads/Alarm.java" afterPath="$PROJECT_DIR$/src/nachos/threads/Alarm.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="C:\Users\dgist\Documents\GitHub\CSE150Project\Nachos\.idea\shelf/" />
@@ -19,7 +18,7 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Machine.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Machine.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/nachos/machine/Machine.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-7295">
@@ -29,7 +28,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="KThread.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="KThread.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/nachos/threads/KThread.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="179">
@@ -177,12 +176,12 @@
         <option value="$PROJECT_DIR$/src/nachos/threads/ThreadQueue.java" />
         <option value="$PROJECT_DIR$/src/nachos/threads/Boat.java" />
         <option value="$PROJECT_DIR$/src/nachos/proj1/nachos.conf" />
-        <option value="$PROJECT_DIR$/src/nachos/threads/Alarm.java" />
         <option value="$PROJECT_DIR$/src/nachos/threads/ThreadedKernel.java" />
         <option value="$PROJECT_DIR$/src/nachos/threads/PriorityScheduler.java" />
         <option value="$PROJECT_DIR$/src/nachos/threads/Condition2.java" />
         <option value="$PROJECT_DIR$/src/nachos/threads/Communicator.java" />
         <option value="$PROJECT_DIR$/src/nachos/threads/KThread.java" />
+        <option value="$PROJECT_DIR$/src/nachos/threads/Alarm.java" />
       </list>
     </option>
   </component>
@@ -896,11 +895,18 @@
       <option name="project" value="LOCAL" />
       <updated>1519843645437</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Passed 3 tests">
+      <created>1519846365250</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1519846365250</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="112524000" />
+    <option name="totallyTimeSpent" value="114641000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
@@ -1003,7 +1009,8 @@
     <MESSAGE value="Changed it back" />
     <MESSAGE value="Passed the first test" />
     <MESSAGE value="Passed 2 tests" />
-    <option name="LAST_COMMIT_MESSAGE" value="Passed 2 tests" />
+    <MESSAGE value="Passed 3 tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="Passed 3 tests" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1027,14 +1034,6 @@
           <option name="timeStamp" value="39" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/nachos/threads/Alarm.java</url>
-          <line>40</line>
-          <properties class="nachos.threads.Alarm" method="timerInterrupt">
-            <option name="EMULATED" value="true" />
-          </properties>
-          <option name="timeStamp" value="32" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/nachos/threads/KThread.java</url>
           <line>433</line>
           <properties class="nachos.threads.KThread" method="selfTest">
@@ -1043,7 +1042,7 @@
           <option name="timeStamp" value="33" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="40" />
+      <option name="time" value="41" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1052,13 +1051,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/nachos/threads/SynchList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/nachos/threads/ThreadedKernel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -1257,16 +1249,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/nachos/threads/Alarm.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1258">
-          <caret line="78" column="0" lean-forward="false" selection-start-line="78" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/nachos/threads/Boat.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
@@ -1430,6 +1412,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/nachos/machine/Machine.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-7295">
+          <caret line="25" column="18" lean-forward="true" selection-start-line="25" selection-start-column="18" selection-end-line="25" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_121/jre/lib/rt.jar!/java/util/PriorityQueue.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="13" column="13" lean-forward="false" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/nachos/threads/Alarm.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="58" column="24" lean-forward="false" selection-start-line="58" selection-start-column="24" selection-end-line="58" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#565#630#0" expanded="true" />
+            <element signature="e#629#630#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/nachos/threads/KThread.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="179">
@@ -1439,14 +1449,6 @@
             <element signature="method#setTarget#0;class#KThread#0" expanded="false" />
             <element signature="method#setName#0;class#KThread#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/nachos/machine/Machine.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-7295">
-          <caret line="25" column="18" lean-forward="true" selection-start-line="25" selection-start-column="18" selection-end-line="25" selection-end-column="18" />
-          <folding />
         </state>
       </provider>
     </entry>
