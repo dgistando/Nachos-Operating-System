@@ -13,7 +13,7 @@ public class Communicator {
 
     private Lock lock;
     private Condition2 speakCondition;
-    private Condition2 listenContidion;
+    private Condition2 listenCondition;
 
     private int listenCount;
     private int speakerCount;
@@ -27,7 +27,7 @@ public class Communicator {
     public Communicator() {
         lock = new Lock();
         speakCondition = new Condition2(lock);
-        listenContidion = new Condition2(lock);
+        listenCondition = new Condition2(lock);
 
         speakerCount = 0;
         listenCount = 0;
@@ -47,7 +47,6 @@ public class Communicator {
      */
     public void speak(int word) {
         lock.acquire();
-
 
         speakerCount++;
 
@@ -78,7 +77,7 @@ public class Communicator {
 
         while(!isWord && speakerCount <= 0) {
             speakCondition.wakeAll();
-            listenContidion.sleep();
+            listenCondition.sleep();
         }
 
         //Since the word was listened to

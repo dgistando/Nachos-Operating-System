@@ -128,8 +128,6 @@ public class PriorityScheduler extends Scheduler {
 
     	//This is the main queue that holds the threads to be executed.
 		public SortedSet<ThreadState> priorityQueue;
-		//This is a queue made just for the threads waiting to execute.
-		public LinkedList<ThreadState> waitQueue;
 
 	PriorityQueue(boolean transferPriority) {
 		this.transferPriority = transferPriority;
@@ -142,8 +140,9 @@ public class PriorityScheduler extends Scheduler {
 			}
 		});
 
-		waitQueue = new LinkedList<ThreadState>();
 	}
+
+
 
 	public void waitForAccess(KThread thread) {
 	    Lib.assertTrue(Machine.interrupt().disabled());
@@ -226,7 +225,11 @@ public class PriorityScheduler extends Scheduler {
      *
      * @see	nachos.threads.KThread#schedulingState
      */
-    protected class ThreadState {																			//<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+    protected class ThreadState {																	//<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+		//This is a queue made just for the threads waiting to execute.
+		public LinkedList<ThreadState> waitQueue;
+
     	protected List<PriorityQueue> capturedResources;
     	protected PriorityQueue wantedResources;
     	protected int effectivePriority;
@@ -249,6 +252,8 @@ public class PriorityScheduler extends Scheduler {
 	    capturedResources = new ArrayList<PriorityQueue>();
 	    wantedResources = new PriorityQueue(false);
 	    effectivePriority = priorityMinimum;
+
+	    waitQueue = new LinkedList<ThreadState>();
 
 	    setPriority(priorityDefault);
 	}
@@ -277,14 +282,14 @@ public class PriorityScheduler extends Scheduler {
 		int effectivePriority = priorityMinimum;
 
 		for(PriorityQueue priorityQueue : capturedResources) {
-			for (ThreadState entity : priorityQueue.waitQueue) {
+	//		for (ThreadState entity : priorityQueue.waitQueue) {
 				/* this implements priority donation as it changes the priority of the current
 				 * thread after having gone through if it finds a higher priority it becomes
 				 * the effective priority
 				 */
-				effectivePriority = (this.effectivePriority > entity.priority) ? this.effectivePriority : entity.priority;
+	//			effectivePriority = (this.effectivePriority > entity.priority) ? this.effectivePriority : entity.priority;
 			}
-		}
+	//	}
 		//this is for priority being changed
 		priorityChanged = true;
 
@@ -321,17 +326,18 @@ public class PriorityScheduler extends Scheduler {
 		//disable the interrupts
 		boolean result = Machine.interrupt().disable();
 		//make sure that it is not in the waitQueue already
-		if(!waitQueue.waitQueue.contains(this))
+		if(!waitQueue.priorityQueue.contains(this)) {
 			/* because the thread cannot obtain access to what it needs
 			 * it should be added to the waitQueue
 			 */
-			waitQueue.waitQueue.add(this);
+			waitQueue.priorityQueue.add(this);
+		}
 
 		/*if it has obtained access to what it needs it needs to be
 		 * removed 
 		 */
-		if(capturedResources.contains(waitQueue))
-			capturedResources.remove(waitQueue);
+		//if(capturedResources.contains(waitQueue))
+		//	capturedResources.remove(waitQueue);
 
 		Machine.interrupt().restore(result);
 	}
@@ -350,7 +356,7 @@ public class PriorityScheduler extends Scheduler {
 	    // implement me
 
 		//make sure thread is not on the waitQueue 
-		if(waitQueue.waitQueue.contains(this))waitQueue.waitQueue.remove(this);
+		//if(waitQueue.waitQueue.contains(this))waitQueue.waitQueue.remove(this);
 		
 		//and make sure waitqueue is not a resource already
 		if(!capturedResources.contains(waitQueue))capturedResources.add(waitQueue);

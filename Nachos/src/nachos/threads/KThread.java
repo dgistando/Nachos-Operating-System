@@ -2,6 +2,8 @@ package nachos.threads;
 
 import nachos.machine.*;
 
+import java.util.LinkedList;
+
 /**
  * A KThread is a thread that can be used to execute Nachos kernel code. Nachos
  * allows multiple threads to run concurrently.
@@ -48,7 +50,7 @@ public class KThread {
 	}	    
 	else {
 	    readyQueue = ThreadedKernel.scheduler.newThreadQueue(false);
-	    readyQueue.acquire(this);	    
+	    readyQueue.acquire(this);
 
 	    currentThread = this;
 	    tcb = TCB.currentTCB();
@@ -191,8 +193,11 @@ public class KThread {
 	Lib.assertTrue(toBeDestroyed == null);
 	toBeDestroyed = currentThread;
 
-
 	currentThread.status = statusFinished;
+
+	//Wake up the next thread in the Queue
+		while (waitQueue != null)
+			waitQueue.nextThread().ready();
 	
 	sleep();
     }
@@ -273,15 +278,12 @@ public class KThread {
      * thread.
      */
     public void join() {
-	    
+
 		boolean interruptStatus = Machine.interrupt().disable();
 		Lib.debug(dbgThread, "Joining to thread: " + toString());
 
-		Lib.assertTrue(this != currentThread && currentThread.status != statusFinished);
-		if(readyQueue == null){
-			readyQueue = ThreadedKernel.scheduler.newThreadQueue(false);
-			readyQueue.acquire(currentThread);
-		}else{
+		if(this != currentThread && currentThread.status != statusFinished) {
+			waitQueue.acquire(this);
 			readyQueue.waitForAccess(currentThread);
 			currentThread.sleep();
 		}
@@ -457,7 +459,12 @@ public class KThread {
     /** Number of times the KThread constructor was called. */
     private static int numCreated = 0;
 
-    private static ThreadQueue readyQueue = null;
+
+    //ADDED STUFF
+	private static ThreadQueue waitQueue = null;
+
+	//////////////////////
+	private static ThreadQueue readyQueue = null;
     private static KThread currentThread = null;
     private static KThread toBeDestroyed = null;
     private static KThread idleThread = null;
