@@ -211,6 +211,12 @@ public class PriorityScheduler extends Scheduler {
 		for(ThreadState threadState: priorityQueue)
 			System.out.print(threadState);
 	}
+
+
+	//ADDED FUNCTION
+	public boolean isEmpty(){
+		return priorityQueue.isEmpty();
+	}
 	/**
 	 * <tt>true</tt> if this queue should transfer priority from waiting
 	 * threads to the owning thread.
@@ -231,7 +237,7 @@ public class PriorityScheduler extends Scheduler {
 		public LinkedList<ThreadState> waitQueue;
 
     	protected List<PriorityQueue> capturedResources;
-    	protected PriorityQueue wantedResources;
+    	protected List<PriorityQueue> wantedResources;
     	protected int effectivePriority;
 		/** There should be some resources here for use*/
 		//protected ThreadQueue othersQueues = newThreadQueue(false);
@@ -250,7 +256,7 @@ public class PriorityScheduler extends Scheduler {
 	    this.thread = thread;
 	    //Creating new resourced list
 	    capturedResources = new ArrayList<PriorityQueue>();
-	    wantedResources = new PriorityQueue(false);
+	    wantedResources = new ArrayList<PriorityQueue>();
 	    effectivePriority = priorityMinimum;
 
 	    waitQueue = new LinkedList<ThreadState>();

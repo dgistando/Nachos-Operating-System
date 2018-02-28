@@ -14,6 +14,7 @@ public class Communicator {
     private Lock lock;
     private Condition2 speakCondition;
     private Condition2 listenCondition;
+    private Condition2 firstSpeaker;
 
     private int listenCount;
     private int speakerCount;
@@ -25,9 +26,11 @@ public class Communicator {
      * Allocate a new communicator.
      */
     public Communicator() {
+        System.out.println("New Communicator!!");
         lock = new Lock();
         speakCondition = new Condition2(lock);
         listenCondition = new Condition2(lock);
+        firstSpeaker = new Condition2(lock);
 
         speakerCount = 0;
         listenCount = 0;
@@ -46,19 +49,22 @@ public class Communicator {
      * @param	word	the integer to transfer.
      */
     public void speak(int word) {
-        lock.acquire();
+        System.out.print("speak");
+        //Don't need to re-acquire the lock if you already have it.
+        if(!lock.isHeldByCurrentThread())lock.acquire();
 
         speakerCount++;
-
-        //If someone is already trying to speak
-        //make the thread sleep until the speaker is found.
-        while(listenCount == 0)
-            speakCondition.sleep();
+        //if there is no word the first time then pass this loop
+        while(isWord) {
+            System.out.print("LISTEN");speakCondition.sleep();
+        }
 
         this.word = word;
         isWord = true;
         //If here then only speaker and ready
-        speakCondition.wakeAll();
+        listenCondition.wake();
+
+        firstSpeaker.sleep();
 
         speakerCount--;
         lock.release();
@@ -71,22 +77,27 @@ public class Communicator {
      * @return	the integer transferred.
      */    
     public int listen() {
-        lock.acquire();
+        int wordReturn;
 
-        listenCount++;
+        System.out.print("listen");
+        //Don't need to re-acquire the lock if you already have it.
+        if(!lock.isHeldByCurrentThread())lock.acquire();
 
-        while(!isWord && speakerCount <= 0) {
-            speakCondition.wakeAll();
-            listenCondition.sleep();
+        while (!isWord || speakerCount == 0){
+            System.out.print("LISTEN");listenCondition.sleep();
         }
+
+        wordReturn = this.word;
+
+        isWord = false;
 
         //Since the word was listened to
         //There is no word anymore
-        isWord = false;
+        speakCondition.wake();
+        firstSpeaker.wake();
 
-        listenCount--;
         lock.release();
-	    return this.word;
+	    return wordReturn;
     }
 
 }

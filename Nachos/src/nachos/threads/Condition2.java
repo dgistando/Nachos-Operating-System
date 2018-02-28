@@ -33,7 +33,7 @@ public class Condition2 {
      * current thread must hold the associated lock. The thread will
      * automatically reacquire the lock before <tt>sleep()</tt> returns.
      */
-    public void sleep() {System.out.println("\n\n sleep \n\n");
+    public void sleep() {System.out.println(" sleep \n");
         Lib.assertTrue(conditionLock.isHeldByCurrentThread());
         boolean res = Machine.interrupt().disable();
 
@@ -51,7 +51,7 @@ public class Condition2 {
      * Wake up at most one thread sleeping on this condition variable. The
      * current thread must hold the associated lock.
      */
-    public void wake() {System.out.println("\n\n wake \n\n");
+    public void wake() {System.out.println(" wake\n");
         Lib.assertTrue(conditionLock.isHeldByCurrentThread());
         boolean res = Machine.interrupt().disable();
 
@@ -66,14 +66,18 @@ public class Condition2 {
      * Wake up all threads sleeping on this condition variable. The current
      * thread must hold the associated lock.
      */
-    public void wakeAll() {
+    public void wakeAll() {System.out.println(" wakeAll\n");
     	Lib.assertTrue(conditionLock.isHeldByCurrentThread());
+
+        boolean res = Machine.interrupt().disable();
 
     	KThread thread = waitQueue.nextThread();
     	while(thread != null){
     	    thread.ready();
     	    thread = waitQueue.nextThread();
         }
+
+        Machine.interrupt().restore(res);
     }
 
 }

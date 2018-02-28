@@ -196,10 +196,16 @@ public class KThread {
 	currentThread.status = statusFinished;
 
 	//Wake up the next thread in the Queue
-		while (waitQueue != null)
-			waitQueue.nextThread().ready();
-	
-	sleep();
+	if(waitQueue != null) {
+		KThread thread = waitQueue.nextThread();
+
+		while (thread != null) {
+			thread.ready();
+			thread = waitQueue.nextThread();
+		}
+	}
+
+		sleep();
     }
 
     /**
@@ -282,9 +288,12 @@ public class KThread {
 		boolean interruptStatus = Machine.interrupt().disable();
 		Lib.debug(dbgThread, "Joining to thread: " + toString());
 
+		if(waitQueue == null)
+			waitQueue = ThreadedKernel.scheduler.newThreadQueue(true);
+
 		if(this != currentThread && currentThread.status != statusFinished) {
 			waitQueue.acquire(this);
-			readyQueue.waitForAccess(currentThread);
+			waitQueue.waitForAccess(currentThread);
 			currentThread.sleep();
 		}
 		Machine.interrupt().restore(interruptStatus);
