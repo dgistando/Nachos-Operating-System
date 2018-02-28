@@ -49,14 +49,13 @@ public class Communicator {
      * @param	word	the integer to transfer.
      */
     public void speak(int word) {
-        System.out.print("speak");
         //Don't need to re-acquire the lock if you already have it.
         if(!lock.isHeldByCurrentThread())lock.acquire();
 
         speakerCount++;
         //if there is no word the first time then pass this loop
         while(isWord) {
-            System.out.print("LISTEN");speakCondition.sleep();
+            speakCondition.sleep();
         }
 
         this.word = word;
@@ -79,12 +78,11 @@ public class Communicator {
     public int listen() {
         int wordReturn;
 
-        System.out.print("listen");
         //Don't need to re-acquire the lock if you already have it.
         if(!lock.isHeldByCurrentThread())lock.acquire();
 
         while (!isWord || speakerCount == 0){
-            System.out.print("LISTEN");listenCondition.sleep();
+            listenCondition.sleep();
         }
 
         wordReturn = this.word;

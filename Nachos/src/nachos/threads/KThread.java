@@ -195,15 +195,15 @@ public class KThread {
 
 	currentThread.status = statusFinished;
 
-	//Wake up the next thread in the Queue
-	if(waitQueue != null) {
-		KThread thread = waitQueue.nextThread();
+		//Wake up the next thread in the Queue
+		if(waitQueue != null) {
+			KThread thread = waitQueue.nextThread();
 
-		while (thread != null) {
-			thread.ready();
-			thread = waitQueue.nextThread();
+			while (thread != null) {
+				thread.ready();
+				thread = waitQueue.nextThread();
+			}
 		}
-	}
 
 		sleep();
     }
@@ -284,18 +284,29 @@ public class KThread {
      * thread.
      */
     public void join() {
-
+    	Lib.assertTrue(this != currentThread);
 		boolean interruptStatus = Machine.interrupt().disable();
 		Lib.debug(dbgThread, "Joining to thread: " + toString());
 
-		if(waitQueue == null)
-			waitQueue = ThreadedKernel.scheduler.newThreadQueue(true);
 
-		if(this != currentThread && currentThread.status != statusFinished) {
+		if(this.status == statusFinished){
+			System.out.println("THIS is finished");
+			Machine.interrupt().restore(interruptStatus);
+			return;
+		}
+
+		if(waitQueue == null) {
+			System.out.println("quueue NULL");
+			waitQueue = ThreadedKernel.scheduler.newThreadQueue(true);
 			waitQueue.acquire(this);
+		}
+
+		if (this != currentThread && currentThread.status != statusFinished) {
+			System.out.println("NOT current thread");
 			waitQueue.waitForAccess(currentThread);
 			currentThread.sleep();
 		}
+
 		Machine.interrupt().restore(interruptStatus);
     }
 
@@ -348,11 +359,11 @@ public class KThread {
      * The state of the previously running thread must already have been
      * changed from running to blocked or ready (depending on whether the
      * thread is sleeping or yielding).
-     *
-     * @param	finishing	<tt>true</tt> if the current thread is
-     *				finished, and should be destroyed by the new
-     *				thread.
-     */
+     **/
+     //* @param	finishing	<tt>true</tt> if the current thread is
+     //*				finished, and should be destroyed by the new
+     //*				thread.
+     //*/
     private void run() {
 	Lib.assertTrue(Machine.interrupt().disabled());
 
