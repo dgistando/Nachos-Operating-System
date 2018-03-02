@@ -130,21 +130,15 @@ public class PriorityScheduler extends Scheduler {
     protected class PriorityQueue extends ThreadQueue {
 
     	//This is the main queue that holds the threads to be executed.
-		public SortedSet<ThreadState> priorityQueue;
+		public java.util.PriorityQueue<ThreadState> priorityQueue;
 		//Need a thread to be in the position of leader when pulled off the Queue
         public ThreadState controller = null;
 
 	PriorityQueue(boolean transferPriority) {
-        System.out.println("Created Priority Queue");
+        /*System.out.println("Created Priority Queue");*/
 		this.transferPriority = transferPriority;
 		//This should initialize a new Queue.Sorted in descending order because of comparator in ThreadState
-		priorityQueue = new TreeSet<ThreadState>(new Comparator<ThreadState>() {
-            @Override
-            public int compare(ThreadState o1, ThreadState o2) {
-                //return o1.priority - o2.priority; //This means ascending order
-                return o2.priority - o1.priority; //Descending
-            }
-        });
+		priorityQueue = new java.util.PriorityQueue<ThreadState>();
 	}
 
 
@@ -159,7 +153,6 @@ public class PriorityScheduler extends Scheduler {
     }
 
 	public KThread nextThread() {
-	    System.out.println("NextThread"); if(priorityQueue!=null)print();
 
 	    //disable the interrupts
 	    Lib.assertTrue(Machine.interrupt().disabled());
@@ -170,7 +163,7 @@ public class PriorityScheduler extends Scheduler {
         if(transferPriority && this.controller != null) {
             this.controller.capturedResources.remove(this);
             //could have received a donation between these lines
-            /**this.controller.updateEffectivePriority();*/
+            this.controller.updateEffectivePriority();
 
         }
 
@@ -194,7 +187,7 @@ public class PriorityScheduler extends Scheduler {
             //the queue as one of the resources.
             this.acquire(threadState.thread);
 
-			priorityQueue.remove(priorityQueue.first());
+			priorityQueue.remove(priorityQueue.peek());
 
             if(priorityQueue!=null)print();
 			//returns the next thread
@@ -210,7 +203,6 @@ public class PriorityScheduler extends Scheduler {
 	 *		return.
 	 */
 	protected ThreadState pickNextThread() {
-        System.out.println("PickNextThread");
 	    /* check to see if something in priorityQueue
 	     *if it is empty return null
 	     */
@@ -218,7 +210,7 @@ public class PriorityScheduler extends Scheduler {
 	    /* the next thread that this function would pick
 	     * is the first one on the queue
 	     */
-	    return priorityQueue.first();
+	    return priorityQueue.peek();
 	}
 	
 	public void print() {
@@ -248,7 +240,7 @@ public class PriorityScheduler extends Scheduler {
      *
      * @see	nachos.threads.KThread#schedulingState
      */
-    protected class ThreadState{																	//<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+    protected class ThreadState implements Comparable<ThreadState>{																	//<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
     	protected List<PriorityQueue> capturedResources;
     	//This structure might be used later on, but its not
@@ -260,6 +252,7 @@ public class PriorityScheduler extends Scheduler {
 
 		protected boolean priorityChanged = false;
 
+		protected long waitTime;
 		//TESINTG ID
         private int id;
 
@@ -278,8 +271,9 @@ public class PriorityScheduler extends Scheduler {
 
 	    setPriority(priorityDefault);
 
-	    id = TestingID++;
-	    System.out.println("create "+this);
+	    waitTime = Machine.timer().getTime();
+
+	    id = ++TestingID;
 	}
 
 	/**
@@ -297,19 +291,16 @@ public class PriorityScheduler extends Scheduler {
 	 * @return	the effective priority of the associated thread.
 	 */
 	public int getEffectivePriority() {
-	    System.out.println("GetEffective");
 	    // implement me
-        /**updateEffectivePriority();*/
+        updateEffectivePriority();
 
-        System.out.println(this+"UpdateEffectivePriority [__new__]:" + priority);
 	    return effectivePriority;
 	}
 
 	public void updateEffectivePriority(){
-	    System.out.println(this+"UpdateEffectivePriority [current]:" + priority);
 	    //Set the priority to the smallest that it can be
         //This might also be an effective priority call.
-        effectivePriority = priorityMinimum;
+        effectivePriority = getPriority();
 
         for(PriorityQueue queue : capturedResources){
             for(ThreadState threadState : queue.priorityQueue){
@@ -336,7 +327,7 @@ public class PriorityScheduler extends Scheduler {
 		return;
 
 	    this.priority = priority;
-	   /**getEffectivePriority();*/
+	    getEffectivePriority();
 	}
 
 	/**
@@ -352,7 +343,6 @@ public class PriorityScheduler extends Scheduler {
 	 * @see	nachos.threads.ThreadQueue#waitForAccess
 	 */
 	public void waitForAccess(PriorityQueue waitQueue) {
-        System.out.println(this+"WaitForAccess");if(waitQueue!=null)waitQueue.print();
 	    // implement me
 
 		//Lib.assertTrue(Machine.interrupt().disable());//COMMENTED OUT THIS LINE. THIS CHECK FAILS INITIALLY
@@ -367,10 +357,11 @@ public class PriorityScheduler extends Scheduler {
         //Doesn't seems necessary for this project
 
         //Update the effective priorities because the order how now changed
-        /**updateEffectivePriority();*/
+        updateEffectivePriority();
 
         //restore the machine state
 		Machine.interrupt().restore(result);
+
 	}
 
 	/**
@@ -384,7 +375,6 @@ public class PriorityScheduler extends Scheduler {
 	 * @see	nachos.threads.ThreadQueue#nextThread
 	 */
 	public void acquire(PriorityQueue waitQueue) {
-        System.out.println(this+"Acquire");if(waitQueue!=null)waitQueue.print();
 	    // implement me
         Lib.assertTrue(waitQueue.controller == null);
 
@@ -396,7 +386,7 @@ public class PriorityScheduler extends Scheduler {
 		waitQueue.controller = this;
 
 		//The order has now changed so I will update the priority
-		/**updateEffectivePriority();*/
+		updateEffectivePriority();
 
 		//If this used to be a resource that you want, you now own it
         //so you don't want it anymore
@@ -419,7 +409,31 @@ public class PriorityScheduler extends Scheduler {
         @Override
         public String toString() {
             return "thread["+id+"]:";
-            //return super.toString();
         }
-    }
+
+		@Override
+		public int compareTo(ThreadState threadState) {
+			//return threadState.priority - this.priority;
+			if(threadState.priority > this.priority){//descenting
+				return 1;
+			}else if(threadState.priority < this.priority ){
+				return -1;
+			}else{
+				//Now consider time as a sorting order
+				//The threads with the longest time go first
+				//EXAMPLE
+				// ThreadPriority[waitTime]
+				// Queue: 3[4],2[6],2[5],2[3],1[1],1[0]
+				if(threadState.waitTime > this.waitTime){
+					return 1;
+				}else if(threadState.waitTime < this.waitTime){
+					return -1;
+				}else{
+					return 0;
+				}
+			}
+
+		}
+	}
+
 }
