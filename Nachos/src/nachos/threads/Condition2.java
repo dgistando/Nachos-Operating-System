@@ -37,10 +37,13 @@ public class Condition2 {
         Lib.assertTrue(conditionLock.isHeldByCurrentThread());
         boolean res = Machine.interrupt().disable();
 
+        /**
+         * waitQueue waits for access of the current thread and
+         * then releases the lock and puts the current thread
+         *  to sleep
+         */
         waitQueue.waitForAccess(KThread.currentThread());
-
         conditionLock.release();
-
         KThread.sleep();
 
         conditionLock.acquire();
@@ -55,10 +58,12 @@ public class Condition2 {
         Lib.assertTrue(conditionLock.isHeldByCurrentThread());
         boolean res = Machine.interrupt().disable();
 
+        /**
+         * grab the next thread on the wait queue
+         * ensure thread isn't null, then ready that thread
+         */
         KThread thread = waitQueue.nextThread();
-
         if(thread != null) thread.ready();
-
         Machine.interrupt().restore(res);
     }
 
@@ -71,6 +76,11 @@ public class Condition2 {
 
         boolean res = Machine.interrupt().disable();
 
+        /**
+         * wakes up all the threads in the waitQueue
+         * this will continue until we dequeue an empty
+         * queue and return a null thread
+         */
     	KThread thread = waitQueue.nextThread();
     	while(thread != null){
     	    thread.ready();

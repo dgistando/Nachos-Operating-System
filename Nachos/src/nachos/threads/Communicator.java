@@ -28,6 +28,7 @@ public class Communicator {
     public Communicator() {
         System.out.println("New Communicator!!");
         lock = new Lock();
+        // Create condition variables
         speakCondition = new Condition2(lock);
         listenCondition = new Condition2(lock);
         firstSpeaker = new Condition2(lock);
@@ -49,18 +50,19 @@ public class Communicator {
      * @param	word	the integer to transfer.
      */
     public void speak(int word) {
-        //Don't need to re-acquire the lock if you already have it.
+        /**Don't need to re-acquire the lock if you already have it. */
         if(!lock.isHeldByCurrentThread())lock.acquire();
 
         speakerCount++;
-        //if there is no word the first time then pass this loop
+        /** if there is no word the first time then pass this loop */
         while(isWord) {
             speakCondition.sleep();
         }
 
+        /** acquire word */
         this.word = word;
         isWord = true;
-        //If here then only speaker and ready
+        /**If here then only speaker and ready */
         listenCondition.wake();
 
         firstSpeaker.sleep();
@@ -78,19 +80,20 @@ public class Communicator {
     public int listen() {
         int wordReturn;
 
-        //Don't need to re-acquire the lock if you already have it.
+        /**Don't need to re-acquire the lock if you already have it. */
         if(!lock.isHeldByCurrentThread())lock.acquire();
 
         while (!isWord || speakerCount == 0){
             listenCondition.sleep();
         }
 
+        /** listen to word */
         wordReturn = this.word;
 
         isWord = false;
 
-        //Since the word was listened to
-        //There is no word anymore
+        /** Since the word was listened to */
+        /** There is no word anymore */
         speakCondition.wake();
         firstSpeaker.wake();
 
