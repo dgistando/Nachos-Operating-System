@@ -284,30 +284,32 @@ public class KThread {
      * thread.
      */
     public void join() {
-    	Lib.assertTrue(this != currentThread);
-		boolean interruptStatus = Machine.interrupt().disable();
+    	Lib.assertTrue(this != currentThread);  // make sure current thread isn't thread calling function
+		boolean interruptStatus = Machine.interrupt().disable();    // disable interrupt
 		Lib.debug(dbgThread, "Joining to thread: " + toString());
 
+        /* if status is finished, print out "this is finished" and restore the machine interrupt */
 
 		if(this.status == statusFinished){
 			System.out.println("THIS is finished");
 			Machine.interrupt().restore(interruptStatus);
 			return;
 		}
-
+        // create queue and add thread onto queue
 		if(waitQueue == null) {
-			System.out.println("quueue NULL");
+			System.out.println("queue NULL");
 			waitQueue = ThreadedKernel.scheduler.newThreadQueue(true);
-			waitQueue.acquire(this);
+			waitQueue.acquire(this);    // acquire thread on wait queue
 		}
 
+		// if acquired thread is not equal to current thread and current thread status not finished
 		if (this != currentThread && currentThread.status != statusFinished) {
-			System.out.println("NOT current thread");
-			waitQueue.waitForAccess(currentThread);
-			currentThread.sleep();
+			System.out.println("NOT current thread");   // not the current thread
+			waitQueue.waitForAccess(currentThread); // wait for access on queue
+			currentThread.sleep();  // current thread goes to sleep
 		}
 
-		Machine.interrupt().restore(interruptStatus);
+		Machine.interrupt().restore(interruptStatus);   // return machine
     }
 
     /**
