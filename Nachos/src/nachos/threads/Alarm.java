@@ -52,7 +52,7 @@ public class Alarm {
     	long currentTime = Machine.timer().getTime();
 		boolean res = Machine.interrupt().disable();	//disable interrupt
 
-		/*
+		/**
 		 * Loop through waitQueue and find threads that need to be woken
 		 * Since it's possible for multiple threads to need to be woken
 		 * We will loop through and ready all these threads
@@ -83,14 +83,13 @@ public class Alarm {
      * @see	nachos.machine.Timer#getTime()
      */
     public void waitUntil(long x) {
-		// for now, cheat just to get something working (busy waiting is bad)
+
+    	// calculate the wakeTime
 		long wakeTime = Machine.timer().getTime() + x;
-		//while (wakeTime > Machine.timer().getTime()) //shouldn't do this
-		//	KThread.yield();
 
 		boolean interruptStatus = Machine.interrupt().disable();
 
-		// Create instance of our Timedthread class and add to waitQueue
+		// Create instance of our TimedThread class and add to waitQueue
 		TimedThread thread = new TimedThread(KThread.currentThread(), wakeTime);
 		waitQueue.add(thread);
 		KThread.sleep();
@@ -99,7 +98,7 @@ public class Alarm {
 	}
 
 
-	/*
+	/**
 	 * Custom class that will hold both our thread and its
 	 * associated wake time. We will create a waitQueue
 	 * from this to simplify implementation of this class

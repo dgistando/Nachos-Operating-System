@@ -12,10 +12,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Boat.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Boat.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/nachos/src/nachos/threads/Boat.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="512">
+            <state relative-caret-position="945">
               <caret line="65" column="66" lean-forward="true" selection-start-line="65" selection-start-column="66" selection-end-line="65" selection-end-column="66" />
               <folding />
             </state>
@@ -25,18 +25,48 @@
       <file leaf-file-name="Communicator.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/nachos/src/nachos/threads/Communicator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-390">
-              <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+            <state relative-caret-position="421">
+              <caret line="91" column="0" lean-forward="true" selection-start-line="91" selection-start-column="0" selection-end-line="91" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Alarm.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Condition2.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/nachos/src/nachos/threads/Condition2.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1170">
+              <caret line="78" column="11" lean-forward="true" selection-start-line="78" selection-start-column="11" selection-end-line="78" selection-end-column="11" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="KThread.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/nachos/src/nachos/threads/KThread.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="305">
+              <caret line="255" column="0" lean-forward="true" selection-start-line="255" selection-start-column="0" selection-end-line="255" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PriorityScheduler.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/nachos/src/nachos/threads/PriorityScheduler.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-916">
+              <caret line="246" column="44" lean-forward="true" selection-start-line="246" selection-start-column="44" selection-end-line="246" selection-end-column="44" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Alarm.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/nachos/src/nachos/threads/Alarm.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="338">
-              <caret line="107" column="32" lean-forward="true" selection-start-line="107" selection-start-column="32" selection-end-line="107" selection-end-column="32" />
+            <state relative-caret-position="386">
+              <caret line="94" column="24" lean-forward="true" selection-start-line="94" selection-start-column="24" selection-end-line="94" selection-end-column="24" />
               <folding />
             </state>
           </provider>
@@ -54,6 +84,10 @@
       <list>
         <option value="$PROJECT_DIR$/nachos/src/nachos/threads/Boat.java" />
         <option value="$PROJECT_DIR$/nachos/src/nachos/threads/Alarm.java" />
+        <option value="$PROJECT_DIR$/nachos/src/nachos/threads/KThread.java" />
+        <option value="$PROJECT_DIR$/nachos/src/nachos/threads/PriorityScheduler.java" />
+        <option value="$PROJECT_DIR$/nachos/src/nachos/threads/Condition2.java" />
+        <option value="$PROJECT_DIR$/nachos/src/nachos/threads/Communicator.java" />
       </list>
     </option>
   </component>
@@ -230,16 +264,15 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1519953128715</updated>
-      <workItem from="1519953132585" duration="1198000" />
+      <workItem from="1519953132585" duration="3851000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1198000" />
+    <option name="totallyTimeSpent" value="3851000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1400" height="787" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -253,7 +286,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -282,26 +315,50 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/nachos/src/nachos/threads/Alarm.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="386">
+          <caret line="94" column="24" lean-forward="true" selection-start-line="94" selection-start-column="24" selection-end-line="94" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nachos/src/nachos/threads/KThread.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="305">
+          <caret line="255" column="0" lean-forward="true" selection-start-line="255" selection-start-column="0" selection-end-line="255" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nachos/src/nachos/threads/PriorityScheduler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-916">
+          <caret line="246" column="44" lean-forward="true" selection-start-line="246" selection-start-column="44" selection-end-line="246" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nachos/src/nachos/threads/Condition2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1170">
+          <caret line="78" column="11" lean-forward="true" selection-start-line="78" selection-start-column="11" selection-end-line="78" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/nachos/src/nachos/threads/Communicator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-390">
-          <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+        <state relative-caret-position="421">
+          <caret line="91" column="0" lean-forward="true" selection-start-line="91" selection-start-column="0" selection-end-line="91" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/nachos/src/nachos/threads/Boat.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="512">
+        <state relative-caret-position="945">
           <caret line="65" column="66" lean-forward="true" selection-start-line="65" selection-start-column="66" selection-end-line="65" selection-end-column="66" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nachos/src/nachos/threads/Alarm.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="338">
-          <caret line="107" column="32" lean-forward="true" selection-start-line="107" selection-start-column="32" selection-end-line="107" selection-end-column="32" />
           <folding />
         </state>
       </provider>
