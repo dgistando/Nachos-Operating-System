@@ -322,7 +322,7 @@ public class PriorityScheduler extends Scheduler {
 	 * @param	priority	the new priority.
 	 */
 	public void setPriority(int priority) {
-	    System.out.println(this+"SetPriority to: " + priority);
+	    //System.out.println(this+"SetPriority to: " + priority);
 	    if (this.priority == priority)
 		return;
 
@@ -401,7 +401,7 @@ public class PriorityScheduler extends Scheduler {
 			return t1.getPriority() - threadState.getPriority();//Descending
 	}*/
 
-		/** The thread with which this object is associated. */
+	/** The thread with which this object is associated. */
 	protected KThread thread;
 	/** The priority of the associated thread. */
 	protected int priority;
