@@ -5,6 +5,8 @@ import nachos.threads.*;
 import nachos.userprog.*;
 
 import java.io.EOFException;
+import java.util.HashMap;
+import java.util.HashSet;
 
 /**
  * Encapsulates the state of a user process that is not contained in its
@@ -23,6 +25,10 @@ public class UserProcess {
      * Allocate a new process.
      */
     public UserProcess() {
+
+    /** Assign this process a unique ID */
+    this.processID = processID++;
+
 	int numPhysPages = Machine.processor().getNumPhysPages();
 	pageTable = new TranslationEntry[numPhysPages];
 	for (int i=0; i<numPhysPages; i++)
@@ -389,8 +395,13 @@ public class UserProcess {
      */
     public int handleSyscall(int syscall, int a0, int a1, int a2, int a3) {
 	switch (syscall) {
-	case syscallHalt:
-	    return handleHalt();
+
+	    case syscallHalt:
+	        return handleHalt();
+
+        case syscallJoin:
+            return handleJoin(a0, a1);
+
 
 
 	default:
@@ -398,6 +409,78 @@ public class UserProcess {
 	    Lib.assertNotReached("Unknown system call!");
 	}
 	return 0;
+    }
+
+    /** handleJoin will suspend execution of this process (and wait) until the
+     * specified child process finishes execution.
+     *
+     * @param pid unique identifier for child process
+     * @param status value that was passed by the child process in when called by exit()
+     *               this value will determine if the child exited normally
+     * @return
+     */
+
+    private int handleJoin(int pid, int status) {
+
+        /** Check to make sure this a valid process and exists */
+        if (!childProcesses.contains(pid) || !processedThreadMap.containsKey(pid)) {
+            return INVALID;
+        }
+
+        /** Declare byte array*/
+        byte[] byteProcessStatus = new byte[256];
+
+        /** Extract the child process and join it, and remove
+         *  from child set upon finishing */
+        UThread childProcess = processedThreadMap.get(pid);
+        childProcess.join();
+        childProcesses.remove(pid);
+
+
+        Lib.bytesFromInt(byteProcessStatus, 0, childProcess.process.processStatus);
+
+        /** ASK TA IF THIS IS NEEDED */
+        readVirtualMemory(status, byteProcessStatus);
+
+
+        if(childProcess.process.exitStatus == SUCCESS) {
+            return SUCCESS;
+        }
+
+    	return EXCEPTION;
+	}
+
+    /** handleExit will terminate this current process immediately. If this is the last
+     * process then the Kernel will also be terminated. Exit status will be passed to the parent
+     * in case join() will be called 
+     * @param status this is the value returned to the parent as the child's exit status
+     */
+	private void handleExit(int status){
+
+        processStatus = status;
+
+        /** Close all remaining open files*/
+        for (int i = 0; i < filetable.length; i++){
+            OpenFile file = filetable[i];
+            if (file != null) {
+                file.close();
+            }
+        }
+
+        this.unloadSections();
+        processedThreadMap.remove(this.processID);
+
+        /** If this is the last process, terminate Kernel*/
+        if(processedThreadMap.isEmpty()){
+            Kernel.kernel.terminate();
+        }
+
+
+        exitStatus = SUCCESS;
+        UThread.finish();
+
+
+
     }
 
     /**
@@ -429,6 +512,28 @@ public class UserProcess {
 	    Lib.assertNotReached("Unexpected exception");
 	}
     }
+
+
+    /** Return values for our syscall functions (task 3)*/
+    private final int EXCEPTION = 0;
+    private final int SUCCESS = 1;
+    private final int INVALID = 2;
+
+    /** This will store our User Threads and corresponding ID number */
+    HashMap<Integer, UThread> processedThreadMap = new HashMap<Integer, UThread>();
+
+    /** This will store the IDs for the forked children of this process */
+    HashSet<Integer> childProcesses = new HashSet<Integer>();
+
+    /** Unique ID for process that will be assigned in constructor*/
+    private int processID = 0;
+
+    /** The current status of the process*/
+    private int processStatus;
+
+    /** This will help tell us if a process is exiting abnormally*/
+    /** By default, it will be exception until successfully exited */
+    private int exitStatus = EXCEPTION;
 
     /** The program being run by this process. */
     protected Coff coff;
