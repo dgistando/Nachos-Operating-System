@@ -402,6 +402,12 @@ public class UserProcess {
         case syscallJoin:
             return handleJoin(a0, a1);
 
+        case syscallExit:
+            handleExit(a0);
+            return exitStatus;
+
+		case syscallExec:
+			return handleExec(a0, a1, a2);
 
 
 	default:
@@ -409,6 +415,46 @@ public class UserProcess {
 	    Lib.assertNotReached("Unknown system call!");
 	}
 	return 0;
+    }
+
+    private int handleExec(int filePtr, int argc, int argv) {
+
+        /** Check to make sure argc is positive */
+        if (argc < 1){
+            return INVALID;
+        }
+
+        /** Buffer and  String array will hold the arguments from the file */
+        byte [] bufferArgs = new byte[argc * 256];
+        String[] stringArgs = new String[argc];
+
+        String filename = readVirtualMemoryString(filePtr, 256);
+
+        /** Check filename */
+        if (filename == null){
+            Lib.debug(dbgProcess, "INVALID FILENAME");
+            return INVALID;
+        }
+
+        for(int i = 0; i < argc; i++) {
+            byte[] bufferPtr = new byte[4];
+            int offsetArg = (argv + i) * 4;
+            readVirtualMemory(offsetArg, bufferPtr);
+            int argAddr = Lib.bytesToInt(bufferPtr, 0);
+
+            stringArgs[i] = readVirtualMemoryString(argAddr, 256);
+        }
+
+        UserProcess child = new UserProcess();
+
+
+        if(child.execute(filename, stringArgs) && int childID = child.processID){
+            this.childProcesses.add(child.processID);
+            return childID;
+
+        }
+
+        return EXCEPTION;
     }
 
     /** handleJoin will suspend execution of this process (and wait) until the
@@ -426,7 +472,7 @@ public class UserProcess {
         if (!childProcesses.contains(pid) || !processedThreadMap.containsKey(pid)) {
             return INVALID;
         }
-
+s
         /** Declare byte array*/
         byte[] byteProcessStatus = new byte[256];
 
@@ -452,7 +498,7 @@ public class UserProcess {
 
     /** handleExit will terminate this current process immediately. If this is the last
      * process then the Kernel will also be terminated. Exit status will be passed to the parent
-     * in case join() will be called 
+     * in case join() will be called
      * @param status this is the value returned to the parent as the child's exit status
      */
 	private void handleExit(int status){
@@ -478,7 +524,6 @@ public class UserProcess {
 
         exitStatus = SUCCESS;
         UThread.finish();
-
 
 
     }
