@@ -1,10 +1,14 @@
 package nachos.userprog;
 
+import com.sun.istack.internal.Nullable;
 import nachos.machine.*;
 import nachos.threads.*;
 import nachos.userprog.*;
 
 import java.io.EOFException;
+import java.lang.management.ManagementFactory;
+import java.util.HashMap;
+import java.util.HashSet;
 
 /**
  * Encapsulates the state of a user process that is not contained in its
@@ -23,7 +27,12 @@ public class UserProcess {
      * Allocate a new process.
      */
     public UserProcess() {
-	int numPhysPages = Machine.processor().getNumPhysPages();
+
+		/** Assign this process a unique ID */
+		this.processID = processID++;
+
+
+		int numPhysPages = Machine.processor().getNumPhysPages();
 	pageTable = new TranslationEntry[numPhysPages];
 	for (int i=0; i<numPhysPages; i++)
 	    pageTable[i] = new TranslationEntry(i,i, true,false,false,false);
@@ -127,21 +136,48 @@ public class UserProcess {
      *			the array.
      * @return	the number of bytes successfully transferred.
      */
-    public int readVirtualMemory(int vaddr, byte[] data, int offset,
-				 int length) {
-	Lib.assertTrue(offset >= 0 && length >= 0 && offset+length <= data.length);
+    public int readVirtualMemory(int vaddr, byte[] data, int offset, int length) {
+		Lib.assertTrue(offset >= 0 && length >= 0 && offset+length <= data.length);
 
-	byte[] memory = Machine.processor().getMemory();
-	
-	// for now, just assume that virtual addresses equal physical addresses
-	if (vaddr < 0 || vaddr >= memory.length)
-	    return 0;
+		byte[] memory = Machine.processor().getMemory();
 
-	int amount = Math.min(length, memory.length-vaddr);
-	System.arraycopy(memory, vaddr, data, offset, amount);
+		int firstPage = Processor.pageFromAddress(vaddr); //Should be the first virtual page
+		int basePageOffset = Processor.offsetFromAddress(vaddr); //offset from the first page
+		int lastPage = Processor.pageFromAddress(vaddr + length); //Should be last page because you have needed data
 
-	return amount;
+		TranslationEntry entry = checkPageTable(firstPage, false);
+
+		if(entry == null) return 0;
+
+		int amount = Math.min(length, pageSize - basePageOffset);
+
+		System.arraycopy(memory, Processor.makeAddress(entry.ppn, basePageOffset), data, offset, amount);
+
+		offset += amount;
+
+		for(int i = firstPage + 1; i<= lastPage; i++){
+			entry = checkPageTable(i, false);
+
+			if (entry == null) return amount;
+
+			int len = Math.min(length - amount, pageSize);
+
+			System.arraycopy(memory, Processor.makeAddress(entry.ppn, 0), data, offset, len);
+
+			offset += len;
+			amount += len;
+		}
+
+		// for now, just assume that virtual addresses equal physical addresses
+		//if (vaddr < 0 || vaddr >= memory.length)
+		//	return 0;
+
+		//int amount = Math.min(length, memory.length-vaddr);
+		//System.arraycopy(memory, vaddr, data, offset, amount);
+
+		return amount;
     }
+
 
     /**
      * Transfer all data from the specified array to this process's virtual
@@ -170,21 +206,69 @@ public class UserProcess {
      *			virtual memory.
      * @return	the number of bytes successfully transferred.
      */
-    public int writeVirtualMemory(int vaddr, byte[] data, int offset,
-				  int length) {
-	Lib.assertTrue(offset >= 0 && length >= 0 && offset+length <= data.length);
+    public int writeVirtualMemory(int vaddr, byte[] data, int offset, int length) {
 
-	byte[] memory = Machine.processor().getMemory();
-	
-	// for now, just assume that virtual addresses equal physical addresses
-	if (vaddr < 0 || vaddr >= memory.length)
-	    return 0;
+		Lib.assertTrue(offset >= 0 && length >= 0 && offset+length <= data.length);
 
-	int amount = Math.min(length, memory.length-vaddr);
-	System.arraycopy(data, offset, memory, vaddr, amount);
+		byte[] memory = Machine.processor().getMemory();
 
-	return amount;
+		int firstPage = Processor.pageFromAddress(vaddr); //Should be the first virtual page
+		int basePageOffset = Processor.offsetFromAddress(vaddr); //offset from the first page
+		int lastPage = Processor.pageFromAddress(vaddr + length); //Should be last page because you have needed data
+
+		TranslationEntry entry = checkPageTable(firstPage, true);
+
+		if(entry == null) return 0;
+
+		//At this point we should be clear to copy everything
+		int amount = Math.min(length, pageSize - basePageOffset);
+		System.arraycopy(data, offset, memory,
+						 Processor.makeAddress(entry.ppn,basePageOffset),
+						 amount);
+		//since we wrote we have to move the offset down the page for future writes
+		offset += amount;
+
+		for(int i = firstPage+1; i<=lastPage; i++){
+			entry = checkPageTable(i, true);
+
+			if(entry == null) return amount;
+
+			int len = Math.min(length - amount, pageSize);
+
+			System.arraycopy(data, offset, memory, Processor.makeAddress(entry.ppn, 0), len);
+
+			offset += len;
+			amount += len;
+		}
+
+																		// for now, just assume that virtual addresses equal physical addresses
+																		//if (vaddr < 0 || vaddr >= memory.length)
+																		//    return 0;
+
+																		//int amount = Math.min(length, memory.length-vaddr);
+																		//System.arraycopy(data, offset, memory, vaddr, amount);
+
+		return amount;
     }
+
+
+	private TranslationEntry checkPageTable(int vpn, boolean wantWrite){
+
+		if(vpn < 0 || vpn >= numPages) return null; //This shouldn't ever happen. Just check to see if in range
+
+		TranslationEntry pageSegment = pageTable[vpn];
+
+		if(pageSegment == null) return null;
+
+		if(pageSegment.readOnly && wantWrite) return null;
+		//This means its clear to write to this location
+		pageSegment.used = true;
+
+		if(wantWrite) pageSegment.dirty = true;
+
+		return pageSegment;
+	}
+
 
     /**
      * Load the executable with the specified name into this process, and
@@ -341,14 +425,94 @@ public class UserProcess {
     private int handleHalt() {
 
 	Machine.halt();
-	
+
 	Lib.assertNotReached("Machine.halt() did not halt machine!");
 	return 0;
     }
 
+	private int handleCreate(int name) {
+		String FileName = readVirtualMemoryString(name, 256);
+		if(FileName == null)
+		{
+			return -1;
+		}
 
-    private static final int
-        syscallHalt = 0,
+		int fileIndex = -1;
+		for(int i = 2; i < 16; i++)
+		{
+			if(fileTable[i] == null)
+			{
+				fileIndex = i;
+			}
+		}
+
+		if(fileIndex == -1)
+		{
+			return -1;
+		}
+
+		OpenFile file = ThreadedKernel.fileSystem.open(FileName, true);
+		if(file == null)
+		{
+			return -1;
+		}
+		else
+		{
+			fileTable[fileIndex] = file;
+			return fileIndex;
+		}
+	}
+
+	private int handleOpen(int name) {
+		String FileName = readVirtualMemoryString(name, 256);
+		if(FileName == null)
+		{
+			return -1;
+		}
+
+		int fileIndex = -1;
+		for(int i = 2; i < 16; i++)
+		{
+			if(fileTable[i] == null)
+			{
+				fileIndex = i;
+			}
+		}
+
+		if(fileIndex == -1)
+		{
+			return -1;
+		}
+
+		OpenFile file = ThreadedKernel.fileSystem.open(FileName, false);
+		if(file == null)
+		{
+			return -1;
+		}
+		else
+		{
+			fileTable[fileIndex] = file;
+			return fileIndex;
+		}
+	}
+
+	private int handleClose(int fd) {
+		if((fd < 0) || (fd > 15) || fileTable[fd] == null)
+		{
+			return -1;
+		}
+
+		OpenFile
+
+		fileTable[fd].close();
+		fileTable[fd] = null;
+		return 0;
+	}
+
+
+
+	private static final int
+	syscallHalt = 0,
 	syscallExit = 1,
 	syscallExec = 2,
 	syscallJoin = 3,
@@ -387,20 +551,103 @@ public class UserProcess {
      * @param	a3	the fourth syscall argument.
      * @return	the value to be returned to the user.
      */
-    public int handleSyscall(int syscall, int a0, int a1, int a2, int a3) {
-	switch (syscall) {
-	case syscallHalt:
-	    return handleHalt();
+	public int handleSyscall(int syscall, int a0, int a1, int a2, int a3) {
+		switch (syscall) {
+			case syscallClose:
+				return handleClose(a0);
+			case syscallJoin:
+				return handleJoin(a0, a1);
+			case syscallHalt:
+				return handleHalt();
+			case syscallCreate:
+				return handleCreate(a0);
+			case syscallOpen:
+				return handleOpen(a0);
 
-
-	default:
-	    Lib.debug(dbgProcess, "Unknown syscall " + syscall);
-	    Lib.assertNotReached("Unknown system call!");
+			//default:
+			//    Lib.debug(dbgProcess, "Unknown syscall " + syscall);
+			//    Lib.assertNotReached("Unknown system call!");
+		}
+		return 0;
 	}
-	return 0;
-    }
 
-    /**
+
+	/** handleJoin will suspend execution of this process (and wait) until the
+	 * specified child process finishes execution.
+	 *
+	 * @param pid unique identifier for child process
+	 * @param status value that was passed by the child process in when called by exit()
+	 *               this value will determine if the child exited normally
+	 * @return
+	 */
+
+	private int handleJoin(int pid, int status) {
+
+		/** Check to make sure this a valid process and exists */
+		if (!childProcesses.contains(pid) || !processedThreadMap.containsKey(pid)) {
+			return INVALID;
+		}
+
+		/** Declare byte array*/
+		byte[] byteProcessStatus = new byte[256];
+
+		/** Extract the child process and join it, and remove
+		 *  from child set upon finishing */
+		UThread childProcess = processedThreadMap.get(pid);
+		childProcess.join();
+		childProcesses.remove(pid);
+
+
+		Lib.bytesFromInt(byteProcessStatus, 0, childProcess.process.processStatus);
+
+		/** ASK TA IF THIS IS NEEDED */
+		readVirtualMemory(status, byteProcessStatus);
+
+
+		if(childProcess.process.exitStatus == SUCCESS) {
+			return SUCCESS;
+		}
+
+		return EXCEPTION;
+	}
+
+	/** handleExit will terminate this current process immediately. If this is the last
+	 * process then the Kernel will also be terminated. Exit status will be passed to the parent
+	 * in case join() will be called
+	 * @param status this is the value returned to the parent as the child's exit status
+	 */
+	private void handleExit(int status){
+
+		processStatus = status;
+
+		/*
+		// Close all remaining open files
+		for (int i = 0; i < filetable.length; i++){
+			OpenFile file = filetable[i];
+			if (file != null) {
+				file.close();
+			}
+		}*/
+
+		this.unloadSections();
+		processedThreadMap.remove(this.processID);
+
+		// If this is the last process, terminate Kernel
+		if(processedThreadMap.isEmpty()){
+			Kernel.kernel.terminate();
+		}
+
+
+		exitStatus = SUCCESS;
+		UThread.finish();
+
+
+
+	}
+
+
+
+	/**
      * Handle a user exception. Called by
      * <tt>UserKernel.exceptionHandler()</tt>. The
      * <i>cause</i> argument identifies which exception occurred; see the
@@ -430,6 +677,28 @@ public class UserProcess {
 	}
     }
 
+
+	/** Return values for our syscall functions (task 3)*/
+	private final int EXCEPTION = 0;
+	private final int SUCCESS = 1;
+	private final int INVALID = 2;
+
+	/** This will store our User Threads and corresponding ID number */
+	HashMap<Integer, UThread> processedThreadMap = new HashMap<Integer, UThread>();
+
+	/** This will store the IDs for the forked children of this process */
+	HashSet<Integer> childProcesses = new HashSet<Integer>();
+
+	/** Unique ID for process that will be assigned in constructor*/
+	private int processID = 0;
+
+	/** The current status of the process*/
+	private int processStatus;
+
+	/** This will help tell us if a process is exiting abnormally*/
+	/** By default, it will be exception until successfully exited */
+	private int exitStatus = EXCEPTION;
+
     /** The program being run by this process. */
     protected Coff coff;
 
@@ -446,4 +715,6 @@ public class UserProcess {
 	
     private static final int pageSize = Processor.pageSize;
     private static final char dbgProcess = 'a';
+
+    OpenFile[] fileTable;
 }

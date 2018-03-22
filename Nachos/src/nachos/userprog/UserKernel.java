@@ -11,6 +11,9 @@ public class UserKernel extends ThreadedKernel {
     /**
      * Allocate a new user kernel.
      */
+
+
+
     public UserKernel() {
 	super();
     }
