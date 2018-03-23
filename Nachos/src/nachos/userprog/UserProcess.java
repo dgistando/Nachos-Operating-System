@@ -345,7 +345,68 @@ public class UserProcess {
 	Lib.assertNotReached("Machine.halt() did not halt machine!");
 	return 0;
     }
-
+   
+    private int handleRead(int fileDescriptor, int buffer, int size){
+    	
+    	if (fileDescriptor < 0 || fileDescriptor > 15){
+    		return -1;		// return -1 on error
+    	}
+    	
+    	if (size < 0){
+    		return -1; 		// return -1 on error
+    	}
+    	
+    	OpenFile file;
+    	
+    	if (descriptors[fileDescriptor] == NULL){
+    		return -1;		// return -1 on error
+    	}
+    	else{
+    		file = descriptors[fileDescriptor];
+    	}
+    	
+    	byte tempbuff[] = new byte[size];
+    	
+    	int readSize = file.read(tempbuff, 0, size);
+    	
+    	if (readSize < 0){
+    		return -1;		// return -1 on error
+    	}
+    	
+    	int counter = writeVirtualMemory(tempbuff, buffer, 0, size);
+    	return counter;
+    	
+    }
+    
+    private int handleWrite(int fileDescriptor, int buffer, int size){
+    	
+    	if (fileDescriptor < 0 || fileDescriptor > 15){
+    		return -1;		// return -1 on error
+    	}
+    	
+    	if (size < 0){
+    		return -1; 		// return -1 on error
+    	}
+    	
+    	OpenFile file;
+    	
+    	if (descriptors[fileDescriptor] == NULL){
+    		return -1;		// return -1 on error
+    	}
+    	else{
+    		file = descriptors[fileDescriptor];
+    	}
+    	
+    	byte tempbuff[] = new byte[size];
+    	
+    	int counter = file.write(tempbuff, 0, readSize);
+    	
+    	if (counter < 0){
+    		return -1;		// return -1 on error
+    	}
+    	return counter;
+    	
+    }
 
     private static final int
         syscallHalt = 0,
@@ -429,6 +490,8 @@ public class UserProcess {
 	    Lib.assertNotReached("Unexpected exception");
 	}
     }
+    
+
 
     /** The program being run by this process. */
     protected Coff coff;
