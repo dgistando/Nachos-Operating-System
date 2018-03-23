@@ -1,12 +1,10 @@
 package nachos.userprog;
 
-import com.sun.istack.internal.Nullable;
 import nachos.machine.*;
 import nachos.threads.*;
 import nachos.userprog.*;
 
 import java.io.EOFException;
-import java.lang.management.ManagementFactory;
 import java.util.HashMap;
 import java.util.HashSet;
 
@@ -27,6 +25,8 @@ public class UserProcess {
      * Allocate a new process.
      */
     public UserProcess() {
+    	//Not sure how many files to allow open at once
+    	fileTable = new OpenFile[16];
 
 		/** Assign this process a unique ID */
 		this.processID = processID++;
@@ -372,20 +372,28 @@ public class UserProcess {
 	    return false;
 	}
 
-	// load sections
-	for (int s=0; s<coff.getNumSections(); s++) {
-	    CoffSection section = coff.getSection(s);
-	    
-	    Lib.debug(dbgProcess, "\tinitializing " + section.getName()
-		      + " section (" + section.getLength() + " pages)");
+		//check to see if tou have the correct number of physical pages.
 
-	    for (int i=0; i<section.getLength(); i++) {
-		int vpn = section.getFirstVPN()+i;
+		//need to keep track of available pages
 
-		// for now, just assume virtual addresses=physical addresses
-		section.loadPage(i, vpn);
-	    }
-	}
+		//user kernelhas linkedlist on. int for available pages.
+
+
+		/*
+		// load sections
+		for (int s=0; s<coff.getNumSections(); s++) {
+			CoffSection section = coff.getSection(s);
+
+			Lib.debug(dbgProcess, "\tinitializing " + section.getName()
+				  + " section (" + section.getLength() + " pages)");
+
+			for (int i=0; i<section.getLength(); i++) {
+			int vpn = section.getFirstVPN()+i;
+
+			// for now, just assume virtual addresses=physical addresses
+			section.loadPage(i, vpn);
+			}
+		}*/
 	
 	return true;
     }
@@ -501,8 +509,6 @@ public class UserProcess {
 		{
 			return -1;
 		}
-
-		OpenFile
 
 		fileTable[fd].close();
 		fileTable[fd] = null;
@@ -620,14 +626,14 @@ public class UserProcess {
 
 		processStatus = status;
 
-		/*
+
 		// Close all remaining open files
-		for (int i = 0; i < filetable.length; i++){
-			OpenFile file = filetable[i];
+		for (int i = 0; i < fileTable.length; i++){
+			OpenFile file = fileTable[i];
 			if (file != null) {
 				file.close();
 			}
-		}*/
+		}
 
 		this.unloadSections();
 		processedThreadMap.remove(this.processID);

@@ -41,7 +41,7 @@ public class LotteryScheduler extends PriorityScheduler {
     }
 
 
-    @Override
+    /*@Override
     public ThreadQueue newThreadQueue(boolean transferPriority) {
         retunrn new LotteryQueue(transferPriority);
     }
@@ -117,7 +117,7 @@ public class LotteryScheduler extends PriorityScheduler {
             int totalTickets = getEffectivePriority(); //should be sum of tickets
 
             if(totalTickets == 0)
-                return
+                return null
 
         }
 
@@ -142,7 +142,7 @@ public class LotteryScheduler extends PriorityScheduler {
             }
             return tickets;
         }
-    }
+    }*/
 
 
     /**
