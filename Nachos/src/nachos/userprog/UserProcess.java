@@ -442,6 +442,35 @@ public class UserProcess {
 		return 0;
     }
 
+    private int handleRead(){ //still adding this
+				if (fileDescriptor < 0 || fileDescriptor > 15){
+					return -1;		// return -1 on err.
+				}
+
+				if (size < 0){
+					return -1; 		// return -1 on err.
+				}
+
+				OpenFile file;
+
+				if (descriptors[fileDescriptor] == null){
+					return -1;		// return -1 on erro
+				}
+				else{file = descriptors[fileDescriptor];
+				}
+
+				byte tempbuff[] = new byte[size];
+
+				int readSize = file.read(tempbuff, 0, size);
+
+				if (readSize < 0){
+					return -1;		// return -1 on error
+				}
+		    	int counter = writeVirtualMemory(tempbuff, buffer, 0, size);
+		    	return counter;
+	}
+
+
 	private int handleCreate(int name) {
 		String FileName = readVirtualMemoryString(name, 256);
 		if(FileName == null)

@@ -1,12 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c35c53d1-c2e6-41be-b37c-9a9f956c3efb" name="Default" comment="nothing in commit">
+    <list default="true" id="c35c53d1-c2e6-41be-b37c-9a9f956c3efb" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/nachos/proj2/nachos.conf" afterPath="$PROJECT_DIR$/src/nachos/proj2/nachos.conf" />
-      <change beforePath="$PROJECT_DIR$/src/nachos/threads/LotteryScheduler.java" afterPath="$PROJECT_DIR$/src/nachos/threads/LotteryScheduler.java" />
-      <change beforePath="$PROJECT_DIR$/src/nachos/threads/PriorityScheduler.java" afterPath="$PROJECT_DIR$/src/nachos/threads/PriorityScheduler.java" />
-      <change beforePath="$PROJECT_DIR$/src/nachos/userprog/UserKernel.java" afterPath="$PROJECT_DIR$/src/nachos/userprog/UserKernel.java" />
       <change beforePath="$PROJECT_DIR$/src/nachos/userprog/UserProcess.java" afterPath="$PROJECT_DIR$/src/nachos/userprog/UserProcess.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -97,11 +93,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="UserProcess.java" pinned="false" current-in-tab="false">
+          <file leaf-file-name="UserProcess.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/nachos/userprog/UserProcess.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="500">
-                  <caret line="708" column="7" lean-forward="true" selection-start-line="708" selection-start-column="7" selection-end-line="708" selection-end-column="7" />
+                <state relative-caret-position="272">
+                  <caret line="444" column="49" lean-forward="false" selection-start-line="444" selection-start-column="49" selection-end-line="444" selection-end-column="49" />
                   <folding>
                     <element signature="imports" expanded="true" />
                     <element signature="e#2435#2436#0" expanded="true" />
@@ -110,8 +106,8 @@
                     <element signature="e#3975#3976#0" expanded="true" />
                     <element signature="e#6463#6464#0" expanded="true" />
                     <element signature="e#6526#6527#0" expanded="true" />
-                    <element signature="e#21055#21073#0" expanded="true" />
-                    <element signature="e#21196#21205#0" expanded="true" />
+                    <element signature="e#21682#21700#0" expanded="true" />
+                    <element signature="e#21823#21832#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -127,11 +123,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="LotteryScheduler.java" pinned="false" current-in-tab="true">
+          <file leaf-file-name="LotteryScheduler.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/nachos/threads/LotteryScheduler.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1003">
-                  <caret line="161" column="5" lean-forward="true" selection-start-line="161" selection-start-column="5" selection-end-line="161" selection-end-column="5" />
+                <state relative-caret-position="187">
+                  <caret line="113" column="72" lean-forward="true" selection-start-line="113" selection-start-column="72" selection-end-line="113" selection-end-column="72" />
                   <folding>
                     <element signature="imports" expanded="true" />
                     <element signature="e#1411#1412#0" expanded="true" />
@@ -322,10 +318,10 @@
         <option value="$PROJECT_DIR$/src/nachos/threads/Boat.java" />
         <option value="$PROJECT_DIR$/src/nachos/threads/KThread.java" />
         <option value="$PROJECT_DIR$/src/nachos/userprog/UserKernel.java" />
-        <option value="$PROJECT_DIR$/src/nachos/userprog/UserProcess.java" />
         <option value="$PROJECT_DIR$/src/nachos/threads/PriorityScheduler.java" />
         <option value="$PROJECT_DIR$/src/nachos/threads/LotteryScheduler.java" />
         <option value="$PROJECT_DIR$/src/nachos/proj2/nachos.conf" />
+        <option value="$PROJECT_DIR$/src/nachos/userprog/UserProcess.java" />
       </list>
     </option>
   </component>
@@ -998,11 +994,18 @@
       <option name="project" value="LOCAL" />
       <updated>1519952129711</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="still need to fix lottery scheduler. Then move on to other tests.">
+      <created>1521805928755</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1521805928756</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="184205000" />
+    <option name="totallyTimeSpent" value="184861000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="2576" height="1426" extended-state="6" />
@@ -1106,7 +1109,8 @@
     <MESSAGE value="Passed 2 tests" />
     <MESSAGE value="Passed 3 tests" />
     <MESSAGE value="Pass all the tests but boat" />
-    <option name="LAST_COMMIT_MESSAGE" value="Pass all the tests but boat" />
+    <MESSAGE value="still need to fix lottery scheduler. Then move on to other tests." />
+    <option name="LAST_COMMIT_MESSAGE" value="still need to fix lottery scheduler. Then move on to other tests." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1396,24 +1400,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/nachos/userprog/UserProcess.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="500">
-          <caret line="708" column="7" lean-forward="true" selection-start-line="708" selection-start-column="7" selection-end-line="708" selection-end-column="7" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2435#2436#0" expanded="true" />
-            <element signature="e#2487#2488#0" expanded="true" />
-            <element signature="e#3913#3914#0" expanded="true" />
-            <element signature="e#3975#3976#0" expanded="true" />
-            <element signature="e#6463#6464#0" expanded="true" />
-            <element signature="e#6526#6527#0" expanded="true" />
-            <element signature="e#21055#21073#0" expanded="true" />
-            <element signature="e#21196#21205#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/nachos/machine/Lib.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="302">
@@ -1452,10 +1438,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/nachos/threads/PriorityScheduler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="472">
+          <caret line="181" column="0" lean-forward="true" selection-start-line="181" selection-start-column="0" selection-end-line="181" selection-end-column="0" />
+          <folding>
+            <element signature="method#getPriority#0;class#PriorityScheduler#0" expanded="false" />
+            <element signature="method#setPriority#0;class#PriorityScheduler#0" expanded="false" />
+            <element signature="method#increasePriority#0;class#PriorityScheduler#0" expanded="false" />
+            <element signature="method#decreasePriority#0;class#PriorityScheduler#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/nachos/threads/LotteryScheduler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1003">
-          <caret line="161" column="5" lean-forward="true" selection-start-line="161" selection-start-column="5" selection-end-line="161" selection-end-column="5" />
+        <state relative-caret-position="187">
+          <caret line="113" column="72" lean-forward="true" selection-start-line="113" selection-start-column="72" selection-end-line="113" selection-end-column="72" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1411#1412#0" expanded="true" />
@@ -1468,15 +1467,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/nachos/threads/PriorityScheduler.java">
+    <entry file="file://$PROJECT_DIR$/src/nachos/userprog/UserProcess.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="472">
-          <caret line="181" column="0" lean-forward="true" selection-start-line="181" selection-start-column="0" selection-end-line="181" selection-end-column="0" />
+        <state relative-caret-position="272">
+          <caret line="444" column="49" lean-forward="false" selection-start-line="444" selection-start-column="49" selection-end-line="444" selection-end-column="49" />
           <folding>
-            <element signature="method#getPriority#0;class#PriorityScheduler#0" expanded="false" />
-            <element signature="method#setPriority#0;class#PriorityScheduler#0" expanded="false" />
-            <element signature="method#increasePriority#0;class#PriorityScheduler#0" expanded="false" />
-            <element signature="method#decreasePriority#0;class#PriorityScheduler#0" expanded="false" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#2435#2436#0" expanded="true" />
+            <element signature="e#2487#2488#0" expanded="true" />
+            <element signature="e#3913#3914#0" expanded="true" />
+            <element signature="e#3975#3976#0" expanded="true" />
+            <element signature="e#6463#6464#0" expanded="true" />
+            <element signature="e#6526#6527#0" expanded="true" />
+            <element signature="e#21682#21700#0" expanded="true" />
+            <element signature="e#21823#21832#0" expanded="true" />
           </folding>
         </state>
       </provider>
