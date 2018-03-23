@@ -2,6 +2,7 @@ package nachos.threads;
 
 import nachos.machine.*;
 
+import java.util.Random;
 import java.util.TreeSet;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -40,11 +41,11 @@ public class LotteryScheduler extends PriorityScheduler {
     public LotteryScheduler() {
     }
 
-
-    /*@Override
+    @Override
     public ThreadQueue newThreadQueue(boolean transferPriority) {
-        retunrn new LotteryQueue(transferPriority);
+        return new LotteryQueue(transferPriority);
     }
+
 
     @Override
     public int getPriority(KThread thread) {
@@ -61,8 +62,11 @@ public class LotteryScheduler extends PriorityScheduler {
     }
 
     @Override
-    protected ThreadState getThreadState(KThread thread) {
+    protected ThreadState getThreadState(KThread thread) {System.out.println("LOT STATE");
+        if (thread.schedulingState == null)
+            thread.schedulingState = new LotThreadState(thread);
 
+        return (LotThreadState) thread.schedulingState;
     }
 
     public void setPriority(KThread thread, int priority) {
@@ -107,42 +111,55 @@ public class LotteryScheduler extends PriorityScheduler {
         return true;
     }
 
-    protected class LotteryQueue extends PriorityScheduler.PriorityQueue{
+    protected class LotteryQueue extends LotteryScheduler.PriorityQueue{
         LotteryQueue(boolean transferPriority){
             super(transferPriority);
         }
 
-        public ThreadState pickNextThread() {
-            // implement me senpai David :)
+        @Override
+        protected ThreadState pickNextThread() {
+            // implement me
             int totalTickets = getEffectivePriority(); //should be sum of tickets
+            if(totalTickets == 0) return null;
 
-            if(totalTickets == 0)
-                return null
+            int winningTicket = new Random().nextInt(totalTickets);
 
+            for(ThreadState threadstate : priorityQueue){
+                //Lib.assertTrue(threadstate instanceof LotThreadState);
+                winningTicket -= threadstate.getPriority();
+
+                if(winningTicket <= 0){
+                    return threadstate;
+                }
+            }
+            return null;
         }
-
 
 
     }
 
-    protected class ThreadState extends PriorityScheduler.ThreadState {
-        public ThreadState(KThread thread) {
+
+
+    protected class LotThreadState extends LotteryScheduler.ThreadState{
+        public LotThreadState(KThread thread) {
             super(thread);
         }
 
-        public int getEffectivePriority() {
-            int ticket = mystate.priority;
+        @Override
+        public int getEffectivePriority() {System.out.println("LOTTERY EFFECTINVE");
+            int tickets = getPriority();
 
-            for (PriorityQueue myQueue : mystate.donateQueue) {
-                for (KThread currentThread : myQueue.waitQueue) {
-                    if (getThreadState(currentThread) == mystate)
+            for (PriorityQueue myQueue : capturedResources)  {
+                for( ThreadState currentThread : myQueue.priorityQueue) {
+                    if (currentThread == this)
                         continue;
-                    tickets += getThreadState(currentThread).getEffectivePriority();
+                    tickets += currentThread.getEffectivePriority();
                 }
             }
+            System.out.println(tickets + "Tickets");
             return tickets;
         }
-    }*/
+    }
 
 
     /**

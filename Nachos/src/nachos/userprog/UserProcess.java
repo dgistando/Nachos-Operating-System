@@ -28,14 +28,17 @@ public class UserProcess {
     	//Not sure how many files to allow open at once
     	fileTable = new OpenFile[16];
 
+		fileTable[0] = UserKernel.console.openForReading();
+		fileTable[0] = UserKernel.console.openForWriting();
+
+
 		/** Assign this process a unique ID */
 		this.processID = processID++;
 
-
 		int numPhysPages = Machine.processor().getNumPhysPages();
-	pageTable = new TranslationEntry[numPhysPages];
-	for (int i=0; i<numPhysPages; i++)
-	    pageTable[i] = new TranslationEntry(i,i, true,false,false,false);
+		pageTable = new TranslationEntry[numPhysPages];
+		for (int i=0; i<numPhysPages; i++)
+	    	pageTable[i] = new TranslationEntry(i,i, true,false,false,false);
     }
     
     /**
@@ -376,7 +379,7 @@ public class UserProcess {
 
 		//need to keep track of available pages
 
-		//user kernelhas linkedlist on. int for available pages.
+		//user kernel has linkedlist on. int for available pages.
 
 
 		/*
@@ -388,10 +391,10 @@ public class UserProcess {
 				  + " section (" + section.getLength() + " pages)");
 
 			for (int i=0; i<section.getLength(); i++) {
-			int vpn = section.getFirstVPN()+i;
+				int vpn = section.getFirstVPN()+i;
 
-			// for now, just assume virtual addresses=physical addresses
-			section.loadPage(i, vpn);
+				// for now, just assume virtual addresses=physical addresses
+				section.loadPage(i, vpn);
 			}
 		}*/
 	
@@ -431,11 +434,12 @@ public class UserProcess {
      * Handle the halt() system call. 
      */
     private int handleHalt() {
+		if(this.processID != 0) return 0;
 
-	Machine.halt();
+		Machine.halt();
 
-	Lib.assertNotReached("Machine.halt() did not halt machine!");
-	return 0;
+		Lib.assertNotReached("Machine.halt() did not halt machine!");
+		return 0;
     }
 
 	private int handleCreate(int name) {
@@ -515,6 +519,14 @@ public class UserProcess {
 		return 0;
 	}
 
+	public int handleUnlink(String name){
+    	boolean succeeded = ThreadedKernel.fileSystem.remove(name);
+    	if(!succeeded){
+    		return -1;
+		}
+		return 0;
+	}
+
 
 
 	private static final int
@@ -569,6 +581,15 @@ public class UserProcess {
 				return handleCreate(a0);
 			case syscallOpen:
 				return handleOpen(a0);
+			case syscallUnlink:
+				if(a0 < 0){
+					return -1;
+				}
+				String name = readVirtualMemoryString(a0, 256);
+				if(name == null){
+					return -1;
+				}
+				return handleUnlink(name);
 
 			//default:
 			//    Lib.debug(dbgProcess, "Unknown syscall " + syscall);
@@ -722,5 +743,5 @@ public class UserProcess {
     private static final int pageSize = Processor.pageSize;
     private static final char dbgProcess = 'a';
 
-    OpenFile[] fileTable;
+    private OpenFile[] fileTable;
 }

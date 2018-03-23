@@ -291,7 +291,7 @@ public class PriorityScheduler extends Scheduler {
 		 *
 		 * @return	the effective priority of the associated thread.
 		 */
-		public int getEffectivePriority() {
+		public int getEffectivePriority() {System.out.println("PRIORITY EFFECTINVE");
 			// implement me
 			updateEffectivePriority();
 
