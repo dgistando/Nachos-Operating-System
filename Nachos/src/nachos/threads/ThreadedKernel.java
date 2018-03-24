@@ -45,12 +45,10 @@ public class ThreadedKernel extends Kernel {
      * autograder never calls this method, so it is safe to put additional
      * tests here.
      */	
-    public void selfTest() {
-        Boat.selfTest();
-	//KThread.selfTest();
-	//Semaphore.selfTest();
-	//SynchList.selfTest();
-
+    public void selfTest() {        //Boat.selfTest();
+	KThread.selfTest();
+	Semaphore.selfTest();
+	SynchList.selfTest();
 	if (Machine.bank() != null) {
 	    ElevatorBank.selfTest();
 	}

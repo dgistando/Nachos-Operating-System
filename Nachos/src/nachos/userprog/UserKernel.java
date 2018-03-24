@@ -3,9 +3,9 @@ package nachos.userprog;
 import nachos.machine.*;
 import nachos.threads.*;
 import nachos.userprog.*;
+import sun.nio.cs.ext.MacHebrew;
 
 import java.util.LinkedList;
-
 /**
  * A kernel that can support multiple user processes.
  */
@@ -13,9 +13,6 @@ public class UserKernel extends ThreadedKernel {
     /**
      * Allocate a new user kernel.
      */
-
-
-
     public UserKernel() {
 	super();
     }
@@ -28,7 +25,10 @@ public class UserKernel extends ThreadedKernel {
 	super.initialize(args);
 
 	console = new SynchConsole(Machine.console());
-	
+
+	for(int i=0; i< Machine.processor().getNumPhysPages();i++)
+		availablePhysicalPages.add(i);
+
 	Machine.processor().setExceptionHandler(new Runnable() {
 		public void run() { exceptionHandler(); }
 	    });
@@ -105,6 +105,27 @@ public class UserKernel extends ThreadedKernel {
 	KThread.currentThread().finish();
     }
 
+    //Need to add physical pages
+	public void addPhysicalPage(int ppn){
+		Lib.assertTrue(ppn >= 0 && ppn < Machine.processor().getNumPhysPages()); // @BBA
+		Machine.interrupt().disable();
+
+		availablePhysicalPages.addFirst(ppn);
+		Machine.interrupt().enable();
+	}
+
+    // release physical pages
+	public int getFreePage(){
+		int pageNumber = 0;
+		Machine.interrupt().disable();
+
+		pageNumber = (availablePhysicalPages.isEmpty())? -1 : availablePhysicalPages.getFirst();
+
+		Machine.interrupt().enable();
+		return pageNumber;
+	}
+
+
     /**
      * Terminate this kernel. Never returns.
      */
@@ -118,6 +139,7 @@ public class UserKernel extends ThreadedKernel {
     // dummy variables to make javac smarter
     private static Coff dummy1 = null;
 
+
     //Represents list of available pages for each proccess
-    LinkedList<Integer> availablePages = new LinkedList<Integer>();
+    public static LinkedList<Integer> availablePhysicalPages = new LinkedList<Integer>();
 }

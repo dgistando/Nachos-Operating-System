@@ -7,6 +7,7 @@ import java.util.TreeSet;
 import java.util.HashSet;
 import java.util.Iterator;
 
+
 /**
  * A scheduler that chooses threads using a lottery.
  *
@@ -28,6 +29,29 @@ import java.util.Iterator;
  * the maximum).
  */
 public class LotteryScheduler extends PriorityScheduler {
+    /**
+     * Allocate a new lottery scheduler.
+     */
+    public LotteryScheduler() {
+    }
+
+    /**
+     * Allocate a new lottery thread queue.
+     *
+     * @param	transferPriority	<tt>true</tt> if this queue should
+     *					transfer tickets from waiting threads
+     *					to the owning thread.
+     * @return	a new lottery thread queue.
+     */
+    public ThreadQueue newThreadQueue(boolean transferPriority) {
+        // implement me
+        return null;
+    }
+}
+
+
+/*
+public class LotteryScheduler extends PriorityScheduler {
 
     // initialize min value for lowest priority
     public static final int PRIORITY_MINIMUM = 1;
@@ -35,12 +59,21 @@ public class LotteryScheduler extends PriorityScheduler {
     //initialize max value for highest priority
     public static final int PRIORITY_MAXIMUM = Integer.MAX_VALUE;   //initialize max value for highest priority
 
-    /**
-     * Allocate a new lottery scheduler.
-     */
+
+    //Allocate a new lottery scheduler.
     public LotteryScheduler() {
     }
 
+    */
+    /**
+     * Allocate a new lottery thread queue.
+     *
+     * @param	transferPriority	<tt>true</tt> if this queue should
+     *					transfer tickets from waiting threads
+     *					to the owning thread.
+     * @return	a new lottery thread queue.
+     */
+    /*
     @Override
     public ThreadQueue newThreadQueue(boolean transferPriority) {
         return new LotteryQueue(transferPriority);
@@ -162,18 +195,6 @@ public class LotteryScheduler extends PriorityScheduler {
     }
 
 
-    /**
-     * Allocate a new lottery thread queue.
-     *
-     * @param	transferPriority	<tt>true</tt> if this queue should
-     *					transfer tickets from waiting threads
-     *					to the owning thread.
-     * @return	a new lottery thread queue.
-     */
-    /**
-     public ThreadQueue newThreadQueue(boolean transferPriority) {
-     // implement me
-     return null;
-     }
-     */
+
 }
+*/
