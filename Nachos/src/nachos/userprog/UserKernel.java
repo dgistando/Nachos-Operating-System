@@ -106,7 +106,7 @@ public class UserKernel extends ThreadedKernel {
     }
 
     //Need to add physical pages
-	public void addPhysicalPage(int ppn){
+	public static void addPhysicalPage(int ppn){
 		Lib.assertTrue(ppn >= 0 && ppn < Machine.processor().getNumPhysPages()); // @BBA
 		Machine.interrupt().disable();
 
@@ -115,7 +115,7 @@ public class UserKernel extends ThreadedKernel {
 	}
 
     // release physical pages
-	public int getFreePage(){
+	public static int getFreePage(){
 		int pageNumber = 0;
 		Machine.interrupt().disable();
 

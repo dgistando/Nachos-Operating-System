@@ -26,7 +26,7 @@ public class UserProcess {
 	 */
 	public UserProcess() {
 		fileTable = new OpenFile[16];
-		processID = ++tpid;
+		processID = tpid++;
 
 		fileTable[0] = UserKernel.console.openForReading();
 		fileTable[1] = UserKernel.console.openForWriting();
@@ -63,7 +63,7 @@ public class UserProcess {
 		UThread thread = new UThread(this);
 
 		thread.setName(name).fork();
-
+		System.out.println("adding child id: "+thread.process.processID);
 		processedThreadMap.put(thread.process.processID, thread);
 
 		return true;
@@ -427,7 +427,8 @@ public class UserProcess {
 		coff.close();//make sure to close the file
 
 		for(int i=0; i < numPages; i++){
-			//
+			UserKernel.addPhysicalPage(pageTable[i].ppn);
+			pageTable[i] = null;
 		}
 
 		pageTable = null;
@@ -732,10 +733,10 @@ public class UserProcess {
 
 		System.out.println("creating child process");
 		UserProcess child = new UserProcess();
+		childID = child.processID;
 
-
-
-
+		System.out.print("childID: "+ childID);
+		System.out.println("my pid: "+processID+" child id: "+child.processID);
 
 		if(child.execute(filename, stringArgs) && childID == child.processID){
 			System.out.println("Supposed to add stuff here!! ");
@@ -744,8 +745,6 @@ public class UserProcess {
 			System.out.println("My id: " + processID);
 			System.out.println("Child id: " + child.processID);
 
-
-			//return childID;
 			return SUCCESS;
 		}
 
@@ -997,7 +996,7 @@ public class UserProcess {
 
 	private final int INVALID = 2;
 
-	HashMap<Integer, UThread> processedThreadMap = new HashMap<Integer, UThread>();
+	public static HashMap<Integer, UThread> processedThreadMap = new HashMap<Integer, UThread>();
 
 	HashSet<Integer> childProcesses = new HashSet<Integer>();
 
