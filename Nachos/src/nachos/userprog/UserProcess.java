@@ -429,6 +429,8 @@ public class UserProcess {
 		for(int i=0; i < numPages; i++){
 			UserKernel.addPhysicalPage(pageTable[i].ppn);
 			pageTable[i] = null;
+			//
+
 		}
 
 		pageTable = null;
@@ -461,6 +463,7 @@ public class UserProcess {
 	 * Handle the halt() system call.
 	 */
 	private int handleHalt() {
+		//check if processID is root
 		if(this.processID != 0)
 		{
 			return 0;
@@ -473,11 +476,12 @@ public class UserProcess {
 
 	private int handleCreate(int name) {
 		String FileName = readVirtualMemoryString(name, 256);
+		//check to make sure file name is valid
 		if(FileName == null)
 		{
 			return -1;
 		}
-
+		//find a free file descriptor
 		int fileIndex = -1;
 		for(int i = 2; i < 16; i++)
 		{
@@ -486,17 +490,19 @@ public class UserProcess {
 				fileIndex = i;
 			}
 		}
-
+		//error if there is no free file descriptor
 		if(fileIndex == -1)
 		{
 			return -1;
 		}
 
 		OpenFile file = ThreadedKernel.fileSystem.open(FileName, true);
+		//error if file cannot be created
 		if(file == null)
 		{
 			return -1;
 		}
+		//create the file with the associated file descriptor
 		else
 		{
 			fileTable[fileIndex] = file;
@@ -506,11 +512,13 @@ public class UserProcess {
 
 	private int handleOpen(int name) {
 		String FileName = readVirtualMemoryString(name, 256);
+		//error if file name is not valid
 		if(FileName == null)
 		{
 			return -1;
 		}
 
+		//find a free file descriptor
 		int fileIndex = -1;
 		for(int i = 2; i < 16; i++)
 		{
@@ -520,12 +528,15 @@ public class UserProcess {
 			}
 		}
 
+		//error if no file descriptor is free
 		if(fileIndex == -1)
 		{
 			return -1;
 		}
 
 		OpenFile file = ThreadedKernel.fileSystem.open(FileName, false);
+
+		//error if file cannot be created
 		if(file == null)
 		{
 			return -1;
@@ -538,12 +549,15 @@ public class UserProcess {
 	}
 
 	private int handleClose(int fd) {
+		//if file descriptor not within valid range or the descriptor is null
+		//then there is an error
 		if((fd < 0) || (fd > 15) || fileTable[fd] == null)
 		{
 			return -1;
 		}
-
+		//close the file associated with file descriptor
 		fileTable[fd].close();
+		//free the file descriptor
 		fileTable[fd] = null;
 		return 0;
 	}
@@ -670,6 +684,7 @@ public class UserProcess {
 
 	private int handleUnlink(String name) {
 		boolean succeeded = ThreadedKernel.fileSystem.remove(name);
+		//if the file was not removed return error
 		if(!succeeded)
 		{
 			return -1;
@@ -944,10 +959,12 @@ public class UserProcess {
 					return -1;
 				}
 				String name = readVirtualMemoryString(a0,256);
+				//if the name is invalid return error
 				if(name == null)
 				{
 					return -1;
 				}
+				//remove the file
 				return handleUnlink(name);
 
 			default:
