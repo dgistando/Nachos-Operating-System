@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c35c53d1-c2e6-41be-b37c-9a9f956c3efb" name="Default" comment="Not sure why not working now. Might bereadVmem but thats not the test">
+    <list default="true" id="c35c53d1-c2e6-41be-b37c-9a9f956c3efb" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/nachos/proj2/nachos.conf" afterPath="$PROJECT_DIR$/src/nachos/proj2/nachos.conf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/nachos/userprog/UserKernel.java" afterPath="$PROJECT_DIR$/src/nachos/userprog/UserKernel.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/nachos/userprog/UserProcess.java" afterPath="$PROJECT_DIR$/src/nachos/userprog/UserProcess.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -33,7 +31,7 @@
         <entry file="file://$PROJECT_DIR$/src/nachos/userprog/UserProcess.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="242">
-              <caret line="836" column="52" lean-forward="false" selection-start-line="836" selection-start-column="52" selection-end-line="836" selection-end-column="52" />
+              <caret line="691" column="0" lean-forward="true" selection-start-line="691" selection-start-column="0" selection-end-line="691" selection-end-column="0" />
               <folding>
                 <element signature="e#1305#1306#0" expanded="true" />
                 <element signature="e#1382#1383#0" expanded="true" />
@@ -46,8 +44,8 @@
                 <element signature="method#initRegisters#0;class#UserProcess#0" expanded="false" />
                 <element signature="method#handleOpen#0;class#UserProcess#0" expanded="false" />
                 <element signature="method#handleRead#0;class#UserProcess#0" expanded="false" />
-                <element signature="e#25389#25407#0" expanded="true" />
-                <marker date="1521973717685" expanded="false" signature="25458:25467" ph="&lt;~&gt;" />
+                <element signature="e#25455#25473#0" expanded="true" />
+                <marker date="1521997667122" expanded="false" signature="25524:25533" ph="&lt;~&gt;" />
               </folding>
             </state>
           </provider>
@@ -157,7 +155,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>childCountOahu</find>
       <find>readyQueue</find>
       <find>getThread</find>
       <find>effect</find>
@@ -187,6 +184,7 @@
       <find>halt</find>
       <find>spe</find>
       <find>processedThreadMap</find>
+      <find>handlewrite</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -1054,14 +1052,22 @@
       <option name="project" value="LOCAL" />
       <updated>1521965692227</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Pass 6 tests. Guess readVM not working right now. Will work in the morning">
+      <created>1521973824999</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1521973824999</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="217691000" />
+    <option name="totallyTimeSpent" value="219217000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1074,7 +1080,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3268921" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32763976" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27697262" sideWeight="0.4969743" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27697262" sideWeight="0.4969743" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16263238" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -1165,7 +1171,8 @@
     <MESSAGE value="5/9 tests passed" />
     <MESSAGE value="Merge remote-tracking branch 'origin/David' into David&#10;Forcing push. Anna's comments are still there.&#10;# Conflicts:&#10;#&#9;Nachos/src/nachos/userprog/UserProcess.java" />
     <MESSAGE value="Merge remote-tracking branch 'origin/David' into David&#10;&#10;# Conflicts:&#10;#&#9;Nachos/src/nachos/userprog/UserProcess.java" />
-    <option name="LAST_COMMIT_MESSAGE" value="Merge remote-tracking branch 'origin/David' into David&#10;&#10;# Conflicts:&#10;#&#9;Nachos/src/nachos/userprog/UserProcess.java" />
+    <MESSAGE value="Pass 6 tests. Guess readVM not working right now. Will work in the morning" />
+    <option name="LAST_COMMIT_MESSAGE" value="Pass 6 tests. Guess readVM not working right now. Will work in the morning" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1581,7 +1588,7 @@
     <entry file="file://$PROJECT_DIR$/src/nachos/userprog/UserProcess.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="242">
-          <caret line="836" column="52" lean-forward="false" selection-start-line="836" selection-start-column="52" selection-end-line="836" selection-end-column="52" />
+          <caret line="691" column="0" lean-forward="true" selection-start-line="691" selection-start-column="0" selection-end-line="691" selection-end-column="0" />
           <folding>
             <element signature="e#1305#1306#0" expanded="true" />
             <element signature="e#1382#1383#0" expanded="true" />
@@ -1594,8 +1601,8 @@
             <element signature="method#initRegisters#0;class#UserProcess#0" expanded="false" />
             <element signature="method#handleOpen#0;class#UserProcess#0" expanded="false" />
             <element signature="method#handleRead#0;class#UserProcess#0" expanded="false" />
-            <element signature="e#25389#25407#0" expanded="true" />
-            <marker date="1521973717685" expanded="false" signature="25458:25467" ph="&lt;~&gt;" />
+            <element signature="e#25455#25473#0" expanded="true" />
+            <marker date="1521997667122" expanded="false" signature="25524:25533" ph="&lt;~&gt;" />
           </folding>
         </state>
       </provider>
