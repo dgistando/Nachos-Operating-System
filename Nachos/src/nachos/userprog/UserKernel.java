@@ -107,12 +107,31 @@ public class UserKernel extends ThreadedKernel {
 
     //Need to add physical pages
 	public static void addPhysicalPage(int ppn){
-		Lib.assertTrue(ppn >= 0 && ppn < Machine.processor().getNumPhysPages()); // @BBA
+		Lib.assertTrue(ppn >= 0 && ppn < Machine.processor().getNumPhysPages());
 		Machine.interrupt().disable();
 
 		availablePhysicalPages.addFirst(ppn);
 		Machine.interrupt().enable();
 	}
+
+
+	public static int[] allocateSpecificNumPages(int num){
+	    Machine.interrupt().disable();
+
+	    if(availablePhysicalPages.size() < num){
+	        Machine.interrupt().enable();
+	        return null;
+        }
+
+        int[] numFree = new int[num];
+
+	    for(int i=0; i<num; i++)
+	        numFree[i] = availablePhysicalPages.remove();
+
+	    Machine.interrupt().enable();
+
+	    return numFree;
+    }
 
     // release physical pages
 	public static int getFreePage(){

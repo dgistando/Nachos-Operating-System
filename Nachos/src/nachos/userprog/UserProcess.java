@@ -139,7 +139,7 @@ public class UserProcess {
 	 *			the array.
 	 * @return	the number of bytes successfully transferred.
 	 */
-	public int readVirtualMemory(int vaddr, byte[] data, int offset, int length) {
+	public int readVirtualMemory(int vaddr, byte[] data, int offset, int length) {System.out.println("READVMEM");
 
 		Lib.assertTrue(offset >= 0 && length >= 0 && offset+length <= data.length);
 
@@ -208,7 +208,7 @@ public class UserProcess {
 	 *			virtual memory.
 	 * @return	the number of bytes successfully transferred.
 	 */
-	public int writeVirtualMemory(int vaddr, byte[] data, int offset, int length) {
+	public int writeVirtualMemory(int vaddr, byte[] data, int offset, int length) { System.out.println("WRITEVMEM");
 		Lib.assertTrue(offset >= 0 && length >= 0 && offset+length <= data.length);
 
 		byte[] memory = Machine.processor().getMemory();
@@ -232,7 +232,7 @@ public class UserProcess {
 
 		//At this point we should be clear to copy everything
 
-		int amount = Math.min(length, pageSize - basePageOffset);
+		int amount = Math.min(length, Math.abs(pageSize - basePageOffset));
 
 		System.arraycopy(data, offset, memory,
 
@@ -259,6 +259,12 @@ public class UserProcess {
 			int len = Math.min(length - amount, pageSize);
 
 
+			//public static void arraycopy(
+			// Object src,
+			//int srcPos,
+			//Object dest,
+			//int destPos,
+			//int length)
 
 			System.arraycopy(data, offset, memory, Processor.makeAddress(entry.ppn, 0), len);
 
@@ -387,12 +393,15 @@ public class UserProcess {
 	 *
 	 * @return	<tt>true</tt> if the sections were successfully loaded.
 	 */
-	protected boolean loadSections() {
+	protected boolean loadSections() { System.out.println("LOADSECTIONS");
 		if (numPages > Machine.processor().getNumPhysPages()) {
 			coff.close();
 			Lib.debug(dbgProcess, "\tinsufficient physical memory");
 			return false;
 		}
+
+		int[] physicalPages = UserKernel.allocateSpecificNumPages(numPages);
+		pageTable = new TranslationEntry[numPages];
 
 		// load sections
 		for (int s=0; s<coff.getNumSections(); s++) {
@@ -401,7 +410,16 @@ public class UserProcess {
 			Lib.debug(dbgProcess, "\tinitializing " + section.getName()
 					+ " section (" + section.getLength() + " pages)");
 
-			for (int i=0; i<section.getLength(); i++) {
+			//Might need to do this in load instead of here.
+			for(int i=0; i<section.getLength(); i++){
+				int vpn = section.getFirstVPN() + i;
+				int ppn = physicalPages[vpn];
+
+				pageTable[vpn] = new TranslationEntry(vpn, ppn, true, section.isReadOnly(), false, false);
+				section.loadPage(i,ppn);
+			}
+
+			/**for (int i=0; i<section.getLength(); i++) {
 				int vpn = section.getFirstVPN()+i;
 				//Go to page table and get the proper sections
 				TranslationEntry entry = pageTable[vpn];
@@ -414,9 +432,12 @@ public class UserProcess {
 
 				// for now, just assume virtual addresses=physical addresses//not for Proj2
 				//section.loadPage(i, vpn);
-			}
+			}*/
 		}
 
+		for(int i=numPages-stackPages-1; i<numPages; i++){
+			pageTable[i] = new TranslationEntry(i, physicalPages[i], true, false, false, false);
+		}
 		return true;
 	}
 
@@ -429,8 +450,6 @@ public class UserProcess {
 		for(int i=0; i < numPages; i++){
 			UserKernel.addPhysicalPage(pageTable[i].ppn);
 			pageTable[i] = null;
-			//
-
 		}
 
 		pageTable = null;
@@ -811,19 +830,15 @@ public class UserProcess {
 		Lib.bytesFromInt(byteProcessStatus, 0, childProcess.process.processStatus);
 
 
-		System.out.println("reading the virtual memory");
+		//System.out.println("reading the virtual memory");
 
 		/** ASK TA IF THIS IS NEEDED */
-		readVirtualMemory(status, byteProcessStatus);
-
-
-
-
+		//readVirtualMemory(status, byteProcessStatus);
+		writeVirtualMemory(status, byteProcessStatus);
 
 		if(childProcess.process.exitStatus == SUCCESS) {
 			System.out.println("Should be join success");
 			return SUCCESS;
-
 		}
 
 
@@ -845,7 +860,7 @@ public class UserProcess {
 	 */
 
 	private void handleExit(int status){
-		System.out.println("Exit");
+		System.out.println("Exit pid: "+processID);
 
 
 		processStatus = status;
@@ -872,6 +887,18 @@ public class UserProcess {
 
 		System.out.println("removing process ID from map");
 		processedThreadMap.remove(this.processID);
+		System.out.println("sizeMap: "+processedThreadMap.size());
+
+		/*
+		//check if called exit on init thread
+		//if so exit and close Kernel
+		if(this.processID == 0){
+			Kernel.kernel.terminate();
+		}else {
+			exitStatus = SUCCESS;
+			//if not, a thread must want to exit
+			KThread.currentThread().finish();
+		}*/
 
 
 
@@ -882,8 +909,6 @@ public class UserProcess {
 			Kernel.kernel.terminate();
 
 		}
-
-
 
 
 
@@ -1000,6 +1025,7 @@ public class UserProcess {
 				break;
 
 			default:
+				System.out.println("!!Exception Triggered: " + Processor.exceptionNames[cause]+"!!");
 				Lib.debug(dbgProcess, "Unexpected exception: " +
 						Processor.exceptionNames[cause]);
 				Lib.assertNotReached("Unexpected exception");

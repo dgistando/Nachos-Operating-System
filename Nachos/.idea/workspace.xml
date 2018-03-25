@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c35c53d1-c2e6-41be-b37c-9a9f956c3efb" name="Default" comment="">
+    <list default="true" id="c35c53d1-c2e6-41be-b37c-9a9f956c3efb" name="Default" comment="Not sure why not working now. Might bereadVmem but thats not the test">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/nachos/proj2/nachos.conf" afterPath="$PROJECT_DIR$/src/nachos/proj2/nachos.conf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/nachos/userprog/UserKernel.java" afterPath="$PROJECT_DIR$/src/nachos/userprog/UserKernel.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/nachos/userprog/UserProcess.java" afterPath="$PROJECT_DIR$/src/nachos/userprog/UserProcess.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -26,24 +29,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Machine.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/nachos/machine/Machine.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="6630">
-              <caret line="397" column="36" lean-forward="false" selection-start-line="397" selection-start-column="36" selection-end-line="397" selection-end-column="36" />
-              <folding>
-                <element signature="e#1542#1617#0" expanded="true" />
-                <element signature="e#1616#1617#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="UserProcess.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/nachos/userprog/UserProcess.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="647">
-              <caret line="438" column="7" lean-forward="true" selection-start-line="438" selection-start-column="7" selection-end-line="438" selection-end-column="7" />
+            <state relative-caret-position="242">
+              <caret line="836" column="52" lean-forward="false" selection-start-line="836" selection-start-column="52" selection-end-line="836" selection-end-column="52" />
               <folding>
                 <element signature="e#1305#1306#0" expanded="true" />
                 <element signature="e#1382#1383#0" expanded="true" />
@@ -51,10 +41,13 @@
                 <element signature="e#2390#2391#0" expanded="true" />
                 <element signature="e#3747#3748#0" expanded="true" />
                 <element signature="e#3807#3808#0" expanded="true" />
-                <element signature="e#5972#5973#0" expanded="true" />
-                <element signature="e#6033#6034#0" expanded="true" />
-                <element signature="e#24123#24141#0" expanded="true" />
-                <marker date="1521965159865" expanded="false" signature="24192:24201" ph="&lt;~&gt;" />
+                <element signature="e#6003#6004#0" expanded="true" />
+                <element signature="e#6064#6065#0" expanded="true" />
+                <element signature="method#initRegisters#0;class#UserProcess#0" expanded="false" />
+                <element signature="method#handleOpen#0;class#UserProcess#0" expanded="false" />
+                <element signature="method#handleRead#0;class#UserProcess#0" expanded="false" />
+                <element signature="e#25389#25407#0" expanded="true" />
+                <marker date="1521973717685" expanded="false" signature="25458:25467" ph="&lt;~&gt;" />
               </folding>
             </state>
           </provider>
@@ -63,13 +56,13 @@
       <file leaf-file-name="UserKernel.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/nachos/userprog/UserKernel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="160">
-              <caret line="115" column="0" lean-forward="true" selection-start-line="115" selection-start-column="0" selection-end-line="115" selection-end-column="0" />
+            <state relative-caret-position="-132">
+              <caret line="117" column="35" lean-forward="false" selection-start-line="117" selection-start-column="32" selection-end-line="117" selection-end-column="35" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#753#820#0" expanded="true" />
                 <element signature="e#819#820#0" expanded="true" />
-                <element signature="e#3978#3987#0" expanded="true" />
+                <element signature="e#4371#4380#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -101,8 +94,8 @@
       <file leaf-file-name="KThread.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/nachos/threads/KThread.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="217">
-              <caret line="271" column="4" lean-forward="true" selection-start-line="271" selection-start-column="4" selection-end-line="271" selection-end-column="4" />
+            <state relative-caret-position="132">
+              <caret line="285" column="16" lean-forward="false" selection-start-line="285" selection-start-column="16" selection-end-line="285" selection-end-column="16" />
               <folding>
                 <element signature="e#3696#3764#0" expanded="true" />
                 <element signature="e#3763#3764#0" expanded="true" />
@@ -144,10 +137,10 @@
         </entry>
       </file>
       <file leaf-file-name="nachos.conf" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/nachos/proj2/nachos.conf">
+        <entry file="file://$PROJECT_DIR$/src/nachos/proj1/nachos.conf">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="13" column="0" lean-forward="true" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+            <state relative-caret-position="170">
+              <caret line="10" column="45" lean-forward="true" selection-start-line="10" selection-start-column="45" selection-end-line="10" selection-end-column="45" />
               <folding />
             </state>
           </provider>
@@ -164,21 +157,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>fini</find>
-      <find>nextThr</find>
-      <find>waitfor</find>
-      <find>finish</find>
-      <find>print</find>
-      <find>UpdateEffect</find>
-      <find>transferPri</find>
-      <find>sched</find>
-      <find>System.out</find>
-      <find>a</find>
-      <find>adultsOn</find>
-      <find>adultsOnO</find>
-      <find>adultsOnOahu</find>
-      <find>.</find>
-      <find>.wake</find>
       <find>childCountOahu</find>
       <find>readyQueue</find>
       <find>getThread</find>
@@ -186,13 +164,28 @@
       <find>geteffect</find>
       <find>loadSections</find>
       <find>loadS</find>
-      <find>exit</find>
       <find>execu</find>
       <find>childID</find>
       <find>join</find>
       <find>exec</find>
       <find>childProcesses</find>
       <find>execute</find>
+      <find>kthrea</find>
+      <find>should be joi</find>
+      <find>writeVirt</find>
+      <find>pageTa</find>
+      <find>loadsec</find>
+      <find>run</find>
+      <find>unload</find>
+      <find>getnum</find>
+      <find>getnumPhys</find>
+      <find>getnumPhysPages</find>
+      <find>loadSe</find>
+      <find>unloadSections</find>
+      <find>exit</find>
+      <find>TA</find>
+      <find>halt</find>
+      <find>spe</find>
       <find>processedThreadMap</find>
     </findStrings>
     <replaceStrings>
@@ -270,8 +263,8 @@
         <option value="$USER_HOME$/Desktop/nachos/nachos/userprog/UserProcess.java" />
         <option value="$PROJECT_DIR$/src/nachos/threads/LotteryScheduler.java" />
         <option value="$PROJECT_DIR$/src/nachos/threads/ThreadedKernel.java" />
-        <option value="$PROJECT_DIR$/src/nachos/proj2/nachos.conf" />
         <option value="$PROJECT_DIR$/src/nachos/userprog/UserKernel.java" />
+        <option value="$PROJECT_DIR$/src/nachos/proj2/nachos.conf" />
         <option value="$PROJECT_DIR$/src/nachos/userprog/UserProcess.java" />
       </list>
     </option>
@@ -416,6 +409,50 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="userprog" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Nachos" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Nachos" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="nachos" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="proj2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Nachos" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Nachos" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="nachos" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="proj1" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1010,15 +1047,21 @@
       <option name="project" value="LOCAL" />
       <updated>1521964779889</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Merge remote-tracking branch 'origin/David' into David&#10;&#10;# Conflicts:&#10;#&#9;Nachos/src/nachos/userprog/UserProcess.java">
+      <created>1521965692227</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1521965692227</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="209296000" />
+    <option name="totallyTimeSpent" value="217691000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1031,7 +1074,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3268921" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32763976" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27697262" sideWeight="0.4969743" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27697262" sideWeight="0.4969743" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16263238" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -1120,7 +1163,9 @@
     <MESSAGE value="still need to fix lottery scheduler. Then move on to other tests." />
     <MESSAGE value="still only 4" />
     <MESSAGE value="5/9 tests passed" />
-    <option name="LAST_COMMIT_MESSAGE" value="5/9 tests passed" />
+    <MESSAGE value="Merge remote-tracking branch 'origin/David' into David&#10;Forcing push. Anna's comments are still there.&#10;# Conflicts:&#10;#&#9;Nachos/src/nachos/userprog/UserProcess.java" />
+    <MESSAGE value="Merge remote-tracking branch 'origin/David' into David&#10;&#10;# Conflicts:&#10;#&#9;Nachos/src/nachos/userprog/UserProcess.java" />
+    <option name="LAST_COMMIT_MESSAGE" value="Merge remote-tracking branch 'origin/David' into David&#10;&#10;# Conflicts:&#10;#&#9;Nachos/src/nachos/userprog/UserProcess.java" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1133,13 +1178,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/nachos/proj1/nachos.conf">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/nachos/security/NachosSecurityManager.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="290">
@@ -1433,21 +1471,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/nachos/proj2/nachos.conf">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="0" lean-forward="true" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/nachos/machine/Machine.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="6630">
           <caret line="397" column="36" lean-forward="false" selection-start-line="397" selection-start-column="36" selection-end-line="397" selection-end-column="36" />
           <folding>
-            <element signature="e#1542#1617#0" expanded="true" />
-            <element signature="e#1616#1617#0" expanded="true" />
+            <element signature="e#1542#1617#0" expanded="false" />
+            <element signature="e#1616#1617#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1471,14 +1501,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/nachos/threads/KThread.java">
+    <entry file="file://$PROJECT_DIR$/src/nachos/userprog/UThread.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="217">
-          <caret line="271" column="4" lean-forward="true" selection-start-line="271" selection-start-column="4" selection-end-line="271" selection-end-column="4" />
-          <folding>
-            <element signature="e#3696#3764#0" expanded="true" />
-            <element signature="e#3763#3764#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="136">
+          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/nachos/proj1/nachos.conf">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="45" lean-forward="true" selection-start-line="10" selection-start-column="45" selection-end-line="10" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/nachos/proj2/nachos.conf">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="0" lean-forward="true" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1500,11 +1543,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/nachos/userprog/UThread.java">
+    <entry file="file://$PROJECT_DIR$/src/nachos/threads/KThread.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-          <folding />
+        <state relative-caret-position="132">
+          <caret line="285" column="16" lean-forward="false" selection-start-line="285" selection-start-column="16" selection-end-line="285" selection-end-column="16" />
+          <folding>
+            <element signature="e#3696#3764#0" expanded="true" />
+            <element signature="e#3763#3764#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1521,21 +1567,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/nachos/userprog/UserKernel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="115" column="0" lean-forward="true" selection-start-line="115" selection-start-column="0" selection-end-line="115" selection-end-column="0" />
+        <state relative-caret-position="-132">
+          <caret line="117" column="35" lean-forward="false" selection-start-line="117" selection-start-column="32" selection-end-line="117" selection-end-column="35" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#753#820#0" expanded="true" />
             <element signature="e#819#820#0" expanded="true" />
-            <element signature="e#3978#3987#0" expanded="true" />
+            <element signature="e#4371#4380#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/nachos/userprog/UserProcess.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="647">
-          <caret line="438" column="7" lean-forward="true" selection-start-line="438" selection-start-column="7" selection-end-line="438" selection-end-column="7" />
+        <state relative-caret-position="242">
+          <caret line="836" column="52" lean-forward="false" selection-start-line="836" selection-start-column="52" selection-end-line="836" selection-end-column="52" />
           <folding>
             <element signature="e#1305#1306#0" expanded="true" />
             <element signature="e#1382#1383#0" expanded="true" />
@@ -1543,10 +1589,13 @@
             <element signature="e#2390#2391#0" expanded="true" />
             <element signature="e#3747#3748#0" expanded="true" />
             <element signature="e#3807#3808#0" expanded="true" />
-            <element signature="e#5972#5973#0" expanded="true" />
-            <element signature="e#6033#6034#0" expanded="true" />
-            <element signature="e#24123#24141#0" expanded="true" />
-            <marker date="1521965159865" expanded="false" signature="24192:24201" ph="&lt;~&gt;" />
+            <element signature="e#6003#6004#0" expanded="true" />
+            <element signature="e#6064#6065#0" expanded="true" />
+            <element signature="method#initRegisters#0;class#UserProcess#0" expanded="false" />
+            <element signature="method#handleOpen#0;class#UserProcess#0" expanded="false" />
+            <element signature="method#handleRead#0;class#UserProcess#0" expanded="false" />
+            <element signature="e#25389#25407#0" expanded="true" />
+            <marker date="1521973717685" expanded="false" signature="25458:25467" ph="&lt;~&gt;" />
           </folding>
         </state>
       </provider>
