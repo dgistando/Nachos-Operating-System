@@ -398,6 +398,8 @@ public class UserProcess {
     	}
     	
     	byte tempbuff[] = new byte[size];
+    	int readSize = readVirtualMemory(buffer, tempbuff, 0, size);
+    	
     	
     	int counter = file.write(tempbuff, 0, readSize);
     	
