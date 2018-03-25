@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="c35c53d1-c2e6-41be-b37c-9a9f956c3efb" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/nachos/userprog/UserKernel.java" afterPath="$PROJECT_DIR$/src/nachos/userprog/UserKernel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/nachos/userprog/UserProcess.java" afterPath="$PROJECT_DIR$/src/nachos/userprog/UserProcess.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="C:\Users\dgist\Documents\GitHub\CSE150Project\Nachos\.idea\shelf/" />
@@ -1002,11 +1000,18 @@
       <option name="project" value="LOCAL" />
       <updated>1521916323794</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="5/9 tests passed">
+      <created>1521964731322</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1521964731322</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="208780000" />
+    <option name="totallyTimeSpent" value="208853000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="0" />
@@ -1110,7 +1115,8 @@
     <MESSAGE value="Pass all the tests but boat" />
     <MESSAGE value="still need to fix lottery scheduler. Then move on to other tests." />
     <MESSAGE value="still only 4" />
-    <option name="LAST_COMMIT_MESSAGE" value="still only 4" />
+    <MESSAGE value="5/9 tests passed" />
+    <option name="LAST_COMMIT_MESSAGE" value="5/9 tests passed" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
