@@ -139,7 +139,7 @@ public class UserProcess {
 	 *			the array.
 	 * @return	the number of bytes successfully transferred.
 	 */
-	public int readVirtualMemory(int vaddr, byte[] data, int offset, int length) {System.out.println("READVMEM");
+	public int readVirtualMemory(int vaddr, byte[] data, int offset, int length) {System.out.println("READVMEM===========");
 
 		Lib.assertTrue(offset >= 0 && length >= 0 && offset+length <= data.length);
 
@@ -157,7 +157,15 @@ public class UserProcess {
 
 		int amount = Math.min(length, pageSize - basePageOffset);
 
-		System.arraycopy(memory, Processor.makeAddress(entry.ppn, basePageOffset), data, offset, amount);
+		System.out.println("srcPos: "+offset);
+		int desPos = Processor.makeAddress(entry.ppn,basePageOffset);
+		System.out.println("desPos: "+desPos);
+		System.out.println("length: "+amount);
+
+		System.arraycopy(memory,
+				//Processor.makeAddress(entry.ppn, basePageOffset)
+				desPos
+				, data, offset, amount);
 
 		offset += amount;
 
@@ -177,6 +185,8 @@ public class UserProcess {
 
 			amount += len;
 		}
+
+		System.out.print("====================");
 		return amount;
 	}
 
@@ -208,7 +218,7 @@ public class UserProcess {
 	 *			virtual memory.
 	 * @return	the number of bytes successfully transferred.
 	 */
-	public int writeVirtualMemory(int vaddr, byte[] data, int offset, int length) { System.out.println("WRITEVMEM");
+	public int writeVirtualMemory(int vaddr, byte[] data, int offset, int length) { System.out.println("WRITEVMEM===========");
 		Lib.assertTrue(offset >= 0 && length >= 0 && offset+length <= data.length);
 
 		byte[] memory = Machine.processor().getMemory();
@@ -234,10 +244,15 @@ public class UserProcess {
 
 		int amount = Math.min(length, Math.abs(pageSize - basePageOffset));
 
+		System.out.println("srcPos: "+offset);
+		int desPos = Processor.makeAddress(entry.ppn,basePageOffset);
+		System.out.println("desPos: "+desPos);
+		System.out.println("length: "+amount);
+
 		System.arraycopy(data, offset, memory,
 
-				Processor.makeAddress(entry.ppn,basePageOffset),
-
+				//Processor.makeAddress(entry.ppn,basePageOffset),
+				desPos,
 				amount);
 
 		//since we wrote we have to move the offset down the page for future writes
@@ -265,7 +280,6 @@ public class UserProcess {
 			//Object dest,
 			//int destPos,
 			//int length)
-
 			System.arraycopy(data, offset, memory, Processor.makeAddress(entry.ppn, 0), len);
 
 
@@ -275,6 +289,7 @@ public class UserProcess {
 			amount += len;
 
 		}
+		System.out.print("====================");
 		return amount;
 
 	}
@@ -403,19 +418,19 @@ public class UserProcess {
 		int[] physicalPages = UserKernel.allocateSpecificNumPages(numPages);
 		pageTable = new TranslationEntry[numPages];
 
-		// load sections
+		// load all the coff sections
 		for (int s=0; s<coff.getNumSections(); s++) {
 			CoffSection section = coff.getSection(s);
 
 			Lib.debug(dbgProcess, "\tinitializing " + section.getName()
 					+ " section (" + section.getLength() + " pages)");
-
-			//Might need to do this in load instead of here.
+			//Go through each page of the coff section
 			for(int i=0; i<section.getLength(); i++){
 				int vpn = section.getFirstVPN() + i;
-				int ppn = physicalPages[vpn];
-
+				int ppn = physicalPages[vpn];//mape vpn tp physical page number
+				//find that page in memory
 				pageTable[vpn] = new TranslationEntry(vpn, ppn, true, section.isReadOnly(), false, false);
+				//Load the page from physical memory
 				section.loadPage(i,ppn);
 			}
 
@@ -434,7 +449,7 @@ public class UserProcess {
 				//section.loadPage(i, vpn);
 			}*/
 		}
-
+		//For all the rest of the pages, just set them to new unwritable sections
 		for(int i=numPages-stackPages-1; i<numPages; i++){
 			pageTable[i] = new TranslationEntry(i, physicalPages[i], true, false, false, false);
 		}
@@ -444,7 +459,7 @@ public class UserProcess {
 	/**
 	 * Release any resources allocated by <tt>loadSections()</tt>.
 	 */
-	protected void unloadSections() { //Unload Sections
+	protected void unloadSections() {
 		coff.close();//make sure to close the file
 
 		for(int i=0; i < numPages; i++){
@@ -635,7 +650,7 @@ public class UserProcess {
 
 
 
-		int counter = writeVirtualMemory(buffer, tempbuff, 0, size);
+		int counter = writeVirtualMemory(buffer, tempbuff, 0, readSize);
 
 		return counter;
 
