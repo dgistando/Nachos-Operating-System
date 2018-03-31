@@ -29,6 +29,13 @@ import java.util.Iterator;
  * the maximum).
  */
 public class LotteryScheduler extends PriorityScheduler {
+    // initialize min value for lowest priority
+    public static final int PRIORITY_MINIMUM = 1;
+
+    //initialize max value for highest priority
+    public static final int PRIORITY_MAXIMUM = Integer.MAX_VALUE;   //initialize max value for highest priority
+
+
     /**
      * Allocate a new lottery scheduler.
      */
@@ -44,41 +51,16 @@ public class LotteryScheduler extends PriorityScheduler {
      * @return	a new lottery thread queue.
      */
     public ThreadQueue newThreadQueue(boolean transferPriority) {
-        // implement me
-        return null;
-    }
-}
-
-
-/*
-public class LotteryScheduler extends PriorityScheduler {
-
-    // initialize min value for lowest priority
-    public static final int PRIORITY_MINIMUM = 1;
-
-    //initialize max value for highest priority
-    public static final int PRIORITY_MAXIMUM = Integer.MAX_VALUE;   //initialize max value for highest priority
-
-
-    //Allocate a new lottery scheduler.
-    public LotteryScheduler() {
-    }
-
-    */
-    /**
-     * Allocate a new lottery thread queue.
-     *
-     * @param	transferPriority	<tt>true</tt> if this queue should
-     *					transfer tickets from waiting threads
-     *					to the owning thread.
-     * @return	a new lottery thread queue.
-     */
-    /*
-    @Override
-    public ThreadQueue newThreadQueue(boolean transferPriority) {
         return new LotteryQueue(transferPriority);
     }
 
+    @Override
+    protected ThreadState getThreadState(KThread thread) {//System.out.println(thread + " LOT STATE");
+        if (thread.schedulingState == null)
+            thread.schedulingState = new LotThreadState(thread);
+
+        return (LotThreadState) thread.schedulingState;
+    }
 
     @Override
     public int getPriority(KThread thread) {
@@ -94,13 +76,7 @@ public class LotteryScheduler extends PriorityScheduler {
         return getThreadState(thread).getEffectivePriority();
     }
 
-    @Override
-    protected ThreadState getThreadState(KThread thread) {System.out.println("LOT STATE");
-        if (thread.schedulingState == null)
-            thread.schedulingState = new LotThreadState(thread);
 
-        return (LotThreadState) thread.schedulingState;
-    }
 
     public void setPriority(KThread thread, int priority) {
         // Check to see if interrupt disabled
@@ -144,42 +120,60 @@ public class LotteryScheduler extends PriorityScheduler {
         return true;
     }
 
-    protected class LotteryQueue extends LotteryScheduler.PriorityQueue{
+
+
+    protected class LotteryQueue extends LotteryScheduler.PriorityQueue{//<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
         LotteryQueue(boolean transferPriority){
             super(transferPriority);
         }
 
         @Override
-        protected ThreadState pickNextThread() {
-            // implement me
+        protected ThreadState pickNextThread() { //System.out.println(controller + " " + this);
+
             int totalTickets = getEffectivePriority(); //should be sum of tickets
             if(totalTickets == 0) return null;
 
             int winningTicket = new Random().nextInt(totalTickets);
 
+            ThreadState state = null;
+
             for(ThreadState threadstate : priorityQueue){
-                //Lib.assertTrue(threadstate instanceof LotThreadState);
+                state = threadstate;
                 winningTicket -= threadstate.getPriority();
 
                 if(winningTicket <= 0){
-                    return threadstate;
+                   // System.out.println("returning "+ threadstate);
+                    return state;
                 }
             }
-            return null;
+
+            Lib.assertTrue(state != null);
+            return state;
         }
 
+        public void print() {
+            Lib.assertTrue(Machine.interrupt().disabled());
+            // implement me (if you want)
+            for(ThreadState threadState: priorityQueue)
+                System.out.print(threadState.priority +" ");
+            System.out.println("");
+        }
+
+        @Override
+        public String toString(){
+            print();
+            return "";
+        }
 
     }
 
-
-
-    protected class LotThreadState extends LotteryScheduler.ThreadState{
-        public LotThreadState(KThread thread) {
+    protected class LotThreadState extends LotteryScheduler.ThreadState{//<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+        private LotThreadState(KThread thread) {
             super(thread);
         }
 
         @Override
-        public int getEffectivePriority() {System.out.println("LOTTERY EFFECTINVE");
+        public int getEffectivePriority() {//System.out.println(this + " LOTTERY EFFECTIVE");
             int tickets = getPriority();
 
             for (PriorityQueue myQueue : capturedResources)  {
@@ -189,12 +183,10 @@ public class LotteryScheduler extends PriorityScheduler {
                     tickets += currentThread.getEffectivePriority();
                 }
             }
-            System.out.println(tickets + "Tickets");
+            //System.out.println("Tickets " + tickets );
             return tickets;
         }
     }
 
 
-
 }
-*/
