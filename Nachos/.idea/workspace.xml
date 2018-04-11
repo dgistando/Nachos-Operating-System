@@ -3,25 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="c35c53d1-c2e6-41be-b37c-9a9f956c3efb" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/out/production/Nachos/nachos/proj2/nachos.conf" afterPath="$PROJECT_DIR$/out/production/Nachos/nachos/proj2/nachos.conf" />
-      <change beforePath="$PROJECT_DIR$/out/production/Nachos/nachos/threads/Alarm$1.class" afterPath="$PROJECT_DIR$/out/production/Nachos/nachos/threads/Alarm$1.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Nachos/nachos/threads/Alarm.class" afterPath="$PROJECT_DIR$/out/production/Nachos/nachos/threads/Alarm.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Nachos/nachos/threads/Boat$1.class" afterPath="$PROJECT_DIR$/out/production/Nachos/nachos/threads/Boat$1.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Nachos/nachos/threads/Boat.class" afterPath="$PROJECT_DIR$/out/production/Nachos/nachos/threads/Boat.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Nachos/nachos/threads/Communicator.class" afterPath="$PROJECT_DIR$/out/production/Nachos/nachos/threads/Communicator.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Nachos/nachos/threads/Condition2.class" afterPath="$PROJECT_DIR$/out/production/Nachos/nachos/threads/Condition2.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Nachos/nachos/threads/KThread$2.class" afterPath="$PROJECT_DIR$/out/production/Nachos/nachos/threads/KThread$2.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Nachos/nachos/threads/KThread$PingTest.class" afterPath="$PROJECT_DIR$/out/production/Nachos/nachos/threads/KThread$PingTest.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Nachos/nachos/threads/KThread.class" afterPath="$PROJECT_DIR$/out/production/Nachos/nachos/threads/KThread.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Nachos/nachos/threads/LotteryScheduler.class" afterPath="$PROJECT_DIR$/out/production/Nachos/nachos/threads/LotteryScheduler.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Nachos/nachos/threads/PriorityScheduler$PriorityQueue.class" afterPath="$PROJECT_DIR$/out/production/Nachos/nachos/threads/PriorityScheduler$PriorityQueue.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Nachos/nachos/threads/PriorityScheduler$ThreadState.class" afterPath="$PROJECT_DIR$/out/production/Nachos/nachos/threads/PriorityScheduler$ThreadState.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Nachos/nachos/threads/ThreadedKernel.class" afterPath="$PROJECT_DIR$/out/production/Nachos/nachos/threads/ThreadedKernel.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Nachos/nachos/userprog/UserKernel$1.class" afterPath="$PROJECT_DIR$/out/production/Nachos/nachos/userprog/UserKernel$1.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Nachos/nachos/userprog/UserKernel.class" afterPath="$PROJECT_DIR$/out/production/Nachos/nachos/userprog/UserKernel.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Nachos/nachos/userprog/UserProcess.class" afterPath="$PROJECT_DIR$/out/production/Nachos/nachos/userprog/UserProcess.class" />
-      <change beforePath="$PROJECT_DIR$/src/nachos/threads/LotteryScheduler.java" afterPath="$PROJECT_DIR$/src/nachos/threads/LotteryScheduler.java" />
-      <change beforePath="$PROJECT_DIR$/src/nachos/threads/ThreadedKernel.java" afterPath="$PROJECT_DIR$/src/nachos/threads/ThreadedKernel.java" />
       <change beforePath="$PROJECT_DIR$/src/nachos/userprog/UserProcess.java" afterPath="$PROJECT_DIR$/src/nachos/userprog/UserProcess.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -48,10 +29,10 @@
       <file leaf-file-name="UserProcess.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/nachos/userprog/UserProcess.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1159">
-              <caret line="800" column="27" lean-forward="true" selection-start-line="800" selection-start-column="27" selection-end-line="800" selection-end-column="27" />
+            <state relative-caret-position="-752">
+              <caret line="819" column="9" lean-forward="true" selection-start-line="819" selection-start-column="9" selection-end-line="819" selection-end-column="9" />
               <folding>
-                <marker date="1523484477881" expanded="false" signature="26250:26259" ph="&lt;~&gt;" />
+                <marker date="1523485662749" expanded="false" signature="26366:26375" ph="&lt;~&gt;" />
               </folding>
             </state>
           </provider>
@@ -170,7 +151,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>geteffect</find>
       <find>loadSections</find>
       <find>loadS</find>
       <find>execu</find>
@@ -200,6 +180,7 @@
       <find>set</find>
       <find>exec</find>
       <find>java.util.pro</find>
+      <find>handleExec</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -853,7 +834,7 @@
       <workItem from="1521705600975" duration="11814000" />
       <workItem from="1522888105149" duration="331000" />
       <workItem from="1522888985007" duration="61000" />
-      <workItem from="1523483526906" duration="932000" />
+      <workItem from="1523483526906" duration="2393000" />
     </task>
     <task id="LOCAL-00001" summary="changed communicator">
       <created>1519155611820</created>
@@ -967,11 +948,18 @@
       <option name="project" value="LOCAL" />
       <updated>1521973824999</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Had to make changes to pass more final tests">
+      <created>1523484518489</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1523484518489</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="238047000" />
+    <option name="totallyTimeSpent" value="239508000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="0" />
@@ -1062,7 +1050,8 @@
     <MESSAGE value="Merge remote-tracking branch 'origin/David' into David&#10;&#10;# Conflicts:&#10;#&#9;Nachos/src/nachos/userprog/UserProcess.java" />
     <MESSAGE value="Pass 6 tests. Guess readVM not working right now. Will work in the morning" />
     <MESSAGE value="8 tests done. One more to go. The issue should be with write mem." />
-    <option name="LAST_COMMIT_MESSAGE" value="8 tests done. One more to go. The issue should be with write mem." />
+    <MESSAGE value="Had to make changes to pass more final tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="Had to make changes to pass more final tests" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1391,10 +1380,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/nachos/userprog/UserProcess.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1159">
-          <caret line="800" column="27" lean-forward="true" selection-start-line="800" selection-start-column="27" selection-end-line="800" selection-end-column="27" />
+        <state relative-caret-position="-752">
+          <caret line="819" column="9" lean-forward="true" selection-start-line="819" selection-start-column="9" selection-end-line="819" selection-end-column="9" />
           <folding>
-            <marker date="1523484477881" expanded="false" signature="26250:26259" ph="&lt;~&gt;" />
+            <marker date="1523485662749" expanded="false" signature="26366:26375" ph="&lt;~&gt;" />
           </folding>
         </state>
       </provider>

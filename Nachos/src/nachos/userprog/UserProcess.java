@@ -733,16 +733,27 @@ public class UserProcess {
 	private int handleExec(int filePtr, int argc, int argv) {
 		System.out.println("EXECUTE_CALLED");
 
+		//Moved from line 754 to here
+		String filename = readVirtualMemoryString(filePtr, 256);
+
+		/** Check filename */
+		if (filename == null || !filename.endsWith(".coff")){
+			System.out.println("INVALID FILENAME");
+			Lib.debug(dbgProcess, "INVALID FILENAME");
+			//return INVALID;
+			return -1;
+		}
+
 
 		/** Check to make sure argc is positive */
 
 		if (argc < 0){
 			System.out.println("INVALID ARG stuff");
-			return INVALID;
-
+		//	return INVALID;
+			return -1;
 		}
 
-
+		//from here
 
 		/** Buffer and  String array will hold the arguments from the file */
 
@@ -750,21 +761,6 @@ public class UserProcess {
 
 		String[] stringArgs = new String[argc];
 
-
-
-		String filename = readVirtualMemoryString(filePtr, 256);
-
-
-
-		/** Check filename */
-
-		if (filename == null){
-			System.out.println("INVALID FILENAME");
-			Lib.debug(dbgProcess, "INVALID FILENAME");
-
-			return INVALID;
-
-		}
 
 
 
@@ -819,8 +815,8 @@ public class UserProcess {
 
 		if (!childProcesses.contains(pid) || !processedThreadMap.containsKey(pid)) {
 
-			return INVALID;
-
+			//return INVALID;
+			return -1;
 		}
 
 		/** Declare byte array*/
