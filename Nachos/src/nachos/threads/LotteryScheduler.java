@@ -35,6 +35,29 @@ public class LotteryScheduler extends PriorityScheduler {
     //initialize max value for highest priority
     public static final int PRIORITY_MAXIMUM = Integer.MAX_VALUE;   //initialize max value for highest priority
 
+    public static void selfTest(){
+        LotteryScheduler scheduler = new LotteryScheduler();
+
+        ThreadQueue queue1 = scheduler.newThreadQueue(true);
+        ThreadQueue queue2 = scheduler.newThreadQueue(true);
+        ThreadQueue queue3 = scheduler.newThreadQueue(true);
+
+        KThread thread1 = new KThread(); thread1.setName("thread1");
+        KThread thread2 = new KThread(); thread2.setName("thread2");
+        KThread thread3 = new KThread(); thread3.setName("thread3");
+        KThread thread4 = new KThread(); thread4.setName("thread4");
+
+        boolean res = Machine.interrupt().disable();
+
+        queue1.acquire(thread1);
+        queue1.waitForAccess(thread2);
+        queue1.waitForAccess(thread3);
+
+
+
+        Machine.interrupt().restore(res);
+    }
+
 
     /**
      * Allocate a new lottery scheduler.
@@ -128,7 +151,7 @@ public class LotteryScheduler extends PriorityScheduler {
         }
 
         @Override
-        protected ThreadState pickNextThread() { //System.out.println(controller + " " + this);
+        protected ThreadState pickNextThread() { System.out.println(controller + " " + this);
 
             int totalTickets = getEffectivePriority(); //should be sum of tickets
             if(totalTickets == 0) return null;
@@ -142,7 +165,7 @@ public class LotteryScheduler extends PriorityScheduler {
                 winningTicket -= threadstate.getPriority();
 
                 if(winningTicket <= 0){
-                   // System.out.println("returning "+ threadstate);
+                    System.out.println("returning "+ threadstate);
                     return state;
                 }
             }
@@ -173,7 +196,7 @@ public class LotteryScheduler extends PriorityScheduler {
         }
 
         @Override
-        public int getEffectivePriority() {//System.out.println(this + " LOTTERY EFFECTIVE");
+        public int getEffectivePriority() {System.out.println(this + " LOTTERY EFFECTIVE");
             int tickets = getPriority();
 
             for (PriorityQueue myQueue : capturedResources)  {
@@ -183,7 +206,7 @@ public class LotteryScheduler extends PriorityScheduler {
                     tickets += currentThread.getEffectivePriority();
                 }
             }
-            //System.out.println("Tickets " + tickets );
+            System.out.println("Tickets " + tickets );
             return tickets;
         }
     }

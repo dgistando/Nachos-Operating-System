@@ -797,7 +797,8 @@ public class UserProcess {
 			System.out.println("My id: " + processID);
 			System.out.println("Child id: " + child.processID);
 
-			return SUCCESS;
+			//CHANGED TO CHILD PROCESS ID
+			return childID;
 		}
 
 
@@ -1076,7 +1077,8 @@ public class UserProcess {
 	/** The number of contiguous pages occupied by the program. */
 	protected int numPages;
 
-	private int processID = 0;
+	//got rid of the zero init
+	private int processID;
 	//Made it static because it needs to be the same for all processes
 	private static int tpid=0;
 	/** The number of pages in the program's stack. */
