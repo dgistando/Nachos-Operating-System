@@ -2,121 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c35c53d1-c2e6-41be-b37c-9a9f956c3efb" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/out/production/Nachos/nachos/ag/AutoGrader.class" afterPath="$PROJECT_DIR$/out/production/Nachos/nachos/ag/AutoGrader.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Nachos/nachos/ag/BoatGrader.class" afterPath="$PROJECT_DIR$/out/production/Nachos/nachos/ag/BoatGrader.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Nachos/nachos/machine/ArrayFile.class" afterPath="$PROJECT_DIR$/out/production/Nachos/nachos/machine/ArrayFile.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Nachos/nachos/machine/AssertionFailureError.class" afterPath="$PROJECT_DIR$/out/production/Nachos/nachos/machine/AssertionFailureError.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Nachos/nachos/machine/Coff.class" afterPath="$PROJECT_DIR$/out/production/Nachos/nachos/machine/Coff.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Nachos/nachos/machine/CoffSection.class" afterPath="$PROJECT_DIR$/out/production/Nachos/nachos/machine/CoffSection.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Nachos/nachos/machine/Config.class" afterPath="$PROJECT_DIR$/out/production/Nachos/nachos/machine/Config.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Nachos/nachos/machine/ElevatorBank$1.class" afterPath="$PROJECT_DIR$/out/production/Nachos/nachos/machine/ElevatorBank$1.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Nachos/nachos/machine/ElevatorBank$ElevatorManager$1.class" afterPath="$PROJECT_DIR$/out/production/Nachos/nachos/machine/ElevatorBank$ElevatorManager$1.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Nachos/nachos/machine/ElevatorBank$ElevatorManager.class" afterPath="$PROJECT_DIR$/out/production/Nachos/nachos/machine/ElevatorBank$ElevatorManager.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Nachos/nachos/machine/ElevatorBank$ElevatorState.class" afterPath="$PROJECT_DIR$/out/production/Nachos/nachos/machine/ElevatorBank$ElevatorState.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Nachos/nachos/machine/ElevatorBank$RiderState$1.class" afterPath="$PROJECT_DIR$/out/production/Nachos/nachos/machine/ElevatorBank$RiderState$1.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Nachos/nachos/machine/ElevatorBank$RiderState.class" afterPath="$PROJECT_DIR$/out/production/Nachos/nachos/machine/ElevatorBank$RiderState.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Nachos/nachos/machine/ElevatorBank.class" afterPath="$PROJECT_DIR$/out/production/Nachos/nachos/machine/ElevatorBank.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Nachos/nachos/machine/ElevatorControllerInterface.class" afterPath="$PROJECT_DIR$/out/production/Nachos/nachos/machine/ElevatorControllerInterface.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Nachos/nachos/machine/ElevatorControls.class" afterPath="$PROJECT_DIR$/out/production/Nachos/nachos/machine/ElevatorControls.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Nachos/nachos/machine/ElevatorEvent.class" afterPath="$PROJECT_DIR$/out/production/Nachos/nachos/machine/ElevatorEvent.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Nachos/nachos/machine/ElevatorGui$ElevatorShaft.class" afterPath="$PROJECT_DIR$/out/production/Nachos/nachos/machine/ElevatorGui$ElevatorShaft.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Nachos/nachos/machine/ElevatorGui$Floor.class" afterPath="$PROJECT_DIR$/out/production/Nachos/nachos/machine/ElevatorGui$Floor.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Nachos/nachos/machine/ElevatorGui.class" afterPath="$PROJECT_DIR$/out/production/Nachos/nachos/machine/ElevatorGui.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Nachos/nachos/machine/ElevatorTest$1.class" afterPath="$PROJECT_DIR$/out/production/Nachos/nachos/machine/ElevatorTest$1.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Nachos/nachos/machine/ElevatorTest$ElevatorController$1.class" afterPath="$PROJECT_DIR$/out/production/Nachos/nachos/machine/ElevatorTest$ElevatorController$1.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Nachos/nachos/machine/ElevatorTest$ElevatorController.class" afterPath="$PROJECT_DIR$/out/production/Nachos/nachos/machine/ElevatorTest$ElevatorController.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Nachos/nachos/machine/ElevatorTest$Rider$1.class" afterPath="$PROJECT_DIR$/out/production/Nachos/nachos/machine/ElevatorTest$Rider$1.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Nachos/nachos/machine/ElevatorTest$Rider.class" afterPath="$PROJECT_DIR$/out/production/Nachos/nachos/machine/ElevatorTest$Rider.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Nachos/nachos/machine/ElevatorTest.class" afterPath="$PROJECT_DIR$/out/production/Nachos/nachos/machine/ElevatorTest.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Nachos/nachos/machine/FileSystem.class" afterPath="$PROJECT_DIR$/out/production/Nachos/nachos/machine/FileSystem.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Nachos/nachos/machine/Interrupt$1.class" afterPath="$PROJECT_DIR$/out/production/Nachos/nachos/machine/Interrupt$1.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Nachos/nachos/machine/Interrupt$InterruptPrivilege.class" afterPath="$PROJECT_DIR$/out/production/Nachos/nachos/machine/Interrupt$InterruptPrivilege.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Nachos/nachos/machine/Interrupt$PendingInterrupt.class" afterPath="$PROJECT_DIR$/out/production/Nachos/nachos/machine/Interrupt$PendingInterrupt.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Nachos/nachos/machine/Interrupt.class" afterPath="$PROJECT_DIR$/out/production/Nachos/nachos/machine/Interrupt.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Nachos/nachos/machine/Kernel.class" afterPath="$PROJECT_DIR$/out/production/Nachos/nachos/machine/Kernel.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Nachos/nachos/machine/Lib.class" afterPath="$PROJECT_DIR$/out/production/Nachos/nachos/machine/Lib.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Nachos/nachos/machine/Machine$1.class" afterPath="$PROJECT_DIR$/out/production/Nachos/nachos/machine/Machine$1.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Nachos/nachos/machine/Machine$MachinePrivilege.class" afterPath="$PROJECT_DIR$/out/production/Nachos/nachos/machine/Machine$MachinePrivilege.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Nachos/nachos/machine/Machine.class" afterPath="$PROJECT_DIR$/out/production/Nachos/nachos/machine/Machine.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Nachos/nachos/machine/MalformedPacketException.class" afterPath="$PROJECT_DIR$/out/production/Nachos/nachos/machine/MalformedPacketException.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Nachos/nachos/machine/NetworkLink$1.class" afterPath="$PROJECT_DIR$/out/production/Nachos/nachos/machine/NetworkLink$1.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Nachos/nachos/machine/NetworkLink$2.class" afterPath="$PROJECT_DIR$/out/production/Nachos/nachos/machine/NetworkLink$2.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Nachos/nachos/machine/NetworkLink$3.class" afterPath="$PROJECT_DIR$/out/production/Nachos/nachos/machine/NetworkLink$3.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Nachos/nachos/machine/NetworkLink$4.class" afterPath="$PROJECT_DIR$/out/production/Nachos/nachos/machine/NetworkLink$4.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Nachos/nachos/machine/NetworkLink.class" afterPath="$PROJECT_DIR$/out/production/Nachos/nachos/machine/NetworkLink.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Nachos/nachos/machine/OpenFile.class" afterPath="$PROJECT_DIR$/out/production/Nachos/nachos/machine/OpenFile.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Nachos/nachos/machine/OpenFileWithPosition.class" afterPath="$PROJECT_DIR$/out/production/Nachos/nachos/machine/OpenFileWithPosition.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Nachos/nachos/machine/Packet.class" afterPath="$PROJECT_DIR$/out/production/Nachos/nachos/machine/Packet.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Nachos/nachos/machine/Processor$1.class" afterPath="$PROJECT_DIR$/out/production/Nachos/nachos/machine/Processor$1.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Nachos/nachos/machine/Processor$Instruction.class" afterPath="$PROJECT_DIR$/out/production/Nachos/nachos/machine/Processor$Instruction.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Nachos/nachos/machine/Processor$Mips.class" afterPath="$PROJECT_DIR$/out/production/Nachos/nachos/machine/Processor$Mips.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Nachos/nachos/machine/Processor$MipsException.class" afterPath="$PROJECT_DIR$/out/production/Nachos/nachos/machine/Processor$MipsException.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Nachos/nachos/machine/Processor$ProcessorPrivilege.class" afterPath="$PROJECT_DIR$/out/production/Nachos/nachos/machine/Processor$ProcessorPrivilege.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Nachos/nachos/machine/Processor.class" afterPath="$PROJECT_DIR$/out/production/Nachos/nachos/machine/Processor.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Nachos/nachos/machine/RiderControls.class" afterPath="$PROJECT_DIR$/out/production/Nachos/nachos/machine/RiderControls.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Nachos/nachos/machine/RiderEvent.class" afterPath="$PROJECT_DIR$/out/production/Nachos/nachos/machine/RiderEvent.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Nachos/nachos/machine/RiderInterface.class" afterPath="$PROJECT_DIR$/out/production/Nachos/nachos/machine/RiderInterface.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Nachos/nachos/machine/SerialConsole.class" afterPath="$PROJECT_DIR$/out/production/Nachos/nachos/machine/SerialConsole.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Nachos/nachos/machine/StandardConsole$1.class" afterPath="$PROJECT_DIR$/out/production/Nachos/nachos/machine/StandardConsole$1.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Nachos/nachos/machine/StandardConsole$2.class" afterPath="$PROJECT_DIR$/out/production/Nachos/nachos/machine/StandardConsole$2.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Nachos/nachos/machine/StandardConsole.class" afterPath="$PROJECT_DIR$/out/production/Nachos/nachos/machine/StandardConsole.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Nachos/nachos/machine/Stats.class" afterPath="$PROJECT_DIR$/out/production/Nachos/nachos/machine/Stats.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Nachos/nachos/machine/StubFileSystem$FileRemover.class" afterPath="$PROJECT_DIR$/out/production/Nachos/nachos/machine/StubFileSystem$FileRemover.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Nachos/nachos/machine/StubFileSystem$StubOpenFile$1.class" afterPath="$PROJECT_DIR$/out/production/Nachos/nachos/machine/StubFileSystem$StubOpenFile$1.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Nachos/nachos/machine/StubFileSystem$StubOpenFile.class" afterPath="$PROJECT_DIR$/out/production/Nachos/nachos/machine/StubFileSystem$StubOpenFile.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Nachos/nachos/machine/StubFileSystem.class" afterPath="$PROJECT_DIR$/out/production/Nachos/nachos/machine/StubFileSystem.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Nachos/nachos/machine/TCB$1.class" afterPath="$PROJECT_DIR$/out/production/Nachos/nachos/machine/TCB$1.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Nachos/nachos/machine/TCB$2.class" afterPath="$PROJECT_DIR$/out/production/Nachos/nachos/machine/TCB$2.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Nachos/nachos/machine/TCB$TCBPrivilege.class" afterPath="$PROJECT_DIR$/out/production/Nachos/nachos/machine/TCB$TCBPrivilege.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Nachos/nachos/machine/TCB.class" afterPath="$PROJECT_DIR$/out/production/Nachos/nachos/machine/TCB.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Nachos/nachos/machine/Timer$1.class" afterPath="$PROJECT_DIR$/out/production/Nachos/nachos/machine/Timer$1.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Nachos/nachos/machine/Timer$2.class" afterPath="$PROJECT_DIR$/out/production/Nachos/nachos/machine/Timer$2.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Nachos/nachos/machine/Timer.class" afterPath="$PROJECT_DIR$/out/production/Nachos/nachos/machine/Timer.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Nachos/nachos/machine/TranslationEntry.class" afterPath="$PROJECT_DIR$/out/production/Nachos/nachos/machine/TranslationEntry.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Nachos/nachos/network/MailMessage.class" afterPath="$PROJECT_DIR$/out/production/Nachos/nachos/network/MailMessage.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Nachos/nachos/network/NetKernel$1.class" afterPath="$PROJECT_DIR$/out/production/Nachos/nachos/network/NetKernel$1.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Nachos/nachos/network/NetKernel.class" afterPath="$PROJECT_DIR$/out/production/Nachos/nachos/network/NetKernel.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Nachos/nachos/network/NetProcess.class" afterPath="$PROJECT_DIR$/out/production/Nachos/nachos/network/NetProcess.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Nachos/nachos/network/PostOffice$1.class" afterPath="$PROJECT_DIR$/out/production/Nachos/nachos/network/PostOffice$1.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Nachos/nachos/network/PostOffice$2.class" afterPath="$PROJECT_DIR$/out/production/Nachos/nachos/network/PostOffice$2.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Nachos/nachos/network/PostOffice$3.class" afterPath="$PROJECT_DIR$/out/production/Nachos/nachos/network/PostOffice$3.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Nachos/nachos/network/PostOffice.class" afterPath="$PROJECT_DIR$/out/production/Nachos/nachos/network/PostOffice.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Nachos/nachos/security/NachosSecurityManager$1.class" afterPath="$PROJECT_DIR$/out/production/Nachos/nachos/security/NachosSecurityManager$1.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Nachos/nachos/security/NachosSecurityManager$2.class" afterPath="$PROJECT_DIR$/out/production/Nachos/nachos/security/NachosSecurityManager$2.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Nachos/nachos/security/NachosSecurityManager$PrivilegeProvider.class" afterPath="$PROJECT_DIR$/out/production/Nachos/nachos/security/NachosSecurityManager$PrivilegeProvider.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Nachos/nachos/security/NachosSecurityManager.class" afterPath="$PROJECT_DIR$/out/production/Nachos/nachos/security/NachosSecurityManager.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Nachos/nachos/security/Privilege$InterruptPrivilege.class" afterPath="$PROJECT_DIR$/out/production/Nachos/nachos/security/Privilege$InterruptPrivilege.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Nachos/nachos/security/Privilege$MachinePrivilege.class" afterPath="$PROJECT_DIR$/out/production/Nachos/nachos/security/Privilege$MachinePrivilege.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Nachos/nachos/security/Privilege$ProcessorPrivilege.class" afterPath="$PROJECT_DIR$/out/production/Nachos/nachos/security/Privilege$ProcessorPrivilege.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Nachos/nachos/security/Privilege$TCBPrivilege.class" afterPath="$PROJECT_DIR$/out/production/Nachos/nachos/security/Privilege$TCBPrivilege.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Nachos/nachos/security/Privilege.class" afterPath="$PROJECT_DIR$/out/production/Nachos/nachos/security/Privilege.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Nachos/nachos/threads/Condition.class" afterPath="$PROJECT_DIR$/out/production/Nachos/nachos/threads/Condition.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Nachos/nachos/threads/ElevatorController.class" afterPath="$PROJECT_DIR$/out/production/Nachos/nachos/threads/ElevatorController.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Nachos/nachos/threads/Lock.class" afterPath="$PROJECT_DIR$/out/production/Nachos/nachos/threads/Lock.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Nachos/nachos/threads/LotteryScheduler.class" afterPath="$PROJECT_DIR$/out/production/Nachos/nachos/threads/LotteryScheduler.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Nachos/nachos/threads/Rider.class" afterPath="$PROJECT_DIR$/out/production/Nachos/nachos/threads/Rider.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Nachos/nachos/threads/RoundRobinScheduler$1.class" afterPath="$PROJECT_DIR$/out/production/Nachos/nachos/threads/RoundRobinScheduler$1.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Nachos/nachos/threads/RoundRobinScheduler$FifoQueue.class" afterPath="$PROJECT_DIR$/out/production/Nachos/nachos/threads/RoundRobinScheduler$FifoQueue.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Nachos/nachos/threads/RoundRobinScheduler.class" afterPath="$PROJECT_DIR$/out/production/Nachos/nachos/threads/RoundRobinScheduler.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Nachos/nachos/threads/Scheduler.class" afterPath="$PROJECT_DIR$/out/production/Nachos/nachos/threads/Scheduler.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Nachos/nachos/threads/Semaphore$PingTest.class" afterPath="$PROJECT_DIR$/out/production/Nachos/nachos/threads/Semaphore$PingTest.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Nachos/nachos/threads/Semaphore.class" afterPath="$PROJECT_DIR$/out/production/Nachos/nachos/threads/Semaphore.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Nachos/nachos/threads/SynchList$PingTest.class" afterPath="$PROJECT_DIR$/out/production/Nachos/nachos/threads/SynchList$PingTest.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Nachos/nachos/threads/SynchList.class" afterPath="$PROJECT_DIR$/out/production/Nachos/nachos/threads/SynchList.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Nachos/nachos/threads/ThreadQueue.class" afterPath="$PROJECT_DIR$/out/production/Nachos/nachos/threads/ThreadQueue.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Nachos/nachos/threads/ThreadedKernel.class" afterPath="$PROJECT_DIR$/out/production/Nachos/nachos/threads/ThreadedKernel.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Nachos/nachos/userprog/SynchConsole$1.class" afterPath="$PROJECT_DIR$/out/production/Nachos/nachos/userprog/SynchConsole$1.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Nachos/nachos/userprog/SynchConsole$2.class" afterPath="$PROJECT_DIR$/out/production/Nachos/nachos/userprog/SynchConsole$2.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Nachos/nachos/userprog/SynchConsole$File.class" afterPath="$PROJECT_DIR$/out/production/Nachos/nachos/userprog/SynchConsole$File.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Nachos/nachos/userprog/SynchConsole.class" afterPath="$PROJECT_DIR$/out/production/Nachos/nachos/userprog/SynchConsole.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Nachos/nachos/userprog/UThread$1.class" afterPath="$PROJECT_DIR$/out/production/Nachos/nachos/userprog/UThread$1.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Nachos/nachos/userprog/UThread.class" afterPath="$PROJECT_DIR$/out/production/Nachos/nachos/userprog/UThread.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Nachos/nachos/userprog/UserProcess.class" afterPath="$PROJECT_DIR$/out/production/Nachos/nachos/userprog/UserProcess.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Nachos/nachos/vm/VMKernel.class" afterPath="$PROJECT_DIR$/out/production/Nachos/nachos/vm/VMKernel.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Nachos/nachos/vm/VMProcess.class" afterPath="$PROJECT_DIR$/out/production/Nachos/nachos/vm/VMProcess.class" />
-      <change beforePath="$PROJECT_DIR$/src/nachos/threads/ThreadedKernel.java" afterPath="$PROJECT_DIR$/src/nachos/threads/ThreadedKernel.java" />
-      <change beforePath="$PROJECT_DIR$/src/nachos/userprog/UserProcess.java" afterPath="$PROJECT_DIR$/src/nachos/userprog/UserProcess.java" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="C:\Users\dgist\Documents\GitHub\CSE150Project\Nachos\.idea\shelf/" />
@@ -142,8 +28,7 @@
       <file leaf-file-name="UserProcess.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/nachos/userprog/UserProcess.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state>
               <folding>
                 <element signature="e#1737#1738#0" expanded="true" />
                 <element signature="e#1814#1815#0" expanded="true" />
@@ -153,7 +38,6 @@
                 <element signature="e#4239#4240#0" expanded="true" />
                 <element signature="e#6701#6702#0" expanded="true" />
                 <element signature="e#6762#6763#0" expanded="true" />
-                <marker date="1523572523633" expanded="false" signature="27405:27414" ph="&lt;~&gt;" />
               </folding>
             </state>
           </provider>
@@ -162,11 +46,10 @@
       <file leaf-file-name="UserKernel.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/nachos/userprog/UserKernel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-23">
-              <caret line="145" column="0" lean-forward="false" selection-start-line="145" selection-start-column="0" selection-end-line="145" selection-end-column="0" />
+            <state relative-caret-position="2346">
+              <caret line="145" selection-start-line="145" selection-end-line="145" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#4371#4380#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -175,8 +58,8 @@
       <file leaf-file-name="OpenFile.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/nachos/machine/OpenFile.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1371">
-              <caret line="135" column="0" lean-forward="false" selection-start-line="135" selection-start-column="0" selection-end-line="135" selection-end-column="0" />
+            <state relative-caret-position="2023">
+              <caret line="135" selection-start-line="135" selection-end-line="135" />
               <folding>
                 <element signature="e#4091#4092#0" expanded="true" />
               </folding>
@@ -187,8 +70,8 @@
       <file leaf-file-name="ArrayFile.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/nachos/machine/ArrayFile.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="108">
-              <caret line="17" column="15" lean-forward="false" selection-start-line="17" selection-start-column="15" selection-end-line="17" selection-end-column="15" />
+            <state relative-caret-position="255">
+              <caret line="17" column="15" selection-start-line="17" selection-start-column="15" selection-end-line="17" selection-end-column="15" />
               <folding>
                 <element signature="e#398#399#0" expanded="true" />
                 <element signature="e#426#427#0" expanded="true" />
@@ -200,9 +83,8 @@
       <file leaf-file-name="Coff.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/nachos/machine/Coff.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="53" column="0" lean-forward="false" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="901">
+              <caret line="53" selection-start-line="53" selection-end-line="53" />
             </state>
           </provider>
         </entry>
@@ -210,8 +92,8 @@
       <file leaf-file-name="VMProcess.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/nachos/vm/VMProcess.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="334">
-              <caret line="47" column="19" lean-forward="false" selection-start-line="47" selection-start-column="19" selection-end-line="47" selection-end-column="19" />
+            <state relative-caret-position="612">
+              <caret line="47" column="19" selection-start-line="47" selection-start-column="19" selection-end-line="47" selection-end-column="19" />
               <folding>
                 <element signature="e#1064#1065#0" expanded="true" />
                 <element signature="e#1095#1096#0" expanded="true" />
@@ -223,9 +105,8 @@
       <file leaf-file-name="KThread.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/nachos/threads/KThread.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="369">
-              <caret line="285" column="16" lean-forward="false" selection-start-line="285" selection-start-column="16" selection-end-line="285" selection-end-column="16" />
-              <folding />
+            <state relative-caret-position="4709">
+              <caret line="285" column="16" selection-start-line="285" selection-start-column="16" selection-end-line="285" selection-end-column="16" />
             </state>
           </provider>
         </entry>
@@ -233,8 +114,8 @@
       <file leaf-file-name="ThreadedKernel.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/nachos/threads/ThreadedKernel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="113">
-              <caret line="50" column="0" lean-forward="false" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
+            <state relative-caret-position="799">
+              <caret line="50" selection-start-line="50" selection-end-line="50" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -246,12 +127,12 @@
         <entry file="file://$PROJECT_DIR$/src/nachos/threads/PriorityScheduler.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1547">
-              <caret line="132" column="31" lean-forward="false" selection-start-line="132" selection-start-column="31" selection-end-line="132" selection-end-column="31" />
+              <caret line="132" column="31" selection-start-line="132" selection-start-column="31" selection-end-line="132" selection-end-column="31" />
               <folding>
-                <element signature="method#getPriority#0;class#PriorityScheduler#0" expanded="false" />
-                <element signature="method#setPriority#0;class#PriorityScheduler#0" expanded="false" />
-                <element signature="method#increasePriority#0;class#PriorityScheduler#0" expanded="false" />
-                <element signature="method#decreasePriority#0;class#PriorityScheduler#0" expanded="false" />
+                <element signature="method#getPriority#0;class#PriorityScheduler#0" />
+                <element signature="method#setPriority#0;class#PriorityScheduler#0" />
+                <element signature="method#increasePriority#0;class#PriorityScheduler#0" />
+                <element signature="method#decreasePriority#0;class#PriorityScheduler#0" />
               </folding>
             </state>
           </provider>
@@ -352,11 +233,6 @@
       </branch-storage>
     </excluded-from-favorite>
   </component>
-  <component name="GradleLocalSettings">
-    <option name="externalProjectsViewState">
-      <projects_view />
-    </option>
-  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
@@ -386,90 +262,18 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1382" />
     <option name="height" value="754" />
   </component>
-  <component name="ProjectInspectionProfilesVisibleTreeState">
-    <entry key="Project Default">
-      <profile-state>
-        <expanded-state>
-          <State>
-            <id />
-          </State>
-          <State>
-            <id>Android &gt; Lint &gt; Correctness</id>
-          </State>
-          <State>
-            <id>Android &gt; Lint &gt; Security</id>
-          </State>
-          <State>
-            <id>Android &gt; Lint &gt; Usability &gt; Icons</id>
-          </State>
-          <State>
-            <id>Android Lint for Kotlin</id>
-          </State>
-          <State>
-            <id>CSS</id>
-          </State>
-          <State>
-            <id>Code StyleScala</id>
-          </State>
-          <State>
-            <id>Google Web Toolkit issues</id>
-          </State>
-          <State>
-            <id>Invalid elementsCSS</id>
-          </State>
-          <State>
-            <id>Java</id>
-          </State>
-          <State>
-            <id>Java interop issuesKotlin</id>
-          </State>
-          <State>
-            <id>Kotlin</id>
-          </State>
-          <State>
-            <id>Packaging issuesJava</id>
-          </State>
-          <State>
-            <id>Probable bugsJava</id>
-          </State>
-          <State>
-            <id>Scala</id>
-          </State>
-          <State>
-            <id>TypeScript</id>
-          </State>
-        </expanded-state>
-        <selected-state>
-          <State>
-            <id>EmptyDirectory</id>
-          </State>
-        </selected-state>
-      </profile-state>
-    </entry>
-  </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
-    <navigator currentView="ProjectPane" proportions="" version="1">
-      <flattenPackages />
-      <showMembers />
-      <showModules />
-      <showLibraryContents />
-      <hideEmptyPackages />
-      <abbreviatePackageNames />
-      <autoscrollToSource />
-      <autoscrollFromSource />
-      <sortByType />
-      <manualOrder />
+    <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -499,21 +303,21 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="AndroidView" />
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="ChangesBrowser.SHOW_FLATTEN" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$USER_HOME$/CSE/REACT/Youtube_Sample-20180412T002247Z-001/Youtube_Sample" />
-    <property name="settings.editor.selected.configurable" value="Errors" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="ChangesBrowser.SHOW_FLATTEN" value="true" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -529,38 +333,44 @@
   </component>
   <component name="RunManager">
     <configuration default="true" type="Applet" factoryName="Applet">
+      <option name="HEIGHT" value="0" />
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <option name="WIDTH" value="0" />
-      <option name="HEIGHT" value="0" />
-      <module />
     </configuration>
     <configuration name="Run" type="Application" factoryName="Application">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="MAIN_CLASS_NAME" value="nachos.machine.Machine" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$/src/nachos/proj1" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
       <module name="Nachos" />
-      <envs />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$/src/nachos/proj1" />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+    </configuration>
+    <configuration default="true" type="ArquillianTestNG" factoryName="">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="OUTPUT_DIRECTORY" />
       <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="" />
-      <envs />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <properties />
+      <listeners />
     </configuration>
     <configuration default="true" type="GrailsRunConfigurationType" factoryName="Grails">
       <setting name="vmparams" value="" />
@@ -571,8 +381,6 @@
       <setting name="depsClasspath" value="false" />
     </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" />
@@ -582,24 +390,13 @@
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <option name="ENV_VARIABLES" />
       <option name="PASS_PARENT_ENVS" value="true" />
       <option name="TEST_SEARCH_SCOPE">
         <value defaultName="singleModule" />
       </option>
-      <envs />
       <patterns />
     </configuration>
-    <configuration default="true" type="Remote" factoryName="Remote">
-      <option name="USE_SOCKET_TRANSPORT" value="true" />
-      <option name="SERVER_MODE" value="false" />
-      <option name="SHMEM_ADDRESS" value="javadebug" />
-      <option name="HOST" value="localhost" />
-      <option name="PORT" value="5005" />
-    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="SUITE_NAME" />
@@ -612,23 +409,14 @@
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
       <option name="OUTPUT_DIRECTORY" />
-      <option name="ANNOTATION_TYPE" />
-      <option name="ENV_VARIABLES" />
       <option name="PASS_PARENT_ENVS" value="true" />
       <option name="TEST_SEARCH_SCOPE">
         <value defaultName="singleModule" />
       </option>
       <option name="USE_DEFAULT_REPORTERS" value="false" />
       <option name="PROPERTIES_FILE" />
-      <envs />
       <properties />
       <listeners />
-    </configuration>
-    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
-      <module name="" />
-      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
-      <option name="PROGRAM_PARAMETERS" />
-      <predefined_log_file id="idea.log" enabled="true" />
     </configuration>
     <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android App">
       <module name="" />
@@ -709,39 +497,6 @@
       </option>
       <envs />
       <patterns />
-      <method />
-    </configuration>
-    <configuration default="true" type="ArquillianTestNG" factoryName="">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="" />
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="SUITE_NAME" />
-      <option name="PACKAGE_NAME" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="GROUP_NAME" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <option name="VM_PARAMETERS" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" />
-      <option name="OUTPUT_DIRECTORY" />
-      <option name="ANNOTATION_TYPE" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <option name="USE_DEFAULT_REPORTERS" value="false" />
-      <option name="PROPERTIES_FILE" />
-      <envs />
-      <properties />
-      <listeners />
       <method />
     </configuration>
     <configuration default="true" type="Cold Fusion runner description" factoryName="Cold Fusion" custom_browser="" web_path="">
@@ -896,11 +651,24 @@
     <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" path-to-node="project" working-dir="">
       <method />
     </configuration>
+    <configuration default="true" type="Remote" factoryName="Remote">
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" value="javadebug" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="5005" />
+    </configuration>
     <configuration default="true" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="" />
       <envs />
       <method />
+    </configuration>
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
+      <module name="" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
+      <option name="PROGRAM_PARAMETERS" />
+      <predefined_log_file id="idea.log" enabled="true" />
     </configuration>
     <configuration default="true" type="js.build_tools.npm" factoryName="npm">
       <command value="run" />
@@ -942,9 +710,6 @@
       <projects_view />
     </option>
   </component>
-  <component name="ShelveChangesManager" show_recycled="false">
-    <option name="remove_strategy" value="false" />
-  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -982,6 +747,7 @@
       <workItem from="1523483526906" duration="7765000" />
       <workItem from="1523569367491" duration="105000" />
       <workItem from="1523570355177" duration="5085000" />
+      <workItem from="1523581522443" duration="76000" />
     </task>
     <task id="LOCAL-00001" summary="changed communicator">
       <created>1519155611820</created>
@@ -1113,72 +879,72 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="250070000" />
+    <option name="totallyTimeSpent" value="250146000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="754" extended-state="0" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="2576" height="1426" extended-state="6" />
     <layout>
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32847896" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32977912" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32686085" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32686085" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27022654" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1452345" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39805827" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32919255" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="right" id="Palette&#9;" order="9" />
+      <window_info id="Image Layers" order="7" />
+      <window_info anchor="right" id="Capture Analysis" order="6" />
+      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" weight="0.32977912" />
+      <window_info anchor="right" id="Maven Projects" order="4" />
+      <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="10" weight="0.32686085" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32686085" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.12888199" />
+      <window_info id="Capture Tool" order="3" />
+      <window_info id="Designer" order="4" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.07750397" />
+      <window_info anchor="right" id="Database" order="5" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info id="UI Designer" order="5" />
+      <window_info anchor="right" id="Theme Preview" order="7" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39805827" />
+      <window_info anchor="right" id="Properties" order="8" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info id="Nl-Palette" order="2" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32919255" />
+      <window_info anchor="bottom" id="Messages" order="8" weight="0.32847896" />
     </layout>
     <layout-to-restore>
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32977912" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3986111" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32977912" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32763976" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32763976" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.15812592" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Capture Analysis" order="6" />
+      <window_info id="Capture Tool" order="3" />
+      <window_info anchor="right" id="Theme Preview" order="7" />
+      <window_info id="Nl-Palette" order="2" />
+      <window_info id="Structure" order="1" weight="0.25" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Version Control" order="10" weight="0.32763976" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32763976" />
+      <window_info id="Image Layers" order="7" />
+      <window_info id="Designer" order="4" />
+      <window_info anchor="right" id="Properties" order="8" />
+      <window_info id="UI Designer" order="5" />
+      <window_info anchor="bottom" id="Debug" order="3" visible="true" weight="0.3986111" />
+      <window_info anchor="right" id="Database" order="5" />
+      <window_info anchor="right" id="Palette&#9;" order="9" />
+      <window_info anchor="bottom" id="Terminal" order="9" />
+      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" weight="0.32977912" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Messages" order="8" weight="0.32977912" />
+      <window_info anchor="right" id="Maven Projects" order="4" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.15812592" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1188,6 +954,10 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$" />
+      <path value="$PROJECT_DIR$/.." />
+    </ignored-roots>
     <MESSAGE value="changed communicator" />
     <MESSAGE value="need last three functions in Priority Scheduler" />
     <MESSAGE value="changed Condition2 and small other changes" />
@@ -1212,7 +982,6 @@
     <breakpoint-manager>
       <option name="time" value="50" />
     </breakpoint-manager>
-    <watches-manager />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
@@ -1222,35 +991,35 @@
     <entry file="file://$PROJECT_DIR$/src/nachos/security/NachosSecurityManager.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="290">
-          <caret line="186" column="0" lean-forward="false" selection-start-line="186" selection-start-column="0" selection-end-line="186" selection-end-column="0" />
+          <caret line="186" selection-start-line="186" selection-end-line="186" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/nachos/machine/Interrupt.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1326">
-          <caret line="84" column="0" lean-forward="false" selection-start-line="84" selection-start-column="0" selection-end-line="84" selection-end-column="0" />
+          <caret line="84" selection-start-line="84" selection-end-line="84" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/nachos/machine/Timer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="493">
-          <caret line="29" column="27" lean-forward="false" selection-start-line="29" selection-start-column="27" selection-end-line="29" selection-end-column="27" />
+          <caret line="29" column="27" selection-start-line="29" selection-start-column="27" selection-end-line="29" selection-end-column="27" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/nachos/threads/ElevatorController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="127">
-          <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/nachos/threads/Rider.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
-          <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -1260,35 +1029,35 @@
     <entry file="file://$PROJECT_DIR$/src/nachos/threads/SynchList.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="127">
-          <caret line="43" column="0" lean-forward="false" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+          <caret line="43" selection-start-line="43" selection-end-line="43" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/nachos/machine/Kernel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="218">
-          <caret line="32" column="25" lean-forward="false" selection-start-line="32" selection-start-column="25" selection-end-line="32" selection-end-column="25" />
+          <caret line="32" column="25" selection-start-line="32" selection-start-column="25" selection-end-line="32" selection-end-column="25" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/nachos/machine/ElevatorTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="155">
-          <caret line="27" column="20" lean-forward="false" selection-start-line="27" selection-start-column="20" selection-end-line="27" selection-end-column="20" />
+          <caret line="27" column="20" selection-start-line="27" selection-start-column="20" selection-end-line="27" selection-end-column="20" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/nachos/machine/ElevatorBank.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="103">
-          <caret line="575" column="33" lean-forward="false" selection-start-line="575" selection-start-column="28" selection-end-line="575" selection-end-column="33" />
+          <caret line="575" column="33" selection-start-line="575" selection-start-column="28" selection-end-line="575" selection-end-column="33" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/nachos/ag/AutoGrader.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
-          <caret line="49" column="0" lean-forward="false" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
+          <caret line="49" selection-start-line="49" selection-end-line="49" />
         </state>
       </provider>
     </entry>
@@ -1303,70 +1072,70 @@
     <entry file="file://$PROJECT_DIR$/src/nachos/threads/Condition.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="833">
-          <caret line="51" column="13" lean-forward="false" selection-start-line="51" selection-start-column="13" selection-end-line="51" selection-end-column="13" />
+          <caret line="51" column="13" selection-start-line="51" selection-start-column="13" selection-end-line="51" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/nachos/threads/Lock.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="731">
-          <caret line="43" column="0" lean-forward="false" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+          <caret line="43" selection-start-line="43" selection-end-line="43" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/nachos/threads/Boat.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-34">
-          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/nachos/threads/RoundRobinScheduler.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="782">
-          <caret line="51" column="19" lean-forward="false" selection-start-line="51" selection-start-column="19" selection-end-line="51" selection-end-column="19" />
+          <caret line="51" column="19" selection-start-line="51" selection-start-column="19" selection-end-line="51" selection-end-column="19" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/nachos/threads/ThreadQueue.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="663">
-          <caret line="39" column="22" lean-forward="false" selection-start-line="39" selection-start-column="22" selection-end-line="39" selection-end-column="22" />
+          <caret line="39" column="22" selection-start-line="39" selection-start-column="22" selection-end-line="39" selection-end-column="22" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/nachos/machine/Config.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
-          <caret line="21" column="27" lean-forward="false" selection-start-line="21" selection-start-column="23" selection-end-line="21" selection-end-column="27" />
+          <caret line="21" column="27" selection-start-line="21" selection-start-column="23" selection-end-line="21" selection-end-column="27" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/nachos/threads/Communicator.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="493">
-          <caret line="29" column="21" lean-forward="false" selection-start-line="29" selection-start-column="21" selection-end-line="29" selection-end-column="21" />
+          <caret line="29" column="21" selection-start-line="29" selection-start-column="21" selection-end-line="29" selection-end-column="21" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/nachos/threads/Condition2.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="476">
-          <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+          <caret line="28" selection-start-line="28" selection-end-line="28" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/nachos/threads/Alarm.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
-          <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+          <caret line="21" selection-start-line="21" selection-end-line="21" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/nachos/threads/Scheduler.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1802">
-          <caret line="109" column="20" lean-forward="false" selection-start-line="109" selection-start-column="20" selection-end-line="109" selection-end-column="20" />
+          <caret line="109" column="20" selection-start-line="109" selection-start-column="20" selection-end-line="109" selection-end-column="20" />
         </state>
       </provider>
     </entry>
@@ -1378,7 +1147,7 @@
     <entry file="file://$PROJECT_DIR$/src/nachos/machine/Machine.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="6630">
-          <caret line="397" column="36" lean-forward="false" selection-start-line="397" selection-start-column="36" selection-end-line="397" selection-end-column="36" />
+          <caret line="397" column="36" selection-start-line="397" selection-start-column="36" selection-end-line="397" selection-end-column="36" />
         </state>
       </provider>
     </entry>
@@ -1386,14 +1155,14 @@
     <entry file="file://$PROJECT_DIR$/src/nachos/userprog/UThread.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
-          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/nachos/proj1/nachos.conf">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
-          <caret line="10" column="45" lean-forward="false" selection-start-line="10" selection-start-column="45" selection-end-line="10" selection-end-column="45" />
+          <caret line="10" column="45" selection-start-line="10" selection-start-column="45" selection-end-line="10" selection-end-column="45" />
         </state>
       </provider>
     </entry>
@@ -1407,34 +1176,33 @@
     <entry file="file://$PROJECT_DIR$/src/nachos/machine/Lib.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1105">
-          <caret line="76" column="0" lean-forward="false" selection-start-line="76" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
-          <folding />
+          <caret line="76" selection-start-line="76" selection-end-line="76" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/nachos/machine/TCB.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1496">
-          <caret line="92" column="0" lean-forward="false" selection-start-line="92" selection-start-column="0" selection-end-line="92" selection-end-column="0" />
+          <caret line="92" selection-start-line="92" selection-end-line="92" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/nachos/threads/Semaphore.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1462">
-          <caret line="88" column="23" lean-forward="false" selection-start-line="88" selection-start-column="23" selection-end-line="88" selection-end-column="23" />
+          <caret line="88" column="23" selection-start-line="88" selection-start-column="23" selection-end-line="88" selection-end-column="23" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/nachos/threads/PriorityScheduler.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1547">
-          <caret line="132" column="31" lean-forward="false" selection-start-line="132" selection-start-column="31" selection-end-line="132" selection-end-column="31" />
+          <caret line="132" column="31" selection-start-line="132" selection-start-column="31" selection-end-line="132" selection-end-column="31" />
           <folding>
-            <element signature="method#getPriority#0;class#PriorityScheduler#0" expanded="false" />
-            <element signature="method#setPriority#0;class#PriorityScheduler#0" expanded="false" />
-            <element signature="method#increasePriority#0;class#PriorityScheduler#0" expanded="false" />
-            <element signature="method#decreasePriority#0;class#PriorityScheduler#0" expanded="false" />
+            <element signature="method#getPriority#0;class#PriorityScheduler#0" />
+            <element signature="method#setPriority#0;class#PriorityScheduler#0" />
+            <element signature="method#increasePriority#0;class#PriorityScheduler#0" />
+            <element signature="method#decreasePriority#0;class#PriorityScheduler#0" />
           </folding>
         </state>
       </provider>
@@ -1442,52 +1210,45 @@
     <entry file="file://$PROJECT_DIR$/src/nachos/threads/LotteryScheduler.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3247">
-          <caret line="197" column="17" lean-forward="false" selection-start-line="197" selection-start-column="17" selection-end-line="197" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
+          <caret line="197" column="17" selection-start-line="197" selection-start-column="17" selection-end-line="197" selection-end-column="17" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/nachos/machine/OpenFileWithPosition.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="612">
-          <caret line="44" column="15" lean-forward="false" selection-start-line="44" selection-start-column="15" selection-end-line="44" selection-end-column="15" />
-          <folding />
+          <caret line="44" column="15" selection-start-line="44" selection-start-column="15" selection-end-line="44" selection-end-column="15" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/nachos/userprog/SynchConsole.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="369">
-          <caret line="134" column="15" lean-forward="false" selection-start-line="134" selection-start-column="15" selection-end-line="134" selection-end-column="15" />
-          <folding />
+          <caret line="134" column="15" selection-start-line="134" selection-start-column="15" selection-end-line="134" selection-end-column="15" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/nachos/machine/StubFileSystem.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1700">
-          <caret line="139" column="15" lean-forward="false" selection-start-line="139" selection-start-column="15" selection-end-line="139" selection-end-column="15" />
-          <folding />
+          <caret line="139" column="15" selection-start-line="139" selection-start-column="15" selection-end-line="139" selection-end-column="15" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/nachos/userprog/UserKernel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-23">
-          <caret line="145" column="0" lean-forward="false" selection-start-line="145" selection-start-column="0" selection-end-line="145" selection-end-column="0" />
+        <state relative-caret-position="2346">
+          <caret line="145" selection-start-line="145" selection-end-line="145" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#4371#4380#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/nachos/machine/OpenFile.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1371">
-          <caret line="135" column="0" lean-forward="false" selection-start-line="135" selection-start-column="0" selection-end-line="135" selection-end-column="0" />
+        <state relative-caret-position="2023">
+          <caret line="135" selection-start-line="135" selection-end-line="135" />
           <folding>
             <element signature="e#4091#4092#0" expanded="true" />
           </folding>
@@ -1496,8 +1257,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/nachos/machine/ArrayFile.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="17" column="15" lean-forward="false" selection-start-line="17" selection-start-column="15" selection-end-line="17" selection-end-column="15" />
+        <state relative-caret-position="255">
+          <caret line="17" column="15" selection-start-line="17" selection-start-column="15" selection-end-line="17" selection-end-column="15" />
           <folding>
             <element signature="e#398#399#0" expanded="true" />
             <element signature="e#426#427#0" expanded="true" />
@@ -1507,16 +1268,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/nachos/machine/Coff.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="53" column="0" lean-forward="false" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="901">
+          <caret line="53" selection-start-line="53" selection-end-line="53" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/nachos/vm/VMProcess.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="334">
-          <caret line="47" column="19" lean-forward="false" selection-start-line="47" selection-start-column="19" selection-end-line="47" selection-end-column="19" />
+        <state relative-caret-position="612">
+          <caret line="47" column="19" selection-start-line="47" selection-start-column="19" selection-end-line="47" selection-end-column="19" />
           <folding>
             <element signature="e#1064#1065#0" expanded="true" />
             <element signature="e#1095#1096#0" expanded="true" />
@@ -1526,16 +1286,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/nachos/threads/KThread.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="369">
-          <caret line="285" column="16" lean-forward="false" selection-start-line="285" selection-start-column="16" selection-end-line="285" selection-end-column="16" />
-          <folding />
+        <state relative-caret-position="4709">
+          <caret line="285" column="16" selection-start-line="285" selection-start-column="16" selection-end-line="285" selection-end-column="16" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/nachos/threads/ThreadedKernel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="113">
-          <caret line="50" column="0" lean-forward="false" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
+        <state relative-caret-position="799">
+          <caret line="50" selection-start-line="50" selection-end-line="50" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1544,8 +1303,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/nachos/userprog/UserProcess.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state>
           <folding>
             <element signature="e#1737#1738#0" expanded="true" />
             <element signature="e#1814#1815#0" expanded="true" />
@@ -1555,7 +1313,6 @@
             <element signature="e#4239#4240#0" expanded="true" />
             <element signature="e#6701#6702#0" expanded="true" />
             <element signature="e#6762#6763#0" expanded="true" />
-            <marker date="1523572523633" expanded="false" signature="27405:27414" ph="&lt;~&gt;" />
           </folding>
         </state>
       </provider>
