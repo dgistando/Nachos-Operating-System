@@ -39,24 +39,9 @@ public class UserProcess {
 	}
 
 	public static void selfTest() {
-        System.out.println("This is the User Process Test!!!!!");
+		System.out.println("This is the User Process Test!!!!!");
 
-        try {
-
-            OpenFile file = new OpenFile(null, "file.coff");
-            byte[] arr = new byte[20];
-
-            file.write(arr, 0, 20);
-
-            Coff coff = new Coff(file);
-			//trying to get rid of conflicts
-			//it shows up red in Intellij
-            coff.getNumSections();
-
-        }catch (EOFException e){
-            e.printStackTrace();
-        }
-
+		System.out.println("END TEST");
 	}
 
 	/**
@@ -681,6 +666,56 @@ public class UserProcess {
 	}
 
 	private int handleWrite(int fileDescriptor, int buffer, int size){
+		// return -1 on error
+		if (fileDescriptor < 0 || fileDescriptor > 15) return -1;
+
+
+		OpenFile file;
+		if (fileTable[fileDescriptor] == null){
+			return -1;
+		}else{
+			file = fileTable[fileDescriptor];
+		}
+
+
+		if(  size < 0)  return -1;
+		if(buffer < 0)  return -1;
+		if(buffer == 0) return 0;
+
+		//loop through and increment counter and keep the buffer size small
+		//enough not to run out of heap space.
+		System.out.println("687" + size);//STOPS HERE
+		int maxWrite = 1024;//should put as public variable
+		byte tempBuff[] = new byte[maxWrite];
+
+		System.out.println("691");
+		//loop through and increment counter and keep the buffer size small
+		//enough not to run out of heap space.
+		int byteTransferTotal = 0;
+		while(size > 0){
+			int transferAmount = (size < maxWrite) ? size : maxWrite;
+	System.out.println("697");
+			int readSize = readVirtualMemory(buffer, tempBuff, 0,transferAmount);//could just re-assign this variable
+	System.out.println("699");
+			int sizeWritten = file.write(tempBuff, 0, readSize);
+	System.out.println("701");
+			if(sizeWritten == -1){
+				if(byteTransferTotal == 0)
+					byteTransferTotal = -1;
+				break;
+			}
+	System.out.print("707");
+			buffer += sizeWritten;
+			size -= sizeWritten;
+			byteTransferTotal += sizeWritten;
+
+			if(sizeWritten < transferAmount)
+				break;
+		}
+		return byteTransferTotal;
+	}
+
+	/*private int handleWrite(int fileDescriptor, int buffer, int size){
 		System.out.println("662");
 		if (fileDescriptor < 0 || fileDescriptor > 15){
 			return -1;		// return -1 on error
@@ -727,14 +762,14 @@ public class UserProcess {
 		//if (counter < 0){
 		if(counter != size){
 			return -1;		// return -1 on error
-		}*/
+		}
 
 		System.out.println("705");
 		return (counter == -1 || counter != size)?-1:counter;
 
 
 		//return counter;
-	}
+	}*/
 
 	private int handleUnlink(String name) {
 		boolean succeeded = ThreadedKernel.fileSystem.remove(name);

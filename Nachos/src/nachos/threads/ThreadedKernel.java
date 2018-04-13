@@ -1,6 +1,8 @@
 package nachos.threads;
 
 import nachos.machine.*;
+import nachos.userprog.SynchConsole;
+import nachos.userprog.UserKernel;
 import nachos.userprog.UserProcess;
 
 /**
@@ -48,7 +50,6 @@ public class ThreadedKernel extends Kernel {
      */	
     public void selfTest() {        //Boat.selfTest();
     //LotteryScheduler.selfTest();
-    UserProcess.selfTest();
 	//Semaphore.selfTest();
 	//SynchList.selfTest();
     //KThread.selfTest();
