@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c35c53d1-c2e6-41be-b37c-9a9f956c3efb" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="c35c53d1-c2e6-41be-b37c-9a9f956c3efb" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="C:\Users\dgist\Documents\GitHub\CSE150Project\Nachos\.idea\shelf/" />
     <ignored path="C:\Users\David\Documents\GitHub\CSE150Project\Nachos\.idea\shelf/" />
@@ -28,7 +26,8 @@
       <file leaf-file-name="UserProcess.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/nachos/userprog/UserProcess.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
+            <state relative-caret-position="578">
+              <caret line="41" column="8" lean-forward="true" selection-start-line="41" selection-start-column="8" selection-end-line="41" selection-end-column="8" />
               <folding>
                 <element signature="e#1737#1738#0" expanded="true" />
                 <element signature="e#1814#1815#0" expanded="true" />
@@ -309,7 +308,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="ChangesBrowser.SHOW_FLATTEN" value="true" />
+    <property name="ChangesTree.GroupingKeys" value="" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
@@ -747,7 +746,7 @@
       <workItem from="1523483526906" duration="7765000" />
       <workItem from="1523569367491" duration="105000" />
       <workItem from="1523570355177" duration="5085000" />
-      <workItem from="1523581522443" duration="76000" />
+      <workItem from="1523581522443" duration="260000" />
     </task>
     <task id="LOCAL-00001" summary="changed communicator">
       <created>1519155611820</created>
@@ -875,11 +874,18 @@
       <option name="project" value="LOCAL" />
       <updated>1523485970516</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="extra commit">
+      <created>1523581737755</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1523581737755</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="250146000" />
+    <option name="totallyTimeSpent" value="250330000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="2576" height="1426" extended-state="6" />
@@ -892,9 +898,9 @@
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" weight="0.32977912" />
       <window_info anchor="right" id="Maven Projects" order="4" />
       <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="10" weight="0.32686085" />
+      <window_info anchor="bottom" id="Version Control" order="10" weight="0.32608697" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32686085" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.12888199" />
+      <window_info anchor="bottom" id="Terminal" order="9" weight="0.12888199" />
       <window_info id="Capture Tool" order="3" />
       <window_info id="Designer" order="4" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.07750397" />
@@ -976,7 +982,8 @@
     <MESSAGE value="8 tests done. One more to go. The issue should be with write mem." />
     <MESSAGE value="Had to make changes to pass more final tests" />
     <MESSAGE value="we now pass 23 out of 30" />
-    <option name="LAST_COMMIT_MESSAGE" value="we now pass 23 out of 30" />
+    <MESSAGE value="extra commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="extra commit" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1303,7 +1310,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/nachos/userprog/UserProcess.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
+        <state relative-caret-position="578">
+          <caret line="41" column="8" lean-forward="true" selection-start-line="41" selection-start-column="8" selection-end-line="41" selection-end-column="8" />
           <folding>
             <element signature="e#1737#1738#0" expanded="true" />
             <element signature="e#1814#1815#0" expanded="true" />

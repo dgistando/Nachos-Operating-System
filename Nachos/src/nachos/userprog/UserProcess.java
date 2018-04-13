@@ -49,7 +49,8 @@ public class UserProcess {
             file.write(arr, 0, 20);
 
             Coff coff = new Coff(file);
-
+			//trying to get rid of conflicts
+			//it shows up red in Intellij
             coff.getNumSections();
 
         }catch (EOFException e){
