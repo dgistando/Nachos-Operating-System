@@ -1,6 +1,7 @@
 package nachos.threads;
 
 import nachos.machine.*;
+import nachos.userprog.UserProcess;
 
 /**
  * A multi-threaded OS kernel.
@@ -46,7 +47,8 @@ public class ThreadedKernel extends Kernel {
      * tests here.
      */	
     public void selfTest() {        //Boat.selfTest();
-    LotteryScheduler.selfTest();
+    //LotteryScheduler.selfTest();
+    UserProcess.selfTest();
 	//Semaphore.selfTest();
 	//SynchList.selfTest();
     //KThread.selfTest();

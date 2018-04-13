@@ -6,6 +6,7 @@ import nachos.userprog.*;
 
 import java.io.EOFException;
 
+import java.io.File;
 import java.util.*;
 
 /**
@@ -35,6 +36,26 @@ public class UserProcess {
 		pageTable = new TranslationEntry[numPhysPages];
 		for (int i=0; i<numPhysPages; i++)
 			pageTable[i] = new TranslationEntry(i,i, true,false,false,false);
+	}
+
+	public static void selfTest() {
+        System.out.println("This is the User Process Test!!!!!");
+
+        try {
+
+            OpenFile file = new OpenFile(null, "file.coff");
+            byte[] arr = new byte[20];
+
+            file.write(arr, 0, 20);
+
+            Coff coff = new Coff(file);
+
+            coff.getNumSections();
+
+        }catch (EOFException e){
+            e.printStackTrace();
+        }
+
 	}
 
 	/**
@@ -659,64 +680,59 @@ public class UserProcess {
 	}
 
 	private int handleWrite(int fileDescriptor, int buffer, int size){
-
-
-
+		System.out.println("662");
 		if (fileDescriptor < 0 || fileDescriptor > 15){
-
 			return -1;		// return -1 on error
-
 		}
-
-
-
-		if (size < 0){
-
-			return -1; 		// return -1 on error
-
-		}
-
-
+		System.out.println("666");
 
 		OpenFile file;
-
-
-
 		if (fileTable[fileDescriptor] == null){
-
 			return -1;		// return -1 on error
-
-		}
-
-		else{
-
+		}else{
 			file = fileTable[fileDescriptor];
-
 		}
 
+		System.out.println("675");
+
+		if (size < 0){
+			return -1; 		// return -1 on error
+		}
+
+		System.out.println("681");
+
+		if(buffer < 0)return -1;
+		if(buffer == 0) return 0;
 
 
+
+		System.out.println("686" + size);//STOPS HERE
 		byte tempbuff[] = new byte[size];
 
+		//loop through and increment counter and keep the buffer size small
+		//enough not to run out of heap space.
 
+		System.out.println("689");
 		//int readSize = file.read(tempbuff, 0, size);
 
 		int readSize = readVirtualMemory(buffer, tempbuff, 0,size);
 
+		System.out.println("694");
 		int counter = file.write(tempbuff, 0, readSize);
 
+		/*
+		if(counter == -1)return -1;
 
-
-		if (counter < 0){
-
+		//if (counter < 0){
+		if(counter != size){
 			return -1;		// return -1 on error
+		}*/
 
-		}
-
-		return counter;
-
+		System.out.println("705");
+		return (counter == -1 || counter != size)?-1:counter;
 
 
+		//return counter;
 	}
 
 	private int handleUnlink(String name) {
@@ -1043,6 +1059,7 @@ public class UserProcess {
 				System.out.println("!!Exception Triggered: " + Processor.exceptionNames[cause]+"!!");
 				Lib.debug(dbgProcess, "Unexpected exception: " +
 						Processor.exceptionNames[cause]);
+				handleExit(Integer.MIN_VALUE);//This is just to make sure it doesn't reach the unhandle.
 				Lib.assertNotReached("Unexpected exception");
 		}
 	}
