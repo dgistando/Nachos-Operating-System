@@ -42,12 +42,43 @@ public class NetProcess extends UserProcess {
         return i;
     }
 
+
+    
     private int handleAccept(int port) {
 
-       
-        for(int i = 2; i < f)
+        Lib.assertTrue(port >= 0 && port < Packet.linkAddressLimit);
 
+        MailMessage mail = NetKernel.postOffice.receive(port);
+        if(mail == null) {
+            return -1;
+        }
 
+        int sourceLink = mail.packet.srcLink;
+        int destinationLink = mail.packet.dstLink;
+        int destinationPort = mail.srcPort;
+
+        Connection conn = new Connection(destinationLink, destinationPort, sourceLink);
+
+        int connectionIndex;
+        for(int i = 2; i < fileTable.length; i++){
+
+            if(fileTable[i] == null) {
+                fileTable[i] = conn;
+                connectionIndex = i;
+                break;
+            }
+        }
+
+        UdpPacket ackPacket = new UdpPacket( destinationPort, sourceLink, port, 1, 0, new byte [0]);
+
+        try {
+            NetKernel.postOffice.send(ackPacket);
+        } catch (MalformedPacketException e) {
+            Lib.assertNotReached("This is a malformed acknowledgement packet");
+            return -1
+        }
+
+        return connectionIndex
     }
 
     private static final int
