@@ -152,7 +152,7 @@ public class PriorityScheduler extends Scheduler {
 			getThreadState(thread).acquire(this);
 		}
 
-		public KThread nextThread() {
+		public KThread nextThread() { System.out.println("PQ: Picking next thread");
 
 			//disable the interrupts
 			Lib.assertTrue(Machine.interrupt().disabled());
@@ -291,7 +291,7 @@ public class PriorityScheduler extends Scheduler {
 		 *
 		 * @return	the effective priority of the associated thread.
 		 */
-		public int getEffectivePriority() {
+		public int getEffectivePriority() {System.out.println("PRIORITY EFFECTINVE");
 			// implement me
 			updateEffectivePriority();
 

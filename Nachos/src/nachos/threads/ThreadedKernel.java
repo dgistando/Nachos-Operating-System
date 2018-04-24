@@ -1,6 +1,9 @@
 package nachos.threads;
 
 import nachos.machine.*;
+import nachos.userprog.SynchConsole;
+import nachos.userprog.UserKernel;
+import nachos.userprog.UserProcess;
 
 /**
  * A multi-threaded OS kernel.
@@ -45,11 +48,11 @@ public class ThreadedKernel extends Kernel {
      * autograder never calls this method, so it is safe to put additional
      * tests here.
      */	
-    public void selfTest() {
-        Boat.selfTest();
-	//KThread.selfTest();
+    public void selfTest() {        //Boat.selfTest();
+    //LotteryScheduler.selfTest();
 	//Semaphore.selfTest();
 	//SynchList.selfTest();
+    //KThread.selfTest();
 
 	if (Machine.bank() != null) {
 	    ElevatorBank.selfTest();
