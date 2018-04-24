@@ -688,23 +688,23 @@ public class UserProcess {
 		int maxWrite = 1024;//should put as public variable
 		byte tempBuff[] = new byte[maxWrite];
 
-		System.out.println("691");
+
 		//loop through and increment counter and keep the buffer size small
 		//enough not to run out of heap space.
 		int byteTransferTotal = 0;
 		while(size > 0){
 			int transferAmount = (size < maxWrite) ? size : maxWrite;
-	System.out.println("697");
+
 			int readSize = readVirtualMemory(buffer, tempBuff, 0,transferAmount);//could just re-assign this variable
-	System.out.println("699");
+
 			int sizeWritten = file.write(tempBuff, 0, readSize);
-	System.out.println("701");
+
 			if(sizeWritten == -1){
 				if(byteTransferTotal == 0)
 					byteTransferTotal = -1;
 				break;
 			}
-	System.out.print("707");
+
 			buffer += sizeWritten;
 			size -= sizeWritten;
 			byteTransferTotal += sizeWritten;

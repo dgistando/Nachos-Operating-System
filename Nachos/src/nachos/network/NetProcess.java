@@ -8,18 +8,44 @@ import nachos.vm.*;
 /**
  * A <tt>VMProcess</tt> that supports networking syscalls.
  */
-public class NetProcess extends VMProcess {
+public class NetProcess extends UserProcess {
     /**
      * Allocate a new process.
      */
     public NetProcess() {
-	super();
+        super();
+    }
+
+    private int handleConnect(int host, int port)
+    {
+        int srcPort = NetKernel.postOffice.PortAvailable();
+        int srcLink = Machine.networkLink().getLinkAddress();
+
+        //Connection connection = new Connection(host, port, srcLink, srcPort);
+        int i;
+        for(i = 2; i < 16; i++)
+        {
+            if(fileTable[i] == null)
+            {
+                //fileTable[i] = connection;
+                //break;
+            }
+        }
+        //______ message = new _____(host, port, srcLink, srcPort, 1, 0, new byte[0]);
+        //NetKernel.postoffice.send(message);
+
+        //if(message == null)
+        //return -1;
+
+        //______ received = NetKkernel.postOffice.receive(srcPort);
+
+        return i;
     }
 
     private static final int
-	syscallConnect = 11,
-	syscallAccept = 12;
-    
+            syscallConnect = 11,
+            syscallAccept = 12;
+
     /**
      * Handle a syscall exception. Called by <tt>handleException()</tt>. The
      * <i>syscall</i> argument identifies which syscall the user executed:
@@ -29,7 +55,7 @@ public class NetProcess extends VMProcess {
      * <tr><td>11</td><td><tt>int  connect(int host, int port);</tt></td></tr>
      * <tr><td>12</td><td><tt>int  accept(int port);</tt></td></tr>
      * </table>
-     * 
+     *
      * @param	syscall	the syscall number.
      * @param	a0	the first syscall argument.
      * @param	a1	the second syscall argument.
@@ -38,9 +64,11 @@ public class NetProcess extends VMProcess {
      * @return	the value to be returned to the user.
      */
     public int handleSyscall(int syscall, int a0, int a1, int a2, int a3) {
-	switch (syscall) {
-	default:
-	    return super.handleSyscall(syscall, a0, a1, a2, a3);
-	}
+        switch (syscall) {
+            case syscallConnect:
+                return handleConnect(a0,a1);
+            default:
+                return super.handleSyscall(syscall, a0, a1, a2, a3);
+        }
     }
 }

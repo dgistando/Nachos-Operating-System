@@ -73,6 +73,7 @@ public class Packet {
     /** The contents of this packet, excluding the link-layer header. */
     public byte[] contents;
 
+
     /**
      * The number of bytes in a link-layer packet header. The header is
      * formatted as follows:
