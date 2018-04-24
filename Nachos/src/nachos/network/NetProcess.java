@@ -42,6 +42,14 @@ public class NetProcess extends UserProcess {
         return i;
     }
 
+    private int handleAccept(int port) {
+
+       
+        for(int i = 2; i < f)
+
+
+    }
+
     private static final int
             syscallConnect = 11,
             syscallAccept = 12;
@@ -67,6 +75,8 @@ public class NetProcess extends UserProcess {
         switch (syscall) {
             case syscallConnect:
                 return handleConnect(a0,a1);
+            case syscallAccept:
+                return handleAccept(a0);
             default:
                 return super.handleSyscall(syscall, a0, a1, a2, a3);
         }
