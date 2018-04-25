@@ -25,8 +25,10 @@ public class PostOffice {
 		messageReceived = new Semaphore(0);
 		messageSent = new Semaphore(0);
 		sendLock = new Lock();
+		portLock = new Lock();
 
-		queues = new SynchList[MailMessage.portLimit];
+		//queues = new SynchList[MailMessage.portLimit];
+        queues = new SynchList[UdpPacket.maxPortLimit];
 		for (int i=0; i<queues.length; i++)
 			queues[i] = new SynchList();
 
@@ -53,12 +55,15 @@ public class PostOffice {
 	 *
 	 * @return	the message received.
 	 */
-	public MailMessage receive(int port) {
+	//public MailMessage receive(int port) {
+    public UdpPacket receive(int port){
+
 		Lib.assertTrue(port >= 0 && port < queues.length);
 
 		Lib.debug(dbgNet, "waiting for mail on port " + port);
 
-		MailMessage mail = (MailMessage) queues[port].removeFirst();
+		//MailMessage mail = (MailMessage) queues[port].removeFirst();//Dont want to return mail.Return our thing
+        UdpPacket mail = (UdpPacket) queues[port].removeFirst();
 
 		if (Lib.test(dbgNet))
 			System.out.println("got mail on port " + port + ": " + mail);
@@ -90,6 +95,7 @@ public class PostOffice {
 
 			// atomically add message to the mailbox and wake a waiting thread
 			queues[mail.dstPort].add(mail);
+			setPortUsed(mail.dstPort);
 		}
 	}
 
@@ -104,7 +110,9 @@ public class PostOffice {
 	/**
 	 * Send a message to a mailbox on a remote machine.
 	 */
-	public void send(MailMessage mail) {
+	//Modified this to tahe a UDPPacket instead of Message type
+	//public void send(MailMessage mail) {
+    public void send(UdpPacket mail){
 		if (Lib.test(dbgNet))
 			System.out.println("sending mail: " + mail);
 
@@ -124,13 +132,13 @@ public class PostOffice {
 	private void sendInterrupt() {
 		messageSent.V();
 	}
-	public int PortAvailable()
-	{
+
+	public int PortAvailable() {
 		portLock.acquire();
 		int i = 0;
 		for(SynchList obj : queues)
 		{
-			if(obj.free == true)
+			if(obj.free)
 			{
 				obj.free = false;
 				return i;
@@ -141,12 +149,21 @@ public class PostOffice {
 		return -1;
 	}
 
-	private Lock portLock = new Lock();
+	//When the port is used you have to mark
+    public void setPortUsed(int i){
+	    portLock.acquire();
+	    if(!queues[i].free)
+	        System.out.print("Port "+ i +" is not free");
+	    else
+	        queues[i].free = false;
+	    portLock.release();
+    }
+
+	private Lock portLock;
 	private SynchList[] queues;
 	private Semaphore messageReceived;	// V'd when a message can be dequeued
 	private Semaphore messageSent;	// V'd when a message can be queued
 	private Lock sendLock;
-	private boolean free = true;
 
 	private static final char dbgNet = 'n';
 }

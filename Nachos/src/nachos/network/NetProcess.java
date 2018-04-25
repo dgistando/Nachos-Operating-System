@@ -21,13 +21,16 @@ public class NetProcess extends UserProcess {
         int srcPort = NetKernel.postOffice.PortAvailable();
         int srcLink = Machine.networkLink().getLinkAddress();
 
+
+
         //Connection connection = new Connection(host, port, srcLink, srcPort);
+        Connection connection = new Connection(port, srcPort, );
         int i;
-        for(i = 2; i < 16; i++)
+        for(i = 2; i < fileTable.length; i++)
         {
             if(fileTable[i] == null)
             {
-                //fileTable[i] = connection;
+                fileTable[i] = connection;
                 //break;
             }
         }
@@ -40,6 +43,43 @@ public class NetProcess extends UserProcess {
         //______ received = NetKkernel.postOffice.receive(srcPort);
 
         return i;
+    }
+
+    private int handleAccept(int port) {
+
+        Lib.assertTrue(port >= 0 && port < Packet.linkAddressLimit);
+
+        //MailMessage mail = NetKernel.postOffice.receive(port);
+        UdpPacket mail = NetKernel.postOffice.receive(port);
+        if(mail == null) {
+            return -1;
+        }
+
+        int sourceLink = mail.packet.srcLink;
+        int destinationLink = mail.packet.dstLink;
+        int destinationPort = mail.srcPort;
+
+        Connection conn = new Connection(destinationLink, destinationPort, sourceLink);
+
+        int connectionIndex;
+        for(int i = 2; i < fileTable.length; i++){
+
+            if(fileTable[i] == null) {
+                fileTable[i] = conn;
+                connectionIndex = i;
+                break;
+            }
+        }
+
+        try {
+            UdpPacket ackPacket = new UdpPacket( destinationPort, sourceLink, port, 1, 0, new byte [0]);
+            NetKernel.postOffice.send(ackPacket);
+        } catch (MalformedPacketException e) {
+            Lib.assertNotReached("This is a malformed acknowledgement packet");
+            return -1;
+        }
+
+        return connectionIndex
     }
 
     private static final int
@@ -67,8 +107,28 @@ public class NetProcess extends UserProcess {
         switch (syscall) {
             case syscallConnect:
                 return handleConnect(a0,a1);
+            case syscallAccept:
+                return handleAccept(a0);
             default:
                 return super.handleSyscall(syscall, a0, a1, a2, a3);
         }
     }
+
+    public static class Socket extends OpenFile{
+        protected Connection connection;
+
+        Socket(){ }
+        Socket(Connection connection){
+            this.connection = connection;
+        }
+
+        public int read(){
+            return 1;
+        }
+
+        public int write(){
+            return 1;
+        }
+    }
+
 }

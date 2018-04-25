@@ -116,7 +116,8 @@ public class NetKernel extends VMKernel {
 	super.terminate();
     }
 
-    private PostOffice postOffice;
+    //Had to make it available to use the send/receive functions
+    public static PostOffice postOffice;
 
     // dummy variables to make javac smarter
     private static NetProcess dummy1 = null;

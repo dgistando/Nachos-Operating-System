@@ -1139,6 +1139,6 @@ public class UserProcess {
 	private static final int pageSize = Processor.pageSize;
 	private static final char dbgProcess = 'a';
 
-	private OpenFile[] fileTable;
+	protected OpenFile[] fileTable;
 
 }

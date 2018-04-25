@@ -59,27 +59,27 @@ public class Connection {
     }
 
     //To be used by post master general
-    public void msgPacket(MailMessage hej){
+    public void msgPacket(UdpPacket hej){
         switch(hej.flags){
-            case MailMessage.FIN:
+            case UdpPacket.FIN:
                 conState.FIN(this);
 
-            case MailMessage.FIN | MailMessage.ACK:
+            case UdpPacket.FIN | UdpPacket.ACK:
                 conState.FINACK(this);
 
-            case MailMessage.STP:
+            case UdpPacket.STP:
                 conState.STP(this);
 
-            case MailMessage.ACK:
+            case UdpPacket.ACK:
                 conState.ACK(this);
 
-            case MailMessage.SYN:
+            case UdpPacket.SYN:
                 conState.SYN(this);
 
-            case MailMessage.SYN | MailMessage.ACK:
+            case UdpPacket.SYN | UdpPacket.ACK:
                 conState.SYNACK(this);
 
-            case MailMessage.DATA:
+            case UdpPacket.DATA:
                 conState.DATA(this);
 
             default:
@@ -88,15 +88,15 @@ public class Connection {
     }
 
 
-    public void packet(MailMessage hej){
-        switch(hej.signal){
-            case MailMessage.FIN:
+    public void packet(UdpPacket hej){
+        switch(hej.flags){
+            case UdpPacket.FIN:
                 break;
-            case MailMessage.STP:
+            case UdpPacket.STP:
                 break;
-            case MailMessage.ACK:
+            case UdpPacket.ACK:
                 break;
-            case MailMessage.SYN:
+            case UdpPacket.SYN:
                 break;
 
             default:
@@ -415,10 +415,10 @@ public class Connection {
 
         };
 
-        int fin = MailMessage.FIN;
-        int ack = MailMessage.ACK;
-        int syn = MailMessage.SYN;
-        int stp = MailMessage.STP;
+        int fin = UdpPacket.FIN;
+        int ack = UdpPacket.ACK;
+        int syn = UdpPacket.SYN;
+        int stp = UdpPacket.STP;
 
         //All of the potential actions to be overriden depending on the current state of the connection
         void CONNECT(Connection conAir){}

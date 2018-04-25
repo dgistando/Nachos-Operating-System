@@ -15,6 +15,7 @@ public class SynchList {
 	list = new LinkedList<Object>();
 	lock = new Lock();
 	listEmpty = new Condition(lock);
+	free = true;
     }
 
     /**
@@ -80,6 +81,9 @@ public class SynchList {
 	    Lib.assertTrue(pong.removeFirst() == o);
 	}
     }
+
+    //Adding boolean to see if free port.{proj4}
+    public boolean free;
 
     private LinkedList<Object> list;
     private Lock lock;
