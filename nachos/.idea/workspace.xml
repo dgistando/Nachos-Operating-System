@@ -1,0 +1,814 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="3cdcf5b7-c55c-4947-8cff-64e25e855de2" name="Default" comment="" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$/.." value="master" />
+      </map>
+    </option>
+    <favorite-branches>
+      <branch-storage>
+        <map>
+          <entry type="LOCAL">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$/.." source="David" />
+              </list>
+            </value>
+          </entry>
+          <entry type="REMOTE">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$/.." source="origin/David" />
+              </list>
+            </value>
+          </entry>
+        </map>
+      </branch-storage>
+    </favorite-branches>
+    <excluded-from-favorite>
+      <branch-storage>
+        <map>
+          <entry type="LOCAL">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$/.." source="master" />
+              </list>
+            </value>
+          </entry>
+          <entry type="REMOTE">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$/.." source="origin/master" />
+              </list>
+            </value>
+          </entry>
+        </map>
+      </branch-storage>
+    </excluded-from-favorite>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Nachos" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Nachos" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Nachos" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Nachos" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Nachos" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Nachos" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="nachos" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Nachos" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Nachos" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="nachos" type="462c0819:PsiDirectoryNode" />
+              <item name="machine" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Nachos" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Nachos" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="nachos" type="462c0819:PsiDirectoryNode" />
+              <item name="network" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
+    </panes>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="Application" factoryName="Application">
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <patterns />
+    </configuration>
+    <configuration default="true" type="TestNG" factoryName="TestNG">
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <properties />
+      <listeners />
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c35c53d1-c2e6-41be-b37c-9a9f956c3efb" name="Default" comment="" />
+      <created>1516943541267</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1516943541267</updated>
+      <workItem from="1516943545031" duration="495000" />
+      <workItem from="1516944976445" duration="85000" />
+      <workItem from="1516945077690" duration="2672000" />
+      <workItem from="1517599223102" duration="95000" />
+      <workItem from="1517599379186" duration="8144000" />
+      <workItem from="1518597775505" duration="99000" />
+      <workItem from="1518597889921" duration="2140000" />
+      <workItem from="1518958553211" duration="150000" />
+      <workItem from="1519082146122" duration="12912000" />
+      <workItem from="1519192156130" duration="1610000" />
+      <workItem from="1519201714244" duration="914000" />
+      <workItem from="1519202650941" duration="4791000" />
+      <workItem from="1519402827608" duration="1032000" />
+      <workItem from="1519375081610" duration="139000" />
+      <workItem from="1519375378726" duration="216000" />
+      <workItem from="1519426006584" duration="8708000" />
+      <workItem from="1519604390024" duration="8125000" />
+      <workItem from="1519687848277" duration="8158000" />
+      <workItem from="1519701634110" duration="1076000" />
+      <workItem from="1521318017553" duration="80000" />
+      <workItem from="1521321469372" duration="1279000" />
+      <workItem from="1521705600975" duration="11814000" />
+      <workItem from="1522888105149" duration="331000" />
+      <workItem from="1522888985007" duration="61000" />
+      <workItem from="1523483526906" duration="7765000" />
+      <workItem from="1523569367491" duration="105000" />
+      <workItem from="1523570355177" duration="5085000" />
+      <workItem from="1523581522443" duration="260000" />
+      <workItem from="1523581797607" duration="9280000" />
+      <workItem from="1523684722969" duration="20000" />
+      <workItem from="1523774924879" duration="6238000" />
+      <workItem from="1524162686525" duration="619000" />
+      <workItem from="1524360637159" duration="16415000" />
+      <workItem from="1524626376945" duration="6020000" />
+      <workItem from="1524725471650" duration="2102000" />
+      <workItem from="1524727845010" duration="283000" />
+    </task>
+    <task id="LOCAL-00001" summary="changed communicator">
+      <created>1519155611820</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1519155611820</updated>
+    </task>
+    <task id="LOCAL-00002" summary="changed communicator">
+      <created>1519207423659</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1519207423659</updated>
+    </task>
+    <task id="LOCAL-00003" summary="need last three functions in Priority Scheduler">
+      <created>1519289059243</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1519289059243</updated>
+    </task>
+    <task id="LOCAL-00004" summary="changed Condition2 and small other changes">
+      <created>1519429415844</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1519429415844</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Trying still trying to test all the parts.&#10;-see KThread(413)[Enabled the debug flags to see what is actually going on]&#10;-To add a test yourself create a selfTest method in the class and add the tests to it. Join seemed to work okay.">
+      <created>1519696222174</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1519696222174</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Changed it back">
+      <created>1519700612564</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1519700612564</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Passed the first test">
+      <created>1519794317697</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1519794317697</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Passed 2 tests">
+      <created>1519843645437</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1519843645437</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Passed 3 tests">
+      <created>1519846365250</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1519846365250</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Pass all the tests but boat">
+      <created>1519952129711</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1519952129711</updated>
+    </task>
+    <task id="LOCAL-00011" summary="still need to fix lottery scheduler. Then move on to other tests.">
+      <created>1521805928755</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1521805928756</updated>
+    </task>
+    <task id="LOCAL-00012" summary="still only 4">
+      <created>1521916323794</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1521916323794</updated>
+    </task>
+    <task id="LOCAL-00013" summary="5/9 tests passed">
+      <created>1521964731322</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1521964731322</updated>
+    </task>
+    <task id="LOCAL-00014" summary="5/9 tests passed">
+      <created>1521964779889</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1521964779889</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Merge remote-tracking branch 'origin/David' into David&#10;&#10;# Conflicts:&#10;#&#9;Nachos/src/nachos/userprog/UserProcess.java">
+      <created>1521965692227</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1521965692227</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Pass 6 tests. Guess readVM not working right now. Will work in the morning">
+      <created>1521973824999</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1521973824999</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Had to make changes to pass more final tests">
+      <created>1523484518489</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1523484518489</updated>
+    </task>
+    <task id="LOCAL-00018" summary="we now pass 23 out of 30">
+      <created>1523485970516</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1523485970516</updated>
+    </task>
+    <task id="LOCAL-00019" summary="extra commit">
+      <created>1523581737755</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1523581737755</updated>
+    </task>
+    <task id="LOCAL-00020" summary="trying to get rid of red files">
+      <created>1523581895402</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1523581895402</updated>
+    </task>
+    <task id="LOCAL-00021" summary="changed handleWrite function">
+      <created>1523592018636</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1523592018636</updated>
+    </task>
+    <task id="LOCAL-00022" summary="Only need Connection class now">
+      <created>1524727507772</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1524727507772</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="20000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="2576" height="1426" extended-state="7" />
+    <layout>
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="right" id="Palette&#9;" order="9" />
+      <window_info id="Image Layers" order="7" />
+      <window_info anchor="right" id="Capture Analysis" order="6" />
+      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" weight="0.32919255" />
+      <window_info anchor="right" id="Maven Projects" order="4" weight="0.3298887" />
+      <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="10" show_stripe_button="false" weight="0.32608697" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32608697" />
+      <window_info anchor="bottom" id="Terminal" order="9" weight="0.12888199" />
+      <window_info id="Capture Tool" order="3" />
+      <window_info id="Designer" order="4" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.122019075" />
+      <window_info anchor="right" id="Database" order="5" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info id="UI Designer" order="5" />
+      <window_info anchor="right" id="Theme Preview" order="7" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39751554" />
+      <window_info anchor="bottom" id="Messages" order="8" weight="0.32847896" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info id="Nl-Palette" order="2" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="right" id="Properties" order="8" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32919255" />
+    </layout>
+    <layout-to-restore>
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Capture Analysis" order="6" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32763976" />
+      <window_info anchor="right" id="Theme Preview" order="7" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info id="Nl-Palette" order="2" />
+      <window_info id="Structure" order="1" weight="0.25" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Version Control" order="10" weight="0.32763976" />
+      <window_info id="Image Layers" order="7" />
+      <window_info id="Designer" order="4" />
+      <window_info anchor="right" id="Properties" order="8" />
+      <window_info id="UI Designer" order="5" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="right" id="Database" order="5" />
+      <window_info anchor="right" id="Palette&#9;" order="9" />
+      <window_info anchor="bottom" id="Terminal" order="9" />
+      <window_info anchor="bottom" id="Debug" order="3" visible="true" weight="0.3986111" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" weight="0.32977912" />
+      <window_info id="Capture Tool" order="3" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Messages" order="8" weight="0.32977912" />
+      <window_info anchor="right" id="Maven Projects" order="4" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.15812592" />
+    </layout-to-restore>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$" />
+      <path value="$PROJECT_DIR$/.." />
+    </ignored-roots>
+    <MESSAGE value="changed communicator" />
+    <MESSAGE value="need last three functions in Priority Scheduler" />
+    <MESSAGE value="changed Condition2 and small other changes" />
+    <MESSAGE value="Trying still trying to test all the parts.&#10;-see KThread(413)[Enabled the debug flags to see what is actually going on]&#10;-To add a test yourself create a selfTest method in the class and add the tests to it. Join seemed to work okay." />
+    <MESSAGE value="Changed it back" />
+    <MESSAGE value="Passed the first test" />
+    <MESSAGE value="Passed 2 tests" />
+    <MESSAGE value="Passed 3 tests" />
+    <MESSAGE value="Pass all the tests but boat" />
+    <MESSAGE value="still need to fix lottery scheduler. Then move on to other tests." />
+    <MESSAGE value="still only 4" />
+    <MESSAGE value="5/9 tests passed" />
+    <MESSAGE value="Merge remote-tracking branch 'origin/David' into David&#10;Forcing push. Anna's comments are still there.&#10;# Conflicts:&#10;#&#9;Nachos/src/nachos/userprog/UserProcess.java" />
+    <MESSAGE value="Merge remote-tracking branch 'origin/David' into David&#10;&#10;# Conflicts:&#10;#&#9;Nachos/src/nachos/userprog/UserProcess.java" />
+    <MESSAGE value="Pass 6 tests. Guess readVM not working right now. Will work in the morning" />
+    <MESSAGE value="8 tests done. One more to go. The issue should be with write mem." />
+    <MESSAGE value="Had to make changes to pass more final tests" />
+    <MESSAGE value="we now pass 23 out of 30" />
+    <MESSAGE value="extra commit" />
+    <MESSAGE value="trying to get rid of red files" />
+    <MESSAGE value="changed handleWrite function" />
+    <MESSAGE value="Only need Connection class now" />
+    <option name="LAST_COMMIT_MESSAGE" value="Only need Connection class now" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="55" />
+    </breakpoint-manager>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/nachos/ag/BoatGrader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="24" column="4" lean-forward="true" selection-start-line="24" selection-start-column="4" selection-end-line="24" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/nachos/threads/Condition.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="833">
+          <caret line="51" column="13" selection-start-line="51" selection-start-column="13" selection-end-line="51" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/nachos/threads/Lock.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="731">
+          <caret line="43" selection-start-line="43" selection-end-line="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/nachos/threads/Boat.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-34">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/nachos/threads/RoundRobinScheduler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="782">
+          <caret line="51" column="19" selection-start-line="51" selection-start-column="19" selection-end-line="51" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/nachos/threads/ThreadQueue.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="663">
+          <caret line="39" column="22" selection-start-line="39" selection-start-column="22" selection-end-line="39" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/nachos/machine/Config.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="21" column="27" selection-start-line="21" selection-start-column="23" selection-end-line="21" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/nachos/threads/Condition2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="28" selection-start-line="28" selection-end-line="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/nachos/threads/Alarm.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="21" selection-start-line="21" selection-end-line="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/nachos/threads/Scheduler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1802">
+          <caret line="109" column="20" selection-start-line="109" selection-start-column="20" selection-end-line="109" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/nachos/nachos/userprog/UserProcess.java" />
+    <entry file="file://$USER_HOME$/Desktop/nachos/nachos/threads/LotteryScheduler.java" />
+    <entry file="file://$USER_HOME$/Desktop/nachos/nachos/userprog/SynchConsole.java" />
+    <entry file="file://$USER_HOME$/Desktop/nachos/nachos/threads/ThreadedKernel.java" />
+    <entry file="file://$USER_HOME$/Desktop/nachos/nachos/userprog/UserKernel.java" />
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_121/jre/lib/rt.jar!/java/util/HashMap.class" />
+    <entry file="file://$PROJECT_DIR$/src/nachos/userprog/UThread.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/nachos/proj1/nachos.conf">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="45" selection-start-line="10" selection-start-column="45" selection-end-line="10" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/nachos/proj2/nachos.conf">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="42" lean-forward="true" selection-start-line="12" selection-start-column="42" selection-end-line="12" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/nachos/machine/TCB.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1496">
+          <caret line="92" selection-start-line="92" selection-end-line="92" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/nachos/threads/Semaphore.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1462">
+          <caret line="88" column="23" selection-start-line="88" selection-start-column="23" selection-end-line="88" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/nachos/threads/LotteryScheduler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3247">
+          <caret line="197" column="17" selection-start-line="197" selection-start-column="17" selection-end-line="197" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/nachos/machine/OpenFileWithPosition.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="612">
+          <caret line="44" column="15" selection-start-line="44" selection-start-column="15" selection-end-line="44" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/nachos/machine/StubFileSystem.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1700">
+          <caret line="139" column="15" selection-start-line="139" selection-start-column="15" selection-end-line="139" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/nachos/machine/ArrayFile.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="15" selection-start-line="17" selection-start-column="15" selection-end-line="17" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/nachos/machine/Coff.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="901">
+          <caret line="53" selection-start-line="53" selection-end-line="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/nachos/test/Makefile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="163">
+          <caret line="25" column="32" lean-forward="true" selection-start-line="25" selection-start-column="32" selection-end-line="25" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/nachos/vm/VMProcess.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="612">
+          <caret line="47" column="19" selection-start-line="47" selection-start-column="19" selection-end-line="47" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/nachos/threads/PriorityScheduler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="786">
+          <caret line="132" column="31" selection-start-line="132" selection-start-column="31" selection-end-line="132" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/nachos/machine/Lib.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1105">
+          <caret line="76" selection-start-line="76" selection-end-line="76" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/nachos/threads/KThread.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4709">
+          <caret line="285" column="16" selection-start-line="285" selection-start-column="16" selection-end-line="285" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/nachos/machine/Machine.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6222">
+          <caret line="373" column="48" selection-start-line="373" selection-start-column="48" selection-end-line="373" selection-end-column="48" />
+          <folding>
+            <element signature="e#15487#15488#0" expanded="true" />
+            <element signature="e#15522#15523#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/nachos/machine/Kernel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/nachos/machine/SerialConsole.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="17" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/nachos/threads/ThreadedKernel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="782">
+          <caret line="51" column="34" selection-start-line="51" selection-start-column="34" selection-end-line="51" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/nachos/userprog/SynchConsole.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2108">
+          <caret line="134" column="15" selection-start-line="134" selection-start-column="15" selection-end-line="134" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/nachos/userprog/UserKernel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="27" selection-start-line="27" selection-end-line="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/nachos/vm/VMKernel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="28" column="16" selection-start-line="28" selection-start-column="16" selection-end-line="28" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/nachos/threads/Communicator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-150">
+          <caret line="29" column="21" selection-start-line="29" selection-start-column="21" selection-end-line="29" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/nachos/threads/SynchList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1360">
+          <caret line="82" column="5" selection-start-line="82" selection-start-column="5" selection-end-line="82" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/nachos/network/UdpPacket.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1071">
+          <caret line="64" selection-start-line="64" selection-end-line="64" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/nachos/network/PostOffice.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="48" column="5" selection-start-line="48" selection-start-column="5" selection-end-line="48" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/nachos/machine/NetworkLink.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4896">
+          <caret line="297" column="75" selection-start-line="297" selection-start-column="75" selection-end-line="297" selection-end-column="75" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/nachos/machine/Processor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="21" column="19" selection-start-line="21" selection-start-column="19" selection-end-line="21" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/nachos/machine/Packet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="901">
+          <caret line="53" column="64" selection-start-line="53" selection-start-column="48" selection-end-line="53" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/nachos/network/MailMessage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/nachos/userprog/UserProcess.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="9741">
+          <caret line="588" column="9" selection-start-line="588" selection-start-column="9" selection-end-line="588" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/nachos/machine/OpenFile.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="20" selection-start-line="19" selection-start-column="20" selection-end-line="19" selection-end-column="20" />
+          <folding>
+            <element signature="e#4073#4074#0" expanded="true" />
+            <element signature="e#4091#4092#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/nachos/network/NetKernel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1445">
+          <caret line="91" column="19" selection-start-line="91" selection-start-column="19" selection-end-line="91" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/nachos/network/NetProcess.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="19" column="49" selection-start-line="19" selection-start-column="49" selection-end-line="19" selection-end-column="49" />
+          <folding>
+            <element signature="e#329#330#0" expanded="true" />
+            <element signature="e#352#353#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/nachos/network/Connection.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="1" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
