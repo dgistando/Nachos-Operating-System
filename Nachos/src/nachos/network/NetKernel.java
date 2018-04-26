@@ -61,11 +61,12 @@ public class NetKernel extends VMKernel {
 
 	long startTime = Machine.timer().getTime();
 	
-	MailMessage ping;
+	//MailMessage ping;
+	UdpPacket ping;
 
 	try {
-	    ping = new MailMessage(dstLink, 1,
-				   Machine.networkLink().getLinkAddress(), 0,
+	    ping = new UdpPacket(dstLink,0, Machine.networkLink().getLinkAddress(),
+				1, 0,
 				   new byte[0]);
 	}
 	catch (MalformedPacketException e) {
@@ -75,8 +76,11 @@ public class NetKernel extends VMKernel {
 
 	postOffice.send(ping);
 
-	MailMessage ack = postOffice.receive(0);
-	
+	//MailMessage ack = postOffice.receive(0);
+	UdpPacket ack = postOffice.receive(0);
+
+	System.out.print(ack);
+
 	long endTime = Machine.timer().getTime();
 
 	System.out.println("time=" + (endTime-startTime) + " ticks");	
@@ -84,14 +88,16 @@ public class NetKernel extends VMKernel {
 
     private void pingServer() {
 	while (true) {
-	    MailMessage ping = postOffice.receive(1);
+		//MailMessage ping = postOffice.receive(1);
+		UdpPacket ping = postOffice.receive(1);
 
-	    MailMessage ack;
+	    UdpPacket ack;
 
 	    try {
-		ack = new MailMessage(ping.packet.srcLink, ping.srcPort,
+		/*ack = new MailMessage(ping.packet.srcLink, ping.srcPort,
 				      ping.packet.dstLink, ping.dstPort,
-				      ping.contents);
+				      ping.contents);*/
+		ack = new UdpPacket(ping.packet.dstLink, ping.destPort, ping.packet.srcLink, ping.srcPort, 0, ping.payload);
 	    }
 	    catch (MalformedPacketException e) {
 		// should never happen...

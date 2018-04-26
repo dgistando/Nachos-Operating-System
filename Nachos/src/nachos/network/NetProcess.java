@@ -4,6 +4,7 @@ import nachos.machine.*;
 import nachos.threads.*;
 import nachos.userprog.*;
 import nachos.vm.*;
+import sun.nio.ch.Net;
 
 /**
  * A <tt>VMProcess</tt> that supports networking syscalls.
@@ -21,27 +22,36 @@ public class NetProcess extends UserProcess {
         int srcPort = NetKernel.postOffice.PortAvailable();
         int srcLink = Machine.networkLink().getLinkAddress();
 
-
-
-        //Connection connection = new Connection(host, port, srcLink, srcPort);
-        Connection connection = new Connection(port, srcPort, );
+        Connection connection = new Connection(host, port, srcLink, srcPort);
         int i;
         for(i = 2; i < fileTable.length; i++)
         {
             if(fileTable[i] == null)
             {
                 fileTable[i] = connection;
-                //break;
+                break;
             }
         }
-        //______ message = new _____(host, port, srcLink, srcPort, 1, 0, new byte[0]);
-        //NetKernel.postoffice.send(message);
 
-        //if(message == null)
-        //return -1;
+        try {
+            //______ message = new _____(host, port, srcLink, srcPort, 1, 0, new byte[0]);
+            UdpPacket packet = new UdpPacket(host, port, srcLink, srcPort, 0, new byte[0]);
+            //NetKernel.postoffice.send(message);
+            //if(message == null)
+            //return -1;
+
+            NetKernel.postOffice.send(packet);
+        }catch (MalformedPacketException e){
+            Lib.assertNotReached("This is a malformed acknowledgement packet");
+            return -1;
+        }
+
 
         //______ received = NetKkernel.postOffice.receive(srcPort);
 
+        UdpPacket ackPack = NetKernel.postOffice.receive(srcPort);
+
+        System.out.print(ackPack);
         return i;
     }
 
@@ -49,19 +59,22 @@ public class NetProcess extends UserProcess {
 
         Lib.assertTrue(port >= 0 && port < Packet.linkAddressLimit);
 
+
+
         //MailMessage mail = NetKernel.postOffice.receive(port);
         UdpPacket mail = NetKernel.postOffice.receive(port);
         if(mail == null) {
             return -1;
         }
-
+        //Added source port for connections. It might just be the same port instead
+        int srcPort = NetKernel.postOffice.PortAvailable();
         int sourceLink = mail.packet.srcLink;
         int destinationLink = mail.packet.dstLink;
         int destinationPort = mail.srcPort;
 
-        Connection conn = new Connection(destinationLink, destinationPort, sourceLink);
-
-        int connectionIndex;
+        //Connection conn = new Connection(destinationLink, destinationPort, sourceLink);
+        Connection conn = new Connection(destinationLink, destinationPort, sourceLink, srcPort);
+        int connectionIndex = -1;
         for(int i = 2; i < fileTable.length; i++){
 
             if(fileTable[i] == null) {
@@ -79,7 +92,7 @@ public class NetProcess extends UserProcess {
             return -1;
         }
 
-        return connectionIndex
+        return connectionIndex;
     }
 
     private static final int
@@ -114,7 +127,7 @@ public class NetProcess extends UserProcess {
         }
     }
 
-    public static class Socket extends OpenFile{
+/*    public static class Socket extends OpenFile{
         protected Connection connection;
 
         Socket(){ }
@@ -129,6 +142,6 @@ public class NetProcess extends UserProcess {
         public int write(){
             return 1;
         }
-    }
+    }*/
 
 }

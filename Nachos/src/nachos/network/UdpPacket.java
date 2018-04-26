@@ -10,7 +10,7 @@ public class UdpPacket {
 
     public int destPort;
     public int srcPort;
-    public int flags;
+   // public int flags;
     public int seq;
 
     public byte[] payload;
@@ -20,7 +20,7 @@ public class UdpPacket {
 
     public UdpPacket(){}
 
-    public UdpPacket(int dstLink, int destPort, int srcLink, int srcPort, int flags, int seq, byte[] payload)throws MalformedPacketException{
+    public UdpPacket(int dstLink, int destPort, int srcLink, int srcPort, /*int flags,*/ int seq, byte[] payload)throws MalformedPacketException{
         //Make sure we have a valid port range
         if (destPort < 0 || destPort >= maxPortLimit ||
                 srcPort < 0 || srcPort >= maxPortLimit ||
@@ -29,7 +29,7 @@ public class UdpPacket {
 
         this.destPort = (byte)destPort;
         this.srcPort = (byte)srcPort;
-        this.flags = flags;
+       // this.flags = flags;
         this.seq = seq;
         this.payload = payload;
 
@@ -58,12 +58,18 @@ public class UdpPacket {
         System.arraycopy(packet.contents, HEADER_LENGTH, payload, 0, payload.length);
     }
 
+    @Override
+    public String toString(){
+        return "UdpPack|| from: "+ packet.srcLink +":"+srcPort+" to: "+ packet.dstLink+":"+destPort+" "+payload.length+" bytes";
+    }
+
+    /*
     //These are all the possible flags
     static final int DATA = 0;
     static final int SYN = 1;
     static final int ACK = 2;
     static final int STP = 4;
-    static final int FIN = 8;
+    static final int FIN = 8;*/
 
     //public static final int newHeaderLength = 2;
     //public static final int maxUdpLength = Packet.maxContentsLength - newHeaderLength;
