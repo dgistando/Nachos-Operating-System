@@ -80,22 +80,23 @@ public class PostOffice {
 
 			Packet p = Machine.networkLink().receive();
 
-			MailMessage mail;
+			UdpPacket mail;
 
 			try {
-				mail = new MailMessage(p);
+				mail = new UdpPacket(p);
 			}
 			catch (MalformedPacketException e) {
 				continue;
 			}
 
 			if (Lib.test(dbgNet))
-				System.out.println("delivering mail to port " + mail.dstPort
+				System.out.println("delivering mail to port " + mail.destPort
 						+ ": " + mail);
 
 			// atomically add message to the mailbox and wake a waiting thread
-			queues[mail.dstPort].add(mail);
-			setPortUsed(mail.dstPort);
+			queues[mail.destPort].add(mail);
+			//queues[mail.destPort].free = false;
+			setPortUsed(mail.destPort);
 		}
 	}
 
@@ -153,7 +154,7 @@ public class PostOffice {
     public void setPortUsed(int i){
 	    portLock.acquire();
 	    if(!queues[i].free)
-	        System.out.print("Port "+ i +" is not free");
+	        System.out.println("Port "+ i +" is not free");
 	    else
 	        queues[i].free = false;
 	    portLock.release();

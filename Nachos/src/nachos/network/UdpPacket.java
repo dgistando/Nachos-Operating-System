@@ -60,7 +60,7 @@ public class UdpPacket {
 
     @Override
     public String toString(){
-        return "UdpPack|| from: "+ packet.srcLink +":"+srcPort+" to: "+ packet.dstLink+":"+destPort+" "+payload.length+" bytes";
+        return "UdpPack || from: "+ packet.srcLink +":"+srcPort+" to: "+ packet.dstLink+":"+destPort+" "+payload.length+" bytes";
     }
 
     /*

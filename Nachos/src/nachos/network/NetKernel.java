@@ -64,10 +64,12 @@ public class NetKernel extends VMKernel {
 	//MailMessage ping;
 	UdpPacket ping;
 
+	byte[] barr = {'q'};
+
 	try {
 	    ping = new UdpPacket(dstLink,0, Machine.networkLink().getLinkAddress(),
 				1, 0,
-				   new byte[0]);
+				   barr);
 	}
 	catch (MalformedPacketException e) {
 	    Lib.assertNotReached();
@@ -79,7 +81,7 @@ public class NetKernel extends VMKernel {
 	//MailMessage ack = postOffice.receive(0);
 	UdpPacket ack = postOffice.receive(0);
 
-	System.out.print(ack);
+	System.out.println(ack);
 
 	long endTime = Machine.timer().getTime();
 

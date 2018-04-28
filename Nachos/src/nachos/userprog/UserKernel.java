@@ -46,8 +46,10 @@ public class UserKernel extends ThreadedKernel {
 	char c;
 
 	do {
-	    c = (char) console.readByte(true);
+	    //c = (char) console.readByte(true);
+	    c = 'q';//Did this so the console wont run forever
 	    console.writeByte(c);
+
 	}
 	while (c != 'q');
 

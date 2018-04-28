@@ -4,7 +4,6 @@ import nachos.machine.*;
 import nachos.threads.*;
 import nachos.userprog.*;
 import nachos.vm.*;
-import sun.nio.ch.Net;
 
 /**
  * A <tt>VMProcess</tt> that supports networking syscalls.
