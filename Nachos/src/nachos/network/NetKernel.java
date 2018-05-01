@@ -9,7 +9,7 @@ import nachos.network.*;
 /**
  * A kernel with network support.
  */
-public class NetKernel extends VMKernel {
+public class NetKernel extends UserKernel {
     /**
      * Allocate a new networking kernel.
      */
@@ -34,7 +34,7 @@ public class NetKernel extends VMKernel {
      */
     public void selfTest() {
 	super.selfTest();
-
+	Lib.enableDebugFlags("n");
 	KThread serverThread = new KThread(new Runnable() {
 		public void run() { pingServer(); }
 	    });

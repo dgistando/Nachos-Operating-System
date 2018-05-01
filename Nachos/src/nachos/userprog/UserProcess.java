@@ -146,7 +146,7 @@ public class UserProcess {
 	 *			the array.
 	 * @return	the number of bytes successfully transferred.
 	 */
-	public int readVirtualMemory(int vaddr, byte[] data, int offset, int length) {System.out.println("READVMEM===========");
+	public int readVirtualMemory(int vaddr, byte[] data, int offset, int length) {//System.out.println("READVMEM===========");
 
 		Lib.assertTrue(offset >= 0 && length >= 0 && offset+length <= data.length);
 
@@ -164,10 +164,10 @@ public class UserProcess {
 
 		int amount = Math.min(length, pageSize - basePageOffset);
 
-		System.out.println("srcPos: "+offset);
+		//System.out.println("srcPos: "+offset);
 		int desPos = Processor.makeAddress(entry.ppn,basePageOffset);
-		System.out.println("desPos: "+desPos);
-		System.out.println("length: "+amount);
+		//System.out.println("desPos: "+desPos);
+		//System.out.println("length: "+amount);
 
 		System.arraycopy(memory,
 				//Processor.makeAddress(entry.ppn, basePageOffset)
@@ -193,7 +193,7 @@ public class UserProcess {
 			amount += len;
 		}
 
-		System.out.print("====================");
+		//System.out.print("====================");
 		return amount;
 	}
 
@@ -225,7 +225,7 @@ public class UserProcess {
 	 *			virtual memory.
 	 * @return	the number of bytes successfully transferred.
 	 */
-	public int writeVirtualMemory(int vaddr, byte[] data, int offset, int length) { System.out.println("WRITEVMEM===========");
+	public int writeVirtualMemory(int vaddr, byte[] data, int offset, int length) { //System.out.println("WRITEVMEM===========");
 		Lib.assertTrue(offset >= 0 && length >= 0 && offset+length <= data.length);
 
 		byte[] memory = Machine.processor().getMemory();
@@ -251,10 +251,10 @@ public class UserProcess {
 
 		int amount = Math.min(length, Math.abs(pageSize - basePageOffset));
 
-		System.out.println("srcPos: "+offset);
+		//System.out.println("srcPos: "+offset);
 		int desPos = Processor.makeAddress(entry.ppn,basePageOffset);
-		System.out.println("desPos: "+desPos);
-		System.out.println("length: "+amount);
+		//System.out.println("desPos: "+desPos);
+		//System.out.println("length: "+amount);
 
 		System.arraycopy(data, offset, memory,
 
@@ -296,7 +296,7 @@ public class UserProcess {
 			amount += len;
 
 		}
-		System.out.print("====================");
+		//System.out.print("====================");
 		return amount;
 
 	}
