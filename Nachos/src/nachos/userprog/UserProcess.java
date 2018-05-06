@@ -434,7 +434,7 @@ public class UserProcess {
 			//Go through each page of the coff section
 			for(int i=0; i<section.getLength(); i++){
 				int vpn = section.getFirstVPN() + i;
-				int ppn = physicalPages[vpn];//mape vpn tp physical page number
+				int ppn = physicalPages[vpn];//map vpn tp physical page number
 				//find that page in memory
 				pageTable[vpn] = new TranslationEntry(vpn, ppn, true, section.isReadOnly(), false, false);
 				//Load the page from physical memory
@@ -842,8 +842,8 @@ public class UserProcess {
 			System.out.println("Supposed to add stuff here!! ");
 			this.childProcesses.add(child.processID);
 
-			System.out.println("My id: " + processID);
-			System.out.println("Child id: " + child.processID);
+			//System.out.println("My id: " + processID);
+			//System.out.println("Child id: " + child.processID);
 
 			//CHANGED TO CHILD PROCESS ID
 			return childID;
@@ -856,7 +856,7 @@ public class UserProcess {
 	}
 
 	private int handleJoin(int pid, int status) {
-		System.out.println("Join pid:"+pid +" and "+status);
+		//System.out.println("Join pid:"+pid +" and "+status);
 
 		/** Check to make sure this a valid process and exists */
 
@@ -1095,7 +1095,7 @@ public class UserProcess {
 				System.out.println("!!Exception Triggered: " + Processor.exceptionNames[cause]+"!!");
 				Lib.debug(dbgProcess, "Unexpected exception: " +
 						Processor.exceptionNames[cause]);
-				handleExit(Integer.MIN_VALUE);//This is just to make sure it doesn't reach the unhandle.
+				handleExit(Integer.MIN_VALUE);//This is just to make sure it doesn't reach the unhandled.
 				Lib.assertNotReached("Unexpected exception");
 		}
 	}

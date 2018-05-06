@@ -291,20 +291,20 @@ public class KThread {
         /* if status is finished, print out "this is finished" and restore the machine interrupt */
 
 		if(this.status == statusFinished){
-			System.out.println("THIS is finished");
+			//System.out.println("THIS is finished");
 			Machine.interrupt().restore(interruptStatus);
 			return;
 		}
         // create queue and add thread onto queue
 		if(waitQueue == null) {
-			System.out.println("queue NULL");
+			//System.out.println("queue NULL");
 			waitQueue = ThreadedKernel.scheduler.newThreadQueue(true);
 			waitQueue.acquire(this);    // acquire thread on wait queue
 		}
 
 		// if acquired thread is not equal to current thread and current thread status not finished
 		if (this != currentThread && currentThread.status != statusFinished) {
-			System.out.println("NOT current thread");   // not the current thread
+			//System.out.println("NOT current thread");   // not the current thread
 			waitQueue.waitForAccess(currentThread); // wait for access on queue
 			currentThread.sleep();  // current thread goes to sleep
 		}

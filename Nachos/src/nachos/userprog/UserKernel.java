@@ -122,6 +122,7 @@ public class UserKernel extends ThreadedKernel {
 
 	    if(availablePhysicalPages.size() < num){
 	        Machine.interrupt().enable();
+	        System.out.println("Not enough physical pages. edit available pages in .conf file");
 	        return null;
         }
 
