@@ -266,8 +266,21 @@ int accept(int port);
 */
 int inetAddr(int fd);
 
+/**
+* This is a syscall to send the message to the other
+* computer on this connection
+*/
 int sendFd(int fd, char* message, int length, int flag);
 
+/**
+* This syscall triggers a read on a specific connection between a client
+* and a server.
+*
+* param fd : This is the file descriptor used to the unique connection 
+* param buffer : buffer for the incominng packets from the sender 
+* param length : The length of the data that you want send
+* returns -1 if an error
+*/
 char* readFd(int fd, void *buffer, int length);
 
 #endif /* START_S */
