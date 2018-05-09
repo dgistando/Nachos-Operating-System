@@ -1,16 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3cdcf5b7-c55c-4947-8cff-64e25e855de2" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/nachos/test/hworld.c" afterDir="false" />
+    <list default="true" id="3cdcf5b7-c55c-4947-8cff-64e25e855de2" name="Default" comment="Still testing...">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Nachos/nachos/proj4/nachos.conf" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Nachos/nachos/proj4/nachos.conf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Nachos/nachos/threads/KThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Nachos/nachos/threads/KThread.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Nachos/nachos/userprog/UserKernel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Nachos/nachos/userprog/UserKernel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Nachos/nachos/userprog/UserProcess.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Nachos/nachos/userprog/UserProcess.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/nachos/network/UdpPacket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/nachos/network/UdpPacket.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/nachos/network/NetKernel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/nachos/network/NetKernel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/nachos/network/NetProcess.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/nachos/network/NetProcess.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/nachos/proj4/nachos.conf" beforeDir="false" afterPath="$PROJECT_DIR$/src/nachos/proj4/nachos.conf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/nachos/threads/KThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/nachos/threads/KThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/nachos/test/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/src/nachos/test/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/nachos/test/assert.o" beforeDir="false" afterPath="$PROJECT_DIR$/src/nachos/test/assert.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/nachos/test/atoi.o" beforeDir="false" afterPath="$PROJECT_DIR$/src/nachos/test/atoi.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/nachos/test/cat.coff" beforeDir="false" afterPath="$PROJECT_DIR$/src/nachos/test/cat.coff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/nachos/test/cat.o" beforeDir="false" afterPath="$PROJECT_DIR$/src/nachos/test/cat.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/nachos/test/cp.coff" beforeDir="false" afterPath="$PROJECT_DIR$/src/nachos/test/cp.coff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/nachos/test/cp.o" beforeDir="false" afterPath="$PROJECT_DIR$/src/nachos/test/cp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/nachos/test/echo.coff" beforeDir="false" afterPath="$PROJECT_DIR$/src/nachos/test/echo.coff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/nachos/test/echo.o" beforeDir="false" afterPath="$PROJECT_DIR$/src/nachos/test/echo.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/nachos/test/halt.coff" beforeDir="false" afterPath="$PROJECT_DIR$/src/nachos/test/halt.coff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/nachos/test/halt.o" beforeDir="false" afterPath="$PROJECT_DIR$/src/nachos/test/halt.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/nachos/test/hworld.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/nachos/test/hworld.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/nachos/test/libnachos.a" beforeDir="false" afterPath="$PROJECT_DIR$/src/nachos/test/libnachos.a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/nachos/test/matmult.coff" beforeDir="false" afterPath="$PROJECT_DIR$/src/nachos/test/matmult.coff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/nachos/test/matmult.o" beforeDir="false" afterPath="$PROJECT_DIR$/src/nachos/test/matmult.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/nachos/test/memcpy.o" beforeDir="false" afterPath="$PROJECT_DIR$/src/nachos/test/memcpy.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/nachos/test/memset.o" beforeDir="false" afterPath="$PROJECT_DIR$/src/nachos/test/memset.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/nachos/test/mv.coff" beforeDir="false" afterPath="$PROJECT_DIR$/src/nachos/test/mv.coff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/nachos/test/mv.o" beforeDir="false" afterPath="$PROJECT_DIR$/src/nachos/test/mv.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/nachos/test/printf.o" beforeDir="false" afterPath="$PROJECT_DIR$/src/nachos/test/printf.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/nachos/test/readline.o" beforeDir="false" afterPath="$PROJECT_DIR$/src/nachos/test/readline.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/nachos/test/rm.coff" beforeDir="false" afterPath="$PROJECT_DIR$/src/nachos/test/rm.coff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/nachos/test/rm.o" beforeDir="false" afterPath="$PROJECT_DIR$/src/nachos/test/rm.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/nachos/test/sh.coff" beforeDir="false" afterPath="$PROJECT_DIR$/src/nachos/test/sh.coff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/nachos/test/sh.o" beforeDir="false" afterPath="$PROJECT_DIR$/src/nachos/test/sh.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/nachos/test/sort.coff" beforeDir="false" afterPath="$PROJECT_DIR$/src/nachos/test/sort.coff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/nachos/test/sort.o" beforeDir="false" afterPath="$PROJECT_DIR$/src/nachos/test/sort.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/nachos/test/start.o" beforeDir="false" afterPath="$PROJECT_DIR$/src/nachos/test/start.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/nachos/test/stdio.o" beforeDir="false" afterPath="$PROJECT_DIR$/src/nachos/test/stdio.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/nachos/test/strcat.o" beforeDir="false" afterPath="$PROJECT_DIR$/src/nachos/test/strcat.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/nachos/test/strcmp.o" beforeDir="false" afterPath="$PROJECT_DIR$/src/nachos/test/strcmp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/nachos/test/strcpy.o" beforeDir="false" afterPath="$PROJECT_DIR$/src/nachos/test/strcpy.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/nachos/test/strlen.o" beforeDir="false" afterPath="$PROJECT_DIR$/src/nachos/test/strlen.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/nachos/test/strncmp.o" beforeDir="false" afterPath="$PROJECT_DIR$/src/nachos/test/strncmp.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/nachos/userprog/UserKernel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/nachos/userprog/UserKernel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/nachos/userprog/UserProcess.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/nachos/userprog/UserProcess.java" afterDir="false" />
     </list>
@@ -22,24 +51,138 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.47115386">
+    <splitter split-orientation="horizontal" split-proportion="0.45688075">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="TCB.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/nachos/machine/TCB.java">
+          <file leaf-file-name="Machine.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/nachos/machine/Machine.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="426">
-                  <caret line="254" selection-start-line="254" selection-end-line="254" />
+                <state relative-caret-position="350">
+                  <caret line="399" column="71" lean-forward="true" selection-start-line="399" selection-start-column="71" selection-end-line="399" selection-end-column="71" />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="Machine.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/nachos/machine/Machine.java">
+          <file leaf-file-name="NetProcess.java" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/nachos/network/NetProcess.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="349">
-                  <caret line="132" column="24" selection-start-line="132" selection-start-column="12" selection-end-line="132" selection-end-column="24" />
+                <state relative-caret-position="561">
+                  <caret line="33" column="42" lean-forward="true" selection-start-line="33" selection-start-column="42" selection-end-line="33" selection-end-column="42" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                    <element signature="e#306#307#0" expanded="true" />
+                    <element signature="e#329#330#0" expanded="true" />
+                    <element signature="e#376#377#0" expanded="true" />
+                    <element signature="e#461#462#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="NetKernel.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/nachos/network/NetKernel.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="1836">
+                  <caret line="116" selection-start-line="116" selection-end-line="116" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Kernel.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/nachos/machine/Kernel.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="629">
+                  <caret line="37" column="28" selection-start-line="37" selection-start-column="25" selection-end-line="37" selection-end-column="28" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="ThreadedKernel.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/nachos/threads/ThreadedKernel.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="1020">
+                  <caret line="65" column="16" selection-start-line="65" selection-start-column="16" selection-end-line="65" selection-end-column="16" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="PostOffice.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/nachos/network/PostOffice.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="1040">
+                  <caret line="80" selection-start-line="80" selection-end-line="80" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="UserKernel.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/nachos/userprog/UserKernel.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="940">
+                  <caret line="62" column="20" selection-start-line="62" selection-start-column="20" selection-end-line="62" selection-end-column="20" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                    <element signature="e#753#820#0" expanded="true" />
+                    <element signature="e#819#820#0" expanded="true" />
+                    <element signature="e#4524#4533#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Connection.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/nachos/network/Connection.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="170">
+                  <caret line="10" column="40" selection-start-line="10" selection-start-column="32" selection-end-line="10" selection-end-column="40" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file leaf-file-name="Processor.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/nachos/machine/Processor.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="566">
+                  <caret line="116" selection-start-line="116" selection-end-line="116" />
+                  <folding>
+                    <element signature="e#6336#6337#0" expanded="true" />
+                    <element signature="e#6364#6365#0" expanded="true" />
+                    <element signature="e#7455#7456#0" expanded="true" />
+                    <element signature="e#7520#7521#0" expanded="true" />
+                    <element signature="e#13513#13514#0" expanded="true" />
+                    <element signature="e#13555#13556#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="UThread.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/nachos/userprog/UThread.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="459">
+                  <caret line="30" selection-start-line="30" selection-end-line="30" />
                 </state>
               </provider>
             </entry>
@@ -53,47 +196,66 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="NetProcess.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/nachos/network/NetProcess.java">
+          <file leaf-file-name="UserProcess.java" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/nachos/userprog/UserProcess.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="598">
-                  <caret line="124" selection-start-line="124" selection-end-line="124" />
+                <state relative-caret-position="404">
+                  <caret line="1042" column="32" selection-start-line="1042" selection-start-column="32" selection-end-line="1042" selection-end-column="32" />
                   <folding>
-                    <element signature="imports" expanded="true" />
-                    <element signature="e#306#307#0" expanded="true" />
-                    <element signature="e#329#330#0" expanded="true" />
+                    <element signature="e#1458#1459#0" expanded="true" />
+                    <element signature="e#1535#1536#0" expanded="true" />
+                    <element signature="e#3900#3901#0" expanded="true" />
+                    <element signature="e#3960#3961#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="NetKernel.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/nachos/network/NetKernel.java">
+          <file leaf-file-name="sh.c" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/nachos/test/sh.c">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="358">
-                  <caret line="43" selection-start-line="43" selection-end-line="43" />
+                <state relative-caret-position="417">
+                  <caret line="169" column="5" lean-forward="true" selection-start-line="169" selection-start-column="5" selection-end-line="169" selection-end-column="5" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Packet.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/nachos/machine/Packet.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="459">
+                  <caret line="27" column="29" lean-forward="true" selection-start-line="27" selection-start-column="29" selection-end-line="27" selection-end-column="29" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Lib.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/nachos/machine/Lib.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="392">
+                  <caret line="77" selection-start-line="77" selection-end-line="77" />
                   <folding>
-                    <element signature="e#2568#2569#0" expanded="true" />
-                    <element signature="e#2588#2589#0" expanded="true" />
+                    <element signature="e#2735#2736#0" expanded="true" />
+                    <element signature="e#2770#2771#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="PostOffice.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/nachos/network/PostOffice.java">
+          <file leaf-file-name="hworld.c" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/nachos/test/hworld.c">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="281">
-                  <caret line="80" selection-start-line="80" selection-end-line="80" />
+                <state relative-caret-position="51">
+                  <caret line="3" column="32" lean-forward="true" selection-start-line="3" selection-start-column="32" selection-end-line="3" selection-end-column="32" />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="UserKernel.java" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/nachos/userprog/UserKernel.java">
+          <file leaf-file-name="echo.c" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/nachos/test/echo.c">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="105">
-                  <caret line="114" column="45" lean-forward="true" selection-start-line="114" selection-start-column="45" selection-end-line="114" selection-end-column="45" />
+                <state relative-caret-position="68">
+                  <caret line="4" column="1" lean-forward="true" selection-start-line="3" selection-start-column="10" selection-end-line="4" selection-end-column="1" />
                 </state>
               </provider>
             </entry>
@@ -101,61 +263,8 @@
           <file leaf-file-name="KThread.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/nachos/threads/KThread.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="706">
-                  <caret line="306" column="14" selection-start-line="306" selection-start-column="14" selection-end-line="306" selection-end-column="14" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="Coff.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/nachos/machine/Coff.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1975">
-                  <caret line="144" column="34" selection-start-line="144" selection-start-column="26" selection-end-line="144" selection-end-column="34" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <leaf>
-          <file leaf-file-name="Processor.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/nachos/machine/Processor.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state>
-                  <caret line="525" lean-forward="true" selection-start-line="525" selection-end-line="525" />
-                  <folding>
-                    <element signature="e#6336#6337#0" expanded="true" />
-                    <element signature="e#6364#6365#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="UserKernel.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/nachos/userprog/UserKernel.java">
-              <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="358">
-                  <caret line="120" selection-start-line="120" selection-end-line="120" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="UserProcess.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/nachos/userprog/UserProcess.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="4650">
-                  <caret line="1046" column="33" selection-start-line="1046" selection-start-column="23" selection-end-line="1046" selection-end-column="33" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="hworld.c" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/nachos/test/hworld.c">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="68">
-                  <caret line="4" column="11" lean-forward="true" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="11" />
+                  <caret line="285" column="16" selection-start-line="285" selection-start-column="16" selection-end-line="285" selection-end-column="16" />
                 </state>
               </provider>
             </entry>
@@ -173,9 +282,17 @@
       <find>write(</find>
       <find>write</find>
       <find>numPhysPages</find>
-      <find>join</find>
       <find>error</find>
       <find>handleException</find>
+      <find>sizeMa</find>
+      <find>numPages</find>
+      <find>load</find>
+      <find>handleExe</find>
+      <find>writevirt</find>
+      <find>writeVirtualMemory</find>
+      <find>execute</find>
+      <find>join</find>
+      <find>processclas</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -230,16 +347,17 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/nachos/network/Connection.java" />
-        <option value="$PROJECT_DIR$/src/nachos/network/NetProcess.java" />
         <option value="$PROJECT_DIR$/src/nachos/network/PostOffice.java" />
-        <option value="$PROJECT_DIR$/src/nachos/network/NetKernel.java" />
         <option value="$PROJECT_DIR$/src/nachos/ag/AutoGrader.java" />
         <option value="$PROJECT_DIR$/src/nachos/network/UdpPacket.java" />
-        <option value="$PROJECT_DIR$/src/nachos/userprog/UserKernel.java" />
         <option value="$PROJECT_DIR$/src/nachos/threads/KThread.java" />
-        <option value="$PROJECT_DIR$/src/nachos/proj4/nachos.conf" />
-        <option value="$PROJECT_DIR$/src/nachos/userprog/UserProcess.java" />
         <option value="$PROJECT_DIR$/src/nachos/test/hworld.c" />
+        <option value="$PROJECT_DIR$/src/nachos/test/Makefile" />
+        <option value="$PROJECT_DIR$/src/nachos/network/NetProcess.java" />
+        <option value="$PROJECT_DIR$/src/nachos/userprog/UserProcess.java" />
+        <option value="$PROJECT_DIR$/src/nachos/proj4/nachos.conf" />
+        <option value="$PROJECT_DIR$/src/nachos/network/NetKernel.java" />
+        <option value="$PROJECT_DIR$/src/nachos/userprog/UserKernel.java" />
       </list>
     </option>
   </component>
@@ -262,7 +380,6 @@
     </navigator>
     <panes>
       <pane id="AndroidView" />
-      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -289,37 +406,21 @@
               <item name="nachos" type="462c0819:PsiDirectoryNode" />
               <item name="machine" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="Nachos" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Nachos" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="nachos" type="462c0819:PsiDirectoryNode" />
-              <item name="network" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Nachos" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Nachos" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="nachos" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Nachos" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Nachos" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="nachos" type="462c0819:PsiDirectoryNode" />
-              <item name="vm" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/nachos/proj4" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/nachos-java" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -439,6 +540,8 @@
       <workItem from="1525388792580" duration="793000" />
       <workItem from="1525468106604" duration="2414000" />
       <workItem from="1525576274734" duration="6707000" />
+      <workItem from="1525630889227" duration="103000" />
+      <workItem from="1525677506467" duration="29865000" />
     </task>
     <task id="LOCAL-00001" summary="assertion failure after just a normal ping.">
       <created>1524874207390</created>
@@ -454,12 +557,12 @@
       <option name="project" value="LOCAL" />
       <updated>1525183211865</updated>
     </task>
-    <task id="LOCAL-00003" summary="need last three functions in Priority Scheduler">
-      <created>1519289059243</created>
+    <task id="LOCAL-00003" summary="Still testing...">
+      <created>1525630969663</created>
       <option name="number" value="00003" />
       <option name="presentableId" value="LOCAL-00003" />
       <option name="project" value="LOCAL" />
-      <updated>1519289059243</updated>
+      <updated>1525630969663</updated>
     </task>
     <task id="LOCAL-00004" summary="changed Condition2 and small other changes">
       <created>1519429415844</created>
@@ -594,11 +697,11 @@
       <option name="project" value="LOCAL" />
       <updated>1524727507772</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="37325000" />
+    <option name="totallyTimeSpent" value="67293000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -611,34 +714,35 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="2576" height="1426" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="4" weight="0.32996893" />
       <window_info anchor="bottom" id="Messages" order="6" weight="0.32847896" />
-      <window_info anchor="right" id="Palette&#9;" order="9" />
+      <window_info anchor="right" id="Palette&#9;" order="8" />
       <window_info id="Image Layers" order="7" />
-      <window_info anchor="right" id="Capture Analysis" order="6" />
+      <window_info anchor="right" id="Capture Analysis" order="5" />
       <window_info anchor="bottom" id="Event Log" order="5" sideWeight="0.50039744" side_tool="true" weight="0.39751554" />
       <window_info anchor="right" id="Maven Projects" order="4" weight="0.3298887" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.32608697" />
-      <window_info anchor="bottom" auto_hide="true" x="2561" y="31" width="1278" height="1378" id="Run" order="10" type="WINDOWED" weight="0.27562112" />
-      <window_info anchor="bottom" id="Terminal" order="8" visible="true" weight="0.12888199" />
+      <window_info anchor="bottom" auto_hide="true" x="3841" y="31" width="1278" height="1378" id="Run" order="10" type="WINDOWED" weight="0.27562112" />
+      <window_info anchor="bottom" id="Terminal" order="8" visible="true" weight="0.1576087" />
       <window_info id="Capture Tool" order="3" />
       <window_info id="Designer" order="4" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.13195549" />
-      <window_info anchor="right" id="Database" order="5" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.13354531" />
+      <window_info anchor="right" id="Database" order="9" weight="0.3298887" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="5" />
-      <window_info anchor="right" id="Theme Preview" order="7" />
+      <window_info anchor="right" id="Theme Preview" order="6" />
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="right" x="2561" y="31" width="1278" height="1378" id="Debug" order="10" sideWeight="0.49960256" type="WINDOWED" weight="0.40699524" />
       <window_info anchor="bottom" id="Inspection" order="3" weight="0.4" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info id="Nl-Palette" order="2" />
       <window_info anchor="bottom" id="Cvs" order="2" weight="0.25" />
-      <window_info anchor="right" id="Properties" order="8" />
+      <window_info anchor="right" id="Properties" order="7" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32919255" />
@@ -710,7 +814,8 @@
     <MESSAGE value="Only need Connection class now" />
     <MESSAGE value="assertion failure after just a normal ping." />
     <MESSAGE value="it doesnt error out." />
-    <option name="LAST_COMMIT_MESSAGE" value="it doesnt error out." />
+    <MESSAGE value="Still testing..." />
+    <option name="LAST_COMMIT_MESSAGE" value="Still testing..." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -723,15 +828,85 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/nachos/userprog/UserProcess.java</url>
-          <line>424</line>
+          <line>866</line>
           <properties />
-          <option name="timeStamp" value="105" />
+          <option name="timeStamp" value="122" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/nachos/machine/Processor.java</url>
+          <line>104</line>
+          <properties />
+          <option name="timeStamp" value="123" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/nachos/userprog/UserKernel.java</url>
+          <line>31</line>
+          <properties />
+          <option name="timeStamp" value="127" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/nachos/userprog/UserProcess.java</url>
+          <line>744</line>
+          <properties class="nachos.userprog.UserProcess" method="handleExec">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="113" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="107" />
+      <option name="time" value="128" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/nachos/threads/KThread.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5066">
+          <caret line="306" column="14" selection-start-line="306" selection-start-column="14" selection-end-line="306" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/nachos/machine/Coff.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2414">
+          <caret line="144" column="34" selection-start-line="144" selection-start-column="26" selection-end-line="144" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/nachos/machine/Processor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="8619">
+          <caret line="525" lean-forward="true" selection-start-line="525" selection-end-line="525" />
+          <folding>
+            <element signature="e#6336#6337#0" expanded="true" />
+            <element signature="e#6364#6365#0" expanded="true" />
+            <element signature="e#7455#7456#0" expanded="true" />
+            <element signature="e#7520#7521#0" expanded="true" />
+            <element signature="e#13513#13514#0" expanded="true" />
+            <element signature="e#13555#13556#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/nachos/userprog/UserKernel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1819">
+          <caret line="114" column="45" lean-forward="true" selection-start-line="114" selection-start-column="45" selection-end-line="114" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/nachos/userprog/UserProcess.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17527">
+          <caret line="1046" column="33" selection-start-line="1046" selection-start-column="23" selection-end-line="1046" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/nachos/test/hworld.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="11" lean-forward="true" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/nachos/machine/ArrayFile.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="561">
@@ -829,30 +1004,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/nachos/network/Connection.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="19" selection-start-line="19" selection-end-line="19" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/nachos/userprog/UThread.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="884">
-          <caret line="56" selection-start-line="56" selection-end-line="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/nachos/machine/Lib.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1105">
-          <caret line="76" selection-start-line="76" selection-end-line="76" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files (x86)/Java/jdk1.8.0_151/jre/lib/javaws.jar!/com/sun/jnlp/AppletContainer.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1071" />
@@ -900,23 +1051,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/nachos/machine/Packet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="42" selection-start-line="17" selection-start-column="35" selection-end-line="17" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/nachos/network/UdpPacket.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/nachos/machine/ArrayFile.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="561">
@@ -931,79 +1065,87 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/nachos/machine/Kernel.java">
+    <entry file="file://$PROJECT_DIR$/src/nachos/machine/Coff.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="629">
-          <caret line="37" selection-start-line="37" selection-end-line="37" />
+        <state relative-caret-position="2414">
+          <caret line="144" column="34" selection-start-line="144" selection-start-column="26" selection-end-line="144" selection-end-column="34" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/nachos/machine/Coff.java">
+    <entry file="file://$PROJECT_DIR$/src/nachos/test/Makefile">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1975">
-          <caret line="144" column="34" selection-start-line="144" selection-start-column="26" selection-end-line="144" selection-end-column="34" />
+        <state relative-caret-position="544">
+          <caret line="32" column="55" selection-start-line="32" selection-start-column="55" selection-end-line="32" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files (x86)/Java/jdk1.8.0_151/src.zip!/java/lang/Runnable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="629">
+          <caret line="60" column="14" lean-forward="true" selection-start-line="60" selection-start-column="14" selection-end-line="60" selection-end-column="14" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/nachos/machine/TCB.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="426">
-          <caret line="254" selection-start-line="254" selection-end-line="254" />
+        <state relative-caret-position="358">
+          <caret line="119" selection-start-line="119" selection-end-line="119" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/nachos/machine/Machine.java">
+    <entry file="file://$PROJECT_DIR$/src/nachos/machine/Lib.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="349">
-          <caret line="132" column="24" selection-start-line="132" selection-start-column="12" selection-end-line="132" selection-end-column="24" />
+        <state relative-caret-position="392">
+          <caret line="77" selection-start-line="77" selection-end-line="77" />
+          <folding>
+            <element signature="e#2735#2736#0" expanded="true" />
+            <element signature="e#2770#2771#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/nachos/network/NetProcess.java">
+    <entry file="file://$PROJECT_DIR$/src/nachos/machine/Packet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="598">
-          <caret line="124" selection-start-line="124" selection-end-line="124" />
+        <state relative-caret-position="459">
+          <caret line="27" column="29" lean-forward="true" selection-start-line="27" selection-start-column="29" selection-end-line="27" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/nachos/network/UdpPacket.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="24" lean-forward="true" selection-start-line="11" selection-start-column="24" selection-end-line="11" selection-end-column="24" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#306#307#0" expanded="true" />
-            <element signature="e#329#330#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/nachos/network/NetKernel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="358">
-          <caret line="43" selection-start-line="43" selection-end-line="43" />
-          <folding>
-            <element signature="e#2568#2569#0" expanded="true" />
-            <element signature="e#2588#2589#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/nachos/network/PostOffice.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="281">
-          <caret line="80" selection-start-line="80" selection-end-line="80" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/nachos/threads/KThread.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="706">
-          <caret line="306" column="14" selection-start-line="306" selection-start-column="14" selection-end-line="306" selection-end-column="14" />
+        <state relative-caret-position="358">
+          <caret line="285" column="16" selection-start-line="285" selection-start-column="16" selection-end-line="285" selection-end-column="16" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/nachos/machine/Processor.java">
+    <entry file="file://$PROJECT_DIR$/src/nachos/test/sh.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="525" lean-forward="true" selection-start-line="525" selection-end-line="525" />
-          <folding>
-            <element signature="e#6336#6337#0" expanded="true" />
-            <element signature="e#6364#6365#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="417">
+          <caret line="169" column="5" lean-forward="true" selection-start-line="169" selection-start-column="5" selection-end-line="169" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/nachos/test/echo.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="1" lean-forward="true" selection-start-line="3" selection-start-column="10" selection-end-line="4" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/nachos/test/hworld.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="32" lean-forward="true" selection-start-line="3" selection-start-column="32" selection-end-line="3" selection-end-column="32" />
         </state>
       </provider>
     </entry>
@@ -1014,26 +1156,187 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/nachos/userprog/UThread.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="30" selection-start-line="30" selection-end-line="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/nachos/network/Connection.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="40" selection-start-line="10" selection-start-column="32" selection-end-line="10" selection-end-column="40" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/nachos/network/PostOffice.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1040">
+          <caret line="80" selection-start-line="80" selection-end-line="80" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/nachos/machine/Processor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="566">
+          <caret line="116" selection-start-line="116" selection-end-line="116" />
+          <folding>
+            <element signature="e#6336#6337#0" expanded="true" />
+            <element signature="e#6364#6365#0" expanded="true" />
+            <element signature="e#7455#7456#0" expanded="true" />
+            <element signature="e#7520#7521#0" expanded="true" />
+            <element signature="e#13513#13514#0" expanded="true" />
+            <element signature="e#13555#13556#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/nachos/userprog/UserProcess.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4650">
-          <caret line="1046" column="33" selection-start-line="1046" selection-start-column="23" selection-end-line="1046" selection-end-column="33" />
+        <state relative-caret-position="404">
+          <caret line="1042" column="32" selection-start-line="1042" selection-start-column="32" selection-end-line="1042" selection-end-column="32" />
+          <folding>
+            <element signature="e#1458#1459#0" expanded="true" />
+            <element signature="e#1535#1536#0" expanded="true" />
+            <element signature="e#3900#3901#0" expanded="true" />
+            <element signature="e#3960#3961#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/nachos/userprog/UserKernel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="358">
-          <caret line="120" selection-start-line="120" selection-end-line="120" />
+        <state relative-caret-position="940">
+          <caret line="62" column="20" selection-start-line="62" selection-start-column="20" selection-end-line="62" selection-end-column="20" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#753#820#0" expanded="true" />
+            <element signature="e#819#820#0" expanded="true" />
+            <element signature="e#4524#4533#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/nachos/test/hworld.c">
+    <entry file="file://$PROJECT_DIR$/src/nachos/threads/ThreadedKernel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="11" lean-forward="true" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="11" />
+        <state relative-caret-position="1020">
+          <caret line="65" column="16" selection-start-line="65" selection-start-column="16" selection-end-line="65" selection-end-column="16" />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/nachos/machine/Kernel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="629">
+          <caret line="37" column="28" selection-start-line="37" selection-start-column="25" selection-end-line="37" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/nachos/network/NetKernel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1836">
+          <caret line="116" selection-start-line="116" selection-end-line="116" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/nachos/machine/Machine.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="350">
+          <caret line="399" column="71" lean-forward="true" selection-start-line="399" selection-start-column="71" selection-end-line="399" selection-end-column="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/nachos/network/NetProcess.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="561">
+          <caret line="33" column="42" lean-forward="true" selection-start-line="33" selection-start-column="42" selection-end-line="33" selection-end-column="42" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#306#307#0" expanded="true" />
+            <element signature="e#329#330#0" expanded="true" />
+            <element signature="e#376#377#0" expanded="true" />
+            <element signature="e#461#462#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>No facets are configured</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>Nachos</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
   </component>
 </project>

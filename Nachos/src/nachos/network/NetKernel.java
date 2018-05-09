@@ -115,6 +115,13 @@ public class NetKernel extends UserKernel {
      */
     public void run() {
 	super.run();
+	/*
+		NetProcess process = NetProcess.newNetProcess();
+
+		String shellProgram = Machine.getShellProgramName();
+		Lib.assertTrue(process.execute(shellProgram, new String[] { }));
+
+		KThread.currentThread().finish();*/
     }
     
     /**

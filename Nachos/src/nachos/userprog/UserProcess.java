@@ -194,6 +194,7 @@ public class UserProcess {
 		}
 
 		//System.out.print("====================");
+		//System.out.println("returning amount: "+ amount);
 		return amount;
 	}
 
@@ -237,15 +238,9 @@ public class UserProcess {
 
 		int lastPage = Processor.pageFromAddress(vaddr + length); //Should be last page because you have needed data
 
-
-
 		TranslationEntry entry = checkPageTable(firstPage, true);
 
-
-
 		if(entry == null) return 0;
-
-
 
 		//At this point we should be clear to copy everything
 
@@ -257,30 +252,19 @@ public class UserProcess {
 		//System.out.println("length: "+amount);
 
 		System.arraycopy(data, offset, memory,
-
 				//Processor.makeAddress(entry.ppn,basePageOffset),
 				desPos,
 				amount);
-
 		//since we wrote we have to move the offset down the page for future writes
-
 		offset += amount;
-
-
 
 		for(int i = firstPage+1; i<=lastPage; i++){
 
 			entry = checkPageTable(i, true);
 
-
-
 			if(entry == null) return amount;
 
-
-
 			int len = Math.min(length - amount, pageSize);
-
-
 			//public static void arraycopy(
 			// Object src,
 			//int srcPos,
@@ -289,12 +273,9 @@ public class UserProcess {
 			//int length)
 			System.arraycopy(data, offset, memory, Processor.makeAddress(entry.ppn, 0), len);
 
-
-
 			offset += len;
 
 			amount += len;
-
 		}
 		//System.out.print("====================");
 		return amount;
@@ -605,15 +586,11 @@ public class UserProcess {
 
 	private int handleRead(int fileDescriptor, int buffer, int size){
 
-
-
 		if (fileDescriptor < 0 || fileDescriptor > 15){
 
 			return -1;		// return -1 on error
 
 		}
-
-
 
 		if (size < 0){
 
@@ -621,11 +598,7 @@ public class UserProcess {
 
 		}
 
-
-
 		OpenFile file;
-
-
 
 		if (fileTable[fileDescriptor] == null){
 
@@ -639,30 +612,17 @@ public class UserProcess {
 
 		}
 
-
-
 		byte tempbuff[] = new byte[size];
-
-
 
 		int readSize = file.read(tempbuff, 0, size);
 
-
-
 		if (readSize < 0){
-
 			return -1;		// return -1 on error
-
 		}
-
-
 
 		int counter = writeVirtualMemory(buffer, tempbuff, 0, readSize);
 
 		return counter;
-
-
-
 	}
 
 	private int handleWrite(int fileDescriptor, int buffer, int size){
@@ -684,7 +644,7 @@ public class UserProcess {
 
 		//loop through and increment counter and keep the buffer size small
 		//enough not to run out of heap space.
-		System.out.println("687" + size);//STOPS HERE
+		//System.out.println("687" + size);//STOPS HERE
 		int maxWrite = 1024;//should put as public variable
 		byte tempBuff[] = new byte[maxWrite];
 
@@ -799,7 +759,7 @@ public class UserProcess {
 
 		/** Check to make sure argc is positive */
 
-		if (argc < 0){
+		if (argc < 1){
 			System.out.println("INVALID ARG stuff");
 		//	return INVALID;
 			return -1;
@@ -815,14 +775,13 @@ public class UserProcess {
 
 
 
+		byte[] bufferPtr = new byte[4];
 
 		for(int i = 0; i < argc; i++) {
-
-			byte[] bufferPtr = new byte[4];
-
-			int offsetArg = (argv + i) * 4;
-
-			readVirtualMemory(offsetArg, bufferPtr);
+			//>:(((((((((((( took me 4.5 hours to find out (argv+i)*4 is wrong. I almost changed readVMem
+			int offsetArg = argv + i * 4;
+			//Doesn't really read vM correctly
+			if(readVirtualMemory(offsetArg, bufferPtr) != 4) return -1;
 
 			int argAddr = Lib.bytesToInt(bufferPtr, 0);
 
@@ -851,7 +810,7 @@ public class UserProcess {
 
 
 
-		return EXCEPTION;
+		return -1;
 
 	}
 
@@ -1092,10 +1051,10 @@ public class UserProcess {
 				break;
 
 			default:
-				System.out.println("!!Exception Triggered: " + Processor.exceptionNames[cause]+"!!");
+				//System.out.println("!!Exception Triggered: " + Processor.exceptionNames[cause]+"!!");
 				Lib.debug(dbgProcess, "Unexpected exception: " +
 						Processor.exceptionNames[cause]);
-				handleExit(Integer.MIN_VALUE);//This is just to make sure it doesn't reach the unhandled.
+				//handleExit(Integer.MIN_VALUE);//This is just to make sure it doesn't reach the unhandled.
 				Lib.assertNotReached("Unexpected exception");
 		}
 	}

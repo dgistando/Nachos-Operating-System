@@ -16,6 +16,10 @@ public class NetProcess extends UserProcess {
         super();
     }
 
+    public static NetProcess newNetProcess(){
+        return (NetProcess)Lib.constructObject(Machine.getProcessClassName());
+    }
+
     private int handleConnect(int host, int port)
     {
         int srcPort = NetKernel.postOffice.PortAvailable();

@@ -3,7 +3,6 @@ package nachos.userprog;
 import nachos.machine.*;
 import nachos.threads.*;
 import nachos.userprog.*;
-import sun.nio.cs.ext.MacHebrew;
 
 import java.util.LinkedList;
 /**
@@ -46,10 +45,9 @@ public class UserKernel extends ThreadedKernel {
 	char c;
 
 	do {
-	    //c = (char) console.readByte(true);
-	    c = 'q';//Did this so the console wont run forever
+	    c = (char) console.readByte(true);
+	    //c = 'q';//Did this so the console wont run forever
 	    console.writeByte(c);
-
 	}
 	while (c != 'q');
 
