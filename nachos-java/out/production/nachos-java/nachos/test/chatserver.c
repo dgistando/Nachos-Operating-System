@@ -10,17 +10,26 @@ void server(int conSockFd, int port){
     char buffer[BUFFERSIZE] = {0};
 
     while(1){
-        char* str = readFd(conSockFd, buffer, BUFFERSIZE);
-        printf("client[&d]: %s", clientIp, str);
+        char* str = readFd(conSockFd, buffer, BUFFERSIZE);//reafFd is an added syscall. see syscall.h and starts.s
+        printf("client[%d]: %s", clientIp, str);
     }
 }
 
+/*
+* This is the chatserver, or at least the start of it.
+* This version basically takes a  conneciton from one client
+* and accepts connection solely from them.
+*
+*/
 int main(){
     printf("incoming...\n");
     int port = 0;
 
     //listening on server
     //would be in a while if multiple clients want ot connect
+        //In that case you would also have a seperate thread
+        //handle the connection to an individual client and one
+        //managing more connections
     int conSockFd = accept(0);
     //will send ack from accpet back to client
     //server function should send SYNACK packet.
