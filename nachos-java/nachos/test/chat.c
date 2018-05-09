@@ -4,6 +4,7 @@
 
 #define BUFFERSIZE	64
 
+//function for the legnth of the string
 int Strlen ( const char * _str )
 {
     int i = 0;
@@ -18,13 +19,16 @@ int main(){
     int port = 0;
     //to 1 from on port 0
     //I am 0
+    //connection socket file descriptor 
     int conSockFd = connect(server,port);
 
+    //this is just a test case to make sure that the chat is working
     //sent SYN. waiting for SYNACK
     if(conSockFd != -1){//contact must have worked. got synack!!
             sendFd(conSockFd, "hello", 5, 0);//first send will be ack
     }
-
+    
+    //this is used to continue waiting for input and a "real" chat can be simulated
     /*char buffer[BUFFERSIZE];
 
      while(1){
