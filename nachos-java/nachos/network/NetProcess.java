@@ -16,14 +16,24 @@ public class NetProcess extends UserProcess {
         super();
     }
 
-
+    /**
+     *  This is the connect function. Its usually called from the Cient.
+     *  It takes in the host ip address and the port that it wants to connect on.
+     *  This function sends a SYN packet and waits for the server to reply with a SYNACK.
+     *  Once it get th SYNACK it responds with an ACK making the three way handshake.
+     *
+     *
+     * @param host The opposite computer in the interations. If im client then host is Server
+     * @param port The port on which the application funs.
+     * @return
+     */
     private int handleConnect(int host, int port)
     {
         int srcLink = Machine.networkLink().getLinkAddress();
         int srcPort;
         int res;
         Connection connection = null;
-        //check for an existing connection and get the index if exists
+        //check for an existing connection and get the index if already exists
         if( (res = checkExistingConnection(host, srcLink, port, port)) == -1) {
 
             srcPort = NetKernel.postOffice.PortAvailable();
@@ -39,26 +49,31 @@ public class NetProcess extends UserProcess {
             res = i;
         }
 
-
+        //If the connection already existed then find it in the file descriptors
         if(connection == null) connection = (Connection) fileDescriptors[res];
         srcPort = connection.sourcePort;
 
         try {
+            //create the SYN packets
             UdpPacket packet = new UdpPacket(host, port, srcLink, srcPort, UdpPacket.SYN,0, new byte[0]);
-
+            //Use post office to send the packet
             NetKernel.postOffice.send(packet);
 
             System.out.println("SYS SENT");
 
+            //This functions operates on a semaphore so if it hasn't
+            //received anything it will just wait until. Something
+            //arrives.
             UdpPacket SynAckPack = NetKernel.postOffice.receive(srcPort);
 
+            //Received SYNACK, just need to send an ACK back.
             if(SynAckPack.flag == UdpPacket.SYNACK && Machine.networkLink().getLinkAddress() == SynAckPack.packet.dstLink){
                 System.out.println("SYNACK RECEIVED: ");
                 System.out.print(SynAckPack);
                 //Sent ack back.
                 UdpPacket ackPack = new UdpPacket(host, port, srcLink, srcPort, UdpPacket.ACK, SynAckPack.seq+1, new byte[0]);
                 NetKernel.postOffice.send(ackPack);
-                //ack sent. start sending immediately!!!!
+                //ack sent. At this point its okay to send data.
             }
 
 
@@ -73,6 +88,15 @@ public class NetProcess extends UserProcess {
         return res;
     }
 
+    /**
+     * This is accept(int). Its usually called by a server to accept
+     * connection coming from a client. It just waits after the Kernel.postOffice.receive(port)
+     * is called.
+     * When it does finally get something on the port
+     *
+     * @param port
+     * @return
+     */
     private int handleAccept(int port) {
 
         Lib.assertTrue(port >= 0 && port < Packet.linkAddressLimit);
@@ -92,7 +116,7 @@ public class NetProcess extends UserProcess {
         int seq = mail.seq + 1;
 
         int res;
-
+        //make sure the connection doesn't already exist.
         if( (res = checkExistingConnection(destinationLink, sourceLink, srcPort, destinationPort)) == -1){
 
             Connection conn = new Connection(destinationLink, destinationPort, sourceLink, srcPort);
@@ -112,8 +136,8 @@ public class NetProcess extends UserProcess {
 
 
         try {
-
-            UdpPacket ackPacket = null;
+            //check that its a syn packet
+            UdpPacket ackPacket = null;                             //Also make sure it was sent to the right person
             if(mail.flag == UdpPacket.SYN && Machine.networkLink().getLinkAddress() == mail.packet.dstLink) {
                 ackPacket = new UdpPacket(destinationLink, destinationPort, sourceLink, srcPort, UdpPacket.SYNACK, seq, new byte[0]);
             }
@@ -126,7 +150,7 @@ public class NetProcess extends UserProcess {
 
             //finish handshake
             UdpPacket ackPack = NetKernel.postOffice.receive(port);
-
+            //Once you receive an ack from the the client you offically have a connection
             if(ackPack.flag == UdpPacket.ACK && Machine.networkLink().getLinkAddress() == mail.packet.dstLink){ //means connection established
                 System.out.print("::CONNECTIONS ESTABLISHED::");
             }
@@ -139,6 +163,16 @@ public class NetProcess extends UserProcess {
         return res;
     }
 
+    /**
+     *  This function is to check if you already have a connection.
+     *  
+     *
+     * @param dest
+     * @param src
+     * @param srcport
+     * @param desport
+     * @return
+     */
     public int checkExistingConnection(int dest, int src, int srcport, int desport){
         //Go through sockets and find connection.
         for(int i = 2; i < fileDescriptors.length; i++){
