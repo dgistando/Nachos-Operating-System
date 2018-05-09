@@ -165,7 +165,7 @@ public class NetProcess extends UserProcess {
 
     /**
      *  This function is to check if you already have a connection.
-     *  
+     *
      *
      * @param dest
      * @param src
@@ -194,11 +194,17 @@ public class NetProcess extends UserProcess {
         return -1;
     }
 
-
+    /**
+     * This functions is to get the ip address of the opposite person in
+     * connection.
+     *
+     * @param fd The file descriptor to find the "socket" associated with the connection.
+     * @return
+     */
     private int handleInet(int fd){
         if(fileDescriptors[fd] instanceof Connection){
             Connection connection = (Connection) fileDescriptors[fd];
-            if(connection != null){
+            if(connection != null){//This is an if check to see if the ip address of the source address is the same as yours. If it is then send the other.
                 return (connection.sourceLink == Machine.networkLink().getLinkAddress()) ? connection.destinationLink : connection.sourceLink;
             }
         }
@@ -206,22 +212,37 @@ public class NetProcess extends UserProcess {
         return -1;
     }
 
+    /**
+     * This is the send syscall. It handles the interation with the processor to get the data
+     * It takes in the fd and finds the Connection.
+     *
+     * Then it reads virtualMemory for the message itself.
+     *
+     * Then it calls write on the connection being careful about the number
+     * of bytessent each time.
+     *
+     * @param fd
+     * @param messagePtr
+     * @param messLen
+     * @param flag
+     * @return returns the number of bytes sent
+     */
     private int handleSend(int fd, int messagePtr, int messLen, int flag){//need to send ack packet using the connection. I know that's not convention
         Connection connection=null;
         if(fileDescriptors[fd] instanceof Connection){
             connection = (Connection) fileDescriptors[fd];
         }
         if(connection == null)return -1;
-
+        //convert the message from bytes in mem to a string
         String message = readVirtualMemoryString(messagePtr, messLen);
 
         System.out.println("\nSending: "+ message);
 
         while(messLen > 0){
             int written = connection.handleWrite(message.getBytes(), 0, message.length());
-
+            //The case that there was an error while writing to the other person
             if(written == -1)return -1;
-
+            //subtract from the amount you have left to write
             messLen -= written;
         }
 
@@ -229,22 +250,39 @@ public class NetProcess extends UserProcess {
     }
 
     private int handleNetRead(int fd, int buffer, int len){
+        //set the initial connection to null
         Connection connection=null;
+
+        //check to make sure that the file descriptor is an
+        //an instance of Connection
         if(fileDescriptors[fd] instanceof Connection){
+            //if it is, then set the connection to the file descriptor
             connection = (Connection) fileDescriptors[fd];
         }
+
+        //if the connection is not valid, then return -1 because of error
         if(connection == null)return -1;
 
+        //create a new temporary, that is the size of the length of the message
         byte[] tempBuffer = new byte[len];
 
+        //initial the readSize to 0
         int readSize = 0;
-        while(readSize < len){//need to find a way to stop because length is 64
-            int res;
-            res = connection.handleRead(tempBuffer, readSize, len);
-            if(res == -1)return -1;//Something went wrong sending
-            readSize += res;
-        }
 
+        //while loop is commented out, because the receiver continues to wait for data
+        //to fill the buffer, but the sender has sent all data
+        // while(readSize < len){
+        int res;
+        //store the amount of bytes that handleRead returns
+        res = connection.handleRead(tempBuffer, readSize, len);
+        //if res is -1, then there was error, so return -1
+        if(res == -1)return -1;
+        //increase the readsize by the amount of bytes returned by handleRead
+        readSize += res;
+
+        //}
+
+        //transfer the data from the temporary buffer to the virtual memory
         return writeVirtualMemory(buffer, tempBuffer, 0, readSize);
     }
 
