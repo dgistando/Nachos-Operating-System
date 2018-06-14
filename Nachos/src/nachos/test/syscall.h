@@ -25,6 +25,9 @@
 #define syscallMmap		10
 #define syscallConnect		11
 #define syscallAccept		12
+#define syscallInetAddr     13
+#define syscallSend     14
+#define syscallNetRead     15
 
 /* Don't want the assembler to see C code, but start.s includes syscall.h. */
 #ifndef START_S
@@ -256,6 +259,16 @@ int connect(int host, int port);
  * occurred.
  */
 int accept(int port);
+
+/**
+* Returns file INET address of other person in connection
+* if error returns -1
+*/
+int inetAddr(int fd);
+
+int sendFd(int fd, char* message, int length, int flag);
+
+char* readFd(int fd, void *buffer, int length);
 
 #endif /* START_S */
 
