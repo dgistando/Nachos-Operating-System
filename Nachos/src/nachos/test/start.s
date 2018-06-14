@@ -67,3 +67,6 @@ name:				; \
 	SYSCALLSTUB(mmap, syscallMmap)
 	SYSCALLSTUB(connect, syscallConnect)
 	SYSCALLSTUB(accept, syscallAccept)
+	SYSCALLSTUB(inetAddr, syscallInetAddr)
+	SYSCALLSTUB(sendFd, syscallSend)
+	SYSCALLSTUB(readFd, syscallNetRead)

@@ -1,11 +1,11 @@
-package nachos.userprog;
+package nachos.userprog;///NEW/////
 
 import nachos.machine.*;
 import nachos.threads.*;
 import nachos.userprog.*;
-import sun.nio.cs.ext.MacHebrew;
 
 import java.util.LinkedList;
+
 /**
  * A kernel that can support multiple user processes.
  */
@@ -22,16 +22,20 @@ public class UserKernel extends ThreadedKernel {
      * processor's exception handler.
      */
     public void initialize(String[] args) {
-	super.initialize(args);
+		super.initialize(args);
 
-	console = new SynchConsole(Machine.console());
+		availablePages = new LinkedList<>();
 
-	for(int i=0; i< Machine.processor().getNumPhysPages();i++)
-		availablePhysicalPages.add(i);
+		console = new SynchConsole(Machine.console());
 
-	Machine.processor().setExceptionHandler(new Runnable() {
-		public void run() { exceptionHandler(); }
-	    });
+
+		int numPages = Machine.processor().getNumPhysPages();
+		for(int page=0; page<numPages ; page++)
+			availablePages.add(page);
+
+		Machine.processor().setExceptionHandler(new Runnable() {
+			public void run() { exceptionHandler(); }
+			});
     }
 
     /**
@@ -39,7 +43,7 @@ public class UserKernel extends ThreadedKernel {
      */	
     public void selfTest() {
 	super.selfTest();
-
+	/*
 	System.out.println("Testing the console device. Typed characters");
 	System.out.println("will be echoed until q is typed.");
 
@@ -51,7 +55,7 @@ public class UserKernel extends ThreadedKernel {
 	}
 	while (c != 'q');
 
-	System.out.println("");
+	System.out.println("");*/
     }
 
     /**
@@ -92,7 +96,7 @@ public class UserKernel extends ThreadedKernel {
      * program in it. The name of the shell program it must run is returned by
      * <tt>Machine.getShellProgramName()</tt>.
      *
-     * @see	nachos.machine.Machine#getShellProgramName
+     * @see	nachos.machine.Machine #getShellProgramName
      */
     public void run() {
 	super.run();
@@ -105,52 +109,51 @@ public class UserKernel extends ThreadedKernel {
 	KThread.currentThread().finish();
     }
 
-    //Need to add physical pages
-	public static void addPhysicalPage(int ppn){
-		Lib.assertTrue(ppn >= 0 && ppn < Machine.processor().getNumPhysPages());
-		Machine.interrupt().disable();
-
-		availablePhysicalPages.addFirst(ppn);
-		Machine.interrupt().enable();
-	}
-
-
-	public static int[] allocateSpecificNumPages(int num){
-	    Machine.interrupt().disable();
-
-	    if(availablePhysicalPages.size() < num){
-	        Machine.interrupt().enable();
-	        return null;
-        }
-
-        int[] numFree = new int[num];
-
-	    for(int i=0; i<num; i++)
-	        numFree[i] = availablePhysicalPages.remove();
-
-	    Machine.interrupt().enable();
-
-	    return numFree;
-    }
-
-    // release physical pages
-	public static int getFreePage(){
-		int pageNumber = 0;
-		Machine.interrupt().disable();
-
-		pageNumber = (availablePhysicalPages.isEmpty())? -1 : availablePhysicalPages.getFirst();
-
-		Machine.interrupt().enable();
-		return pageNumber;
-	}
-
-
     /**
      * Terminate this kernel. Never returns.
      */
     public void terminate() {
-	super.terminate();
+		super.terminate();
     }
+
+    //Page management functions//
+	public static void addPhysicalPage(int page){
+    	Lib.assertTrue(page >= 0 && page < Machine.processor().getNumPhysPages());
+    	Machine.interrupt().disable();
+
+    	availablePages.addFirst(page);
+
+		Machine.interrupt().enable();
+	}
+
+	public static int[]allocateSpecificNumPages(int num){
+    	Machine.interrupt().disable();
+
+    	if(availablePages.size() < num){//don't have enough pages
+			System.out.println("Not enough pages. Please allocate more. BUY MORE RAM");
+    		Machine.interrupt().enable();
+    		return null;
+		}
+
+		int[] numFree = new int[num];
+
+    	for(int i=0; i<num; i++)//get all existing pages needed
+    		numFree[i] = availablePages.remove();
+
+    	Machine.interrupt().enable();
+    	return numFree;
+	}
+
+	public static int getFreePage(){
+		int pageNumber = 0;
+		Machine.interrupt().disable();
+
+		pageNumber = (availablePages.isEmpty()) ? -1 : availablePages.getFirst();
+
+		Machine.interrupt().enable();
+		return pageNumber;
+	}
+	/////////////////////////////
 
     /** Globally accessible reference to the synchronized console. */
     public static SynchConsole console;
@@ -158,7 +161,9 @@ public class UserKernel extends ThreadedKernel {
     // dummy variables to make javac smarter
     private static Coff dummy1 = null;
 
+    //Added some extras
+	private static int offset, offsetMask;
+	private static Lock kernelLock;
+	private static LinkedList<Integer> availablePages;
 
-    //Represents list of available pages for each proccess
-    public static LinkedList<Integer> availablePhysicalPages = new LinkedList<Integer>();
 }
